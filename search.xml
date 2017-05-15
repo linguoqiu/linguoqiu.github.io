@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Ionic2使用Slides的loop属性后点击事件失效bug]]></title>
     <url>%2F2017%2F05%2F15%2FIonic2%E4%BD%BF%E7%94%A8Slides%E7%9A%84loop%E5%B1%9E%E6%80%A7%E5%90%8E%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6%E5%A4%B1%E6%95%88bug%2F</url>
-    <content type="text"><![CDATA[问题描述：Ionic2使用Slides的loop=’true’属性后，从slide第一页滑动到最后一夜，或者最后一页滑动到第一页，点击事件会失效。 问题原因：只要设置了loop=’true’ ，Slide会默认复制第一页和最后一页，分别放在最后一页后和第一页前，达到循环的效果。由于dom代码clone的原因导致点击事件失效 问题解决：为第一页和最后一页的标签加上class，在dom加载完成后对第一页和最后一页加上事件即可。注意：因为clone后，会有2个标签有相同的class，注意区分，还需要阻止事件冒泡 html：1234&lt;ion-slides #ionSlides loop="true" autoplay="3000" pager id="indexSlides" &gt; &lt;ion-slide&gt;&lt;div class="toReport"&gt;&lt;img src=""/&gt;&lt;/div&gt;&lt;/ion-slide&gt; &lt;ion-slide&gt;&lt;div class="toBusines"&gt;&lt;img src=""/&gt;&lt;/div&gt;&lt;/ion-slide&gt;&lt;/ion-slides&gt; TS：123let toReportBtn:any = document.getElementsByClassName("toReport"); toReportBtn[0].addEventListener("click", (e)=&gt;&#123;this.pushToReport();e.stopImmediatePropagation()&#125;); toReportBtn[1].addEventListener("click", (e)=&gt;&#123;this.pushToReport();e.stopImmediatePropagation()&#125;);]]></content>
+    <content type="text"><![CDATA[问题描述：Ionic2使用Slides的loop=’true’属性后，从slide第一页滑动到最后一页，或者最后一页滑动到第一页，点击事件会失效。 问题原因：只要设置了loop=’true’ ，Slide会默认复制第一页和最后一页，分别放在最后一页后和第一页前，达到循环的效果。由于dom代码clone的原因导致点击事件失效 问题解决：为第一页和最后一页的标签加上class，在dom加载完成后对第一页和最后一页加上事件即可。注意：因为clone后，会有2个标签有相同的class，注意区分，还需要阻止事件冒泡 html：1234&lt;ion-slides #ionSlides loop="true" autoplay="3000" pager id="indexSlides" &gt; &lt;ion-slide&gt;&lt;div class="toReport"&gt;&lt;img src=""/&gt;&lt;/div&gt;&lt;/ion-slide&gt; &lt;ion-slide&gt;&lt;div class="toBusines"&gt;&lt;img src=""/&gt;&lt;/div&gt;&lt;/ion-slide&gt;&lt;/ion-slides&gt; TS：123let toReportBtn:any = document.getElementsByClassName("toReport"); toReportBtn[0].addEventListener("click", (e)=&gt;&#123;this.pushToReport();e.stopImmediatePropagation()&#125;); toReportBtn[1].addEventListener("click", (e)=&gt;&#123;this.pushToReport();e.stopImmediatePropagation()&#125;);]]></content>
       <categories>
         <category>Ionic2</category>
       </categories>
@@ -59,6 +59,55 @@
       <tags>
         <tag>Ionic2</tag>
         <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ionic2之tabs相关内容和其他一些坑]]></title>
+    <url>%2F2017%2F04%2F05%2FIonic2%E4%B9%8Btabs%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%E5%92%8C%E5%85%B6%E4%BB%96%E4%B8%80%E4%BA%9B%E5%9D%91%2F</url>
+    <content type="text"><![CDATA[1、 ionic2 中隐藏子页面tabs选项卡的三种方法第一种： 隐藏全部子页面的tabs选项界面找到app.module.ts文件 ，修改如下代码 12345imports: [ IonicModule.forRoot(MyApp,&#123; tabsHideOnSubPages: 'true' //隐藏全部子页面tabs &#125;) ], 第二种：隐藏某个子页面的tabs ; 缺点：当子页面使用pop()方法退出时，父页面的任何事件都不响应。 123import&#123; App &#125; from'ionic-angular'; //1.引入App类constructor(privateapp:App) &#123;&#125; //2.声明初始化app对象this.app.getRootNav().push(nextPage); //3.调用this.app.getRootNav() 从根页面跳转就可以了 第三种：隐藏某个子页面的tabs； 缺点：暂无 123456789101112131415161718//当页面进入初始化的时候 letelements = document.querySelectorAll(".tabbar"); if(elements !=null) &#123; Object.keys(elements).map((key) =&gt; &#123; elements[key].style.display ='none'; &#125;); &#125; //当退出页面的时候ionViewWillLeave() &#123; letelements = document.querySelectorAll(".tabbar"); if(elements !=null) &#123; Object.keys(elements).map((key) =&gt; &#123; elements[key].style.display ='flex'; &#125;); &#125;&#125; 2、Ionic2 组件之Tab的基本属性和事件 示例html代码如下: 1&lt;ion-tabs #mainTabs (ionChange)="changeTabs()" color="danger" tabsHighlight="true"&gt; &lt;ion-tab [root]="tab1Root" [rootParams]="homeParams" tabTitle="Home" tabIcon="home"&gt;&lt;/ion-tab&gt; &lt;ion-tab [root]="tab2Root" (ionSelect)="selectFriend()" tabTitle="Friends" tabIcon="aperture" tabBadge="3" tabBadgeStyle="danger"&gt;&lt;/ion-tab&gt; &lt;ion-tab [root]="tab3Root" enabled="false" swipeBackEnabled="true" tabTitle="Contact" tabIcon="contacts"&gt;&lt;/ion-tab&gt; &lt;/ion-tabs&gt; 3、ionic的一些坑1、如何在push页面后隐藏tabbar 在ionicBootstrap中设置tabsHideOnSubPages为true 2、如何设置返回按键文字 在ionicBootstrap中设置backButtonText，如”返回”或”“ 3、如何在page pop后传递参数到前一个页面 a) 使用model来代替push，然后在dismiss方法中传递参数 b) 使用Promise parent: 12345new Promise((resolve, reject) =&gt; &#123; this.nav.push(ChildPage, &#123;resolve: resolve&#125;); &#125;).then(data =&gt; &#123; let value = data["property"]; &#125;); child： 12let resolve = this.navParams.get("resolve"); resolve(&#123;property: value&#125;); 5 . 如何设置button的disabled状态：注意解除disabled状态需要设置绑定变量为null &lt;button disabled=“{{buttonDisabled}}”&gt; this.buttonDisabled = true; this.buttonDisabled = null; 6.如何修改slides的bullet 在slides的option中添加下面两个属性： bulletClass: &quot;my-swiper-pagination-bullet&quot;, bulletActiveClass: &apos;my-swiper-pagination-bullet-active&apos;]]></content>
+      <categories>
+        <category>Ionic2</category>
+      </categories>
+      <tags>
+        <tag>Ionic2</tag>
+        <tag>tabs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ionic2实现:下拉刷新和上拉加载]]></title>
+    <url>%2F2017%2F04%2F05%2FIonic2%E5%AE%9E%E7%8E%B0%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0%E5%92%8C%E4%B8%8A%E6%8B%89%E5%8A%A0%E8%BD%BD%2F</url>
+    <content type="text"><![CDATA[下拉刷新：12345678910&lt;ion-content&gt; &lt;ion-refresher (ionRefresh)="doRefresh($event)"&gt; &lt;ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing..."&gt; &lt;/ion-refresher-content&gt; &lt;/ion-refresher&gt;&lt;/ion-content&gt; TypeScript： 12345678910111213141516@Component(&#123;...&#125;) export class NewsFeedPage &#123; items = []; doRefresh(refresher) &#123; console.log(&apos;Begin async operation&apos;, refresher); setTimeout(() =&gt; &#123; this.items = []; for (var i = 0; i &lt; 30; i++) &#123; this.items.push( this.items.length ); &#125; console.log(&apos;Async operation has ended&apos;); refresher.complete(); &#125;, 2000); &#125; &#125; 上拉加载：1234567891011121314&lt;ion-content&gt; &lt;ion-list&gt; &lt;ion-item *ngFor="let i of items"&gt;&#123;&#123;i&#125;&#125;&lt;/ion-item&gt; &lt;/ion-list&gt; &lt;ion-infinite-scroll (ionInfinite)="doInfinite($event)"&gt; &lt;ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..."&gt; &lt;/ion-infinite-scroll-content&gt; &lt;/ion-infinite-scroll&gt;&lt;/ion-content&gt; TypeScript： 123456789101112131415161718192021222324@Component(&#123;...&#125;)export class NewsFeedPage &#123; items = []; constructor() &#123; for (let i = 0; i &lt; 30; i++) &#123; this.items.push( this.items.length ); &#125; &#125; doInfinite(infiniteScroll) &#123; console.log('Begin async operation'); setTimeout(() =&gt; &#123; for (let i = 0; i &lt; 30; i++) &#123; this.items.push( this.items.length ); &#125; console.log('Async operation has ended'); infiniteScroll.complete(); &#125;, 500); &#125;&#125;]]></content>
+      <categories>
+        <category>Ionic2</category>
+      </categories>
+      <tags>
+        <tag>Ionic2</tag>
+        <tag>refesh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ionic2关于Slides的一些坑]]></title>
+    <url>%2F2017%2F04%2F05%2FIonic2%E5%85%B3%E4%BA%8ESlides%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91%2F</url>
+    <content type="text"><![CDATA[首先，要知道Slides是实际使用的是swiper组件，所以遇到问题也可以查阅swiper相关资料。 通用Html代码 1&lt;ion-slides #ionSlides loop="true" autoplay="3000" pager (ionSlideAutoplayStop)="autoPlay()"&gt; TS: 1@ViewChild('ionSlides') slides; 1、Slides在用户拖拽后，停止自动播放，解决方法：第一种方法： 可以监听 停止自动播放 事件，然后开启自动播放： 12autoPlay()&#123; this.slides.startAutoplay(); 第二种方法： 在启动的时候设置 slides的属性autoplayDisableOnInteraction 为false； 123ionViewDidEnter()&#123; this.slides.autoplayDisableOnInteraction = false; &#125; 2、自动播放的Slides调转到其他页面一定时间后（超过设置的播放时间），再回到此页面，自动播放失效，解决方法如下： 现在页面退出的时候手动停止slides的播放（此步骤必须要有，不然后面的启动无效），在回来页面加载完成的时候启动自动播放，代码如下： 12345678910 //页面进入时启动自动播放 ionViewDidEnter()&#123; this.slides.startAutoplay(); &#125; //页面离开时停止自动播放 ionViewDidLeave()&#123; this.slides.stopAutoplay(); &#125;]]></content>
+      <categories>
+        <category>Ionic2</category>
+      </categories>
+      <tags>
+        <tag>Ionic2</tag>
+        <tag>Slides</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ionic2点击事件感觉到延迟的解决办法]]></title>
+    <url>%2F2016%2F12%2F14%2Fionic2%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6%E6%84%9F%E8%A7%89%E5%88%B0%E5%BB%B6%E8%BF%9F%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[In general, we recommend only adding (click) events to elements that are normally clickable. This includes &lt; button&gt; and &lt; a&gt; elements. This improves accessibility as a screen reader will be able to tell that the element is clickable.However, you may need to add a (click) event to an element that is not normally clickable. When you do this you may experience a 300ms delay from the time you click the element to the event firing. To remove this delay, you can add the tappable attribute to your element. 1&lt;div tappable (click)="doClick()"&gt;I am clickable!&lt;/div&gt; 一般来说，我们建议您只向通常可点击的元素添加（点击）事件。 这包括&lt; button&gt;和&lt; a&gt;元素。 这提高了可访问性，因为屏幕阅读器将能够告诉该元素是可点击的。 但是，您可能需要向通常不可点击的元素添加（点击）事件。 执行此操作时，您可能会遇到从点击元素到事件触发的300毫秒延迟。 要删除此延迟，可以将tappable属性添加到元素。]]></content>
+      <categories>
+        <category>Ionic2</category>
+      </categories>
+      <tags>
+        <tag>Ionic2</tag>
+        <tag>tappable</tag>
+        <tag>点击延迟</tag>
       </tags>
   </entry>
 </search>

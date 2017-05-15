@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Ionic2,pipe," />
+  <meta name="keywords" content="Ionic2,tabs," />
 
 
 
@@ -90,17 +90,19 @@
 
 
 
-<meta name="description" content="1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe |–src　|–pipe　　*.ts  2、在ts文件里面写pipe的逻辑1234567891011121314151617181920import &amp;#123; Pipe, PipeTransform &amp;#125; from &apos;@angular/core&apos;;/* * Raise the value exponen">
-<meta name="keywords" content="Ionic2,pipe">
+<meta name="description" content="1、 ionic2 中隐藏子页面tabs选项卡的三种方法第一种： 隐藏全部子页面的tabs选项界面找到app.module.ts文件 ，修改如下代码 12345imports: [    IonicModule.forRoot(MyApp,&amp;#123;      tabsHideOnSubPages: &apos;true&apos;         //隐藏全部子页面tabs    &amp;#125;)  ], 第二种：">
+<meta name="keywords" content="Ionic2,tabs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ionic2创建一个自定义pipe实现千分位号">
-<meta property="og:url" content="http://www.lynson.tech/2017/04/09/Ionic2创建一个自定义pipe实现千分位号/index.html">
+<meta property="og:title" content="Ionic2之tabs相关内容和其他一些坑">
+<meta property="og:url" content="http://www.lynson.tech/2017/04/05/Ionic2之tabs相关内容和其他一些坑/index.html">
 <meta property="og:site_name" content="Lynson">
-<meta property="og:description" content="1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe |–src　|–pipe　　*.ts  2、在ts文件里面写pipe的逻辑1234567891011121314151617181920import &amp;#123; Pipe, PipeTransform &amp;#125; from &apos;@angular/core&apos;;/* * Raise the value exponen">
-<meta property="og:updated_time" content="2017-05-15T08:03:57.241Z">
+<meta property="og:description" content="1、 ionic2 中隐藏子页面tabs选项卡的三种方法第一种： 隐藏全部子页面的tabs选项界面找到app.module.ts文件 ，修改如下代码 12345imports: [    IonicModule.forRoot(MyApp,&amp;#123;      tabsHideOnSubPages: &apos;true&apos;         //隐藏全部子页面tabs    &amp;#125;)  ], 第二种：">
+<meta property="og:image" content="http://i.imgur.com/cRsMjLK.png">
+<meta property="og:updated_time" content="2017-05-15T08:39:55.267Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ionic2创建一个自定义pipe实现千分位号">
-<meta name="twitter:description" content="1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe |–src　|–pipe　　*.ts  2、在ts文件里面写pipe的逻辑1234567891011121314151617181920import &amp;#123; Pipe, PipeTransform &amp;#125; from &apos;@angular/core&apos;;/* * Raise the value exponen">
+<meta name="twitter:title" content="Ionic2之tabs相关内容和其他一些坑">
+<meta name="twitter:description" content="1、 ionic2 中隐藏子页面tabs选项卡的三种方法第一种： 隐藏全部子页面的tabs选项界面找到app.module.ts文件 ，修改如下代码 12345imports: [    IonicModule.forRoot(MyApp,&amp;#123;      tabsHideOnSubPages: &apos;true&apos;         //隐藏全部子页面tabs    &amp;#125;)  ], 第二种：">
+<meta name="twitter:image" content="http://i.imgur.com/cRsMjLK.png">
 
 
 
@@ -128,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://www.lynson.tech/2017/04/09/Ionic2创建一个自定义pipe实现千分位号/"/>
+  <link rel="canonical" href="http://www.lynson.tech/2017/04/05/Ionic2之tabs相关内容和其他一些坑/"/>
 
 
 
 
 
-  <title>Ionic2创建一个自定义pipe实现千分位号 | Lynson</title>
+  <title>Ionic2之tabs相关内容和其他一些坑 | Lynson</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -307,7 +309,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.lynson.tech/2017/04/09/Ionic2创建一个自定义pipe实现千分位号/">
+    <link itemprop="mainEntityOfPage" href="http://www.lynson.tech/2017/04/05/Ionic2之tabs相关内容和其他一些坑/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lynson">
@@ -324,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ionic2创建一个自定义pipe实现千分位号</h1>
+          <h1 class="post-title" itemprop="name headline">Ionic2之tabs相关内容和其他一些坑</h1>
         
 
         <div class="post-meta">
@@ -336,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-09T21:33:48+08:00">
-                2017-04-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-05T23:24:13+08:00">
+                2017-04-05
               </time>
             
 
@@ -376,7 +378,7 @@
 
           
           
-             <span id="/2017/04/09/Ionic2创建一个自定义pipe实现千分位号/" class="leancloud_visitors" data-flag-title="Ionic2创建一个自定义pipe实现千分位号">
+             <span id="/2017/04/05/Ionic2之tabs相关内容和其他一些坑/" class="leancloud_visitors" data-flag-title="Ionic2之tabs相关内容和其他一些坑">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -409,14 +411,45 @@
       
 
       
-        <h2 id="1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe"><a href="#1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe" class="headerlink" title="1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe"></a>1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe</h2><blockquote>
-<p>|–src<br>　|–pipe<br>　　<strong>*</strong>.ts</p>
-</blockquote>
-<h2 id="2、在ts文件里面写pipe的逻辑"><a href="#2、在ts文件里面写pipe的逻辑" class="headerlink" title="2、在ts文件里面写pipe的逻辑"></a>2、在ts文件里面写pipe的逻辑</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Pipe, PipeTransform &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="comment">/*</span></div><div class="line"> * Raise the value exponentially</div><div class="line"> * Takes an exponent argument that defaults to 1.</div><div class="line"> * Usage:</div><div class="line"> *   value | exponentialStrength:exponent</div><div class="line"> * Example:</div><div class="line"> *   &#123;&#123; 2 |  exponentialStrength:10&#125;&#125;</div><div class="line"> *   formats to: 1024</div><div class="line"> *  将number转换为千分位的字符串</div><div class="line"> */</div><div class="line"><span class="meta">@Pipe</span>(&#123;name: <span class="string">'toNumber'</span>&#125;)</div><div class="line"><span class="keyword">export</span> <span class="keyword">class</span> ToNumberPipe <span class="keyword">implements</span> PipeTransform &#123;</div><div class="line">    <span class="comment">//实现了PipeTransform类，实现transform方法，当html使用了toNumber的管道，会自动调用此方法</span></div><div class="line">    transform(input:<span class="built_in">number</span>): <span class="built_in">string</span> &#123;</div><div class="line">    <span class="comment">//这里可以带多个参数，第一个参数默认是原始数据，这里是指</span></div><div class="line">    <span class="comment">//amount、total 、debt 、overdue ，见下html代码</span></div><div class="line">        <span class="keyword">return</span> input.toString().replace(<span class="regexp">/\B(?=(\d&#123;3&#125;)+(?!\d))/g</span>, <span class="string">","</span>);<span class="comment">//转为千分位的正则表达式</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h2 id="1、-ionic2-中隐藏子页面tabs选项卡的三种方法"><a href="#1、-ionic2-中隐藏子页面tabs选项卡的三种方法" class="headerlink" title="1、 ionic2 中隐藏子页面tabs选项卡的三种方法"></a>1、 ionic2 中隐藏子页面tabs选项卡的三种方法</h2><p>第一种： 隐藏全部子页面的tabs选项界面找到app.module.ts文件 ，修改如下代码</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">imports: [</div><div class="line">    IonicModule.forRoot(MyApp,&#123;</div><div class="line">      tabsHideOnSubPages: <span class="string">'true'</span>         <span class="comment">//隐藏全部子页面tabs</span></div><div class="line">    &#125;)</div><div class="line">  ],</div></pre></td></tr></table></figure>
+<p>第二种：隐藏某个子页面的tabs ; 缺点：当子页面使用pop()方法退出时，父页面的任何事件都不响应。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span>&#123; App &#125; <span class="keyword">from</span><span class="string">'ionic-angular'</span>;        <span class="comment">//1.引入App类</span></div><div class="line"><span class="keyword">constructor</span>(<span class="params">privateapp:App</span>) &#123;&#125;           <span class="comment">//2.声明初始化app对象</span></div><div class="line"><span class="keyword">this</span>.app.getRootNav().push(nextPage);      <span class="comment">//3.调用this.app.getRootNav() 从根页面跳转就可以了</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="3、在app-modules-ts中import这个ts文件，然后只需在declarations中声明。"><a href="#3、在app-modules-ts中import这个ts文件，然后只需在declarations中声明。" class="headerlink" title="3、在app.modules.ts中import这个ts文件，然后只需在declarations中声明。"></a>3、在app.modules.ts中import这个ts文件，然后只需在declarations中声明。</h2><h2 id="4、在需要的Html模版中使用（不需要引入）"><a href="#4、在需要的Html模版中使用（不需要引入）" class="headerlink" title="4、在需要的Html模版中使用（不需要引入）"></a>4、在需要的Html模版中使用（不需要引入）</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;professionItem.list[0].amount | toNumber&#125;&#125;辆<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;professionItem.list[0].total | toNumber&#125;&#125;元<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;professionItem.list[0].debt | toNumber&#125;&#125;辆<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;professionItem.list[0].overdue | toNumber&#125;&#125;元<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>这样就完成了，amount等数据会传入到transform方法，然后返回的数据展示在li上。</p>
+<p>第三种：隐藏某个子页面的tabs； 缺点：暂无</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//当页面进入初始化的时候</span></div><div class="line">    letelements = <span class="built_in">document</span>.querySelectorAll(<span class="string">".tabbar"</span>);</div><div class="line">    <span class="keyword">if</span>(elements !=<span class="literal">null</span>) &#123;</div><div class="line">        <span class="built_in">Object</span>.keys(elements).map(<span class="function">(<span class="params">key</span>) =&gt;</span> &#123;</div><div class="line">            elements[key].style.display =<span class="string">'none'</span>;</div><div class="line">        &#125;);</div><div class="line">    &#125;   </div><div class="line"></div><div class="line"></div><div class="line">  <span class="comment">//当退出页面的时候</span></div><div class="line">ionViewWillLeave() &#123;</div><div class="line">    letelements = <span class="built_in">document</span>.querySelectorAll(<span class="string">".tabbar"</span>);</div><div class="line">    <span class="keyword">if</span>(elements !=<span class="literal">null</span>) &#123;</div><div class="line">        <span class="built_in">Object</span>.keys(elements).map(<span class="function">(<span class="params">key</span>) =&gt;</span> &#123;</div><div class="line">            elements[key].style.display =<span class="string">'flex'</span>;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="2、Ionic2-组件之Tab的基本属性和事件"><a href="#2、Ionic2-组件之Tab的基本属性和事件" class="headerlink" title="2、Ionic2 组件之Tab的基本属性和事件"></a>2、Ionic2 组件之Tab的基本属性和事件</h2><p><img src="http://i.imgur.com/cRsMjLK.png" alt=""></p>
+<p>示例html代码如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ion-tabs</span> #<span class="attr">mainTabs</span> (<span class="attr">ionChange</span>)=<span class="string">"changeTabs()"</span> <span class="attr">color</span>=<span class="string">"danger"</span> <span class="attr">tabsHighlight</span>=<span class="string">"true"</span>&gt;</span> <span class="tag">&lt;<span class="name">ion-tab</span> [<span class="attr">root</span>]=<span class="string">"tab1Root"</span> [<span class="attr">rootParams</span>]=<span class="string">"homeParams"</span> <span class="attr">tabTitle</span>=<span class="string">"Home"</span> <span class="attr">tabIcon</span>=<span class="string">"home"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-tab</span>&gt;</span> <span class="tag">&lt;<span class="name">ion-tab</span> [<span class="attr">root</span>]=<span class="string">"tab2Root"</span> (<span class="attr">ionSelect</span>)=<span class="string">"selectFriend()"</span> <span class="attr">tabTitle</span>=<span class="string">"Friends"</span> <span class="attr">tabIcon</span>=<span class="string">"aperture"</span> <span class="attr">tabBadge</span>=<span class="string">"3"</span> <span class="attr">tabBadgeStyle</span>=<span class="string">"danger"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-tab</span>&gt;</span> <span class="tag">&lt;<span class="name">ion-tab</span> [<span class="attr">root</span>]=<span class="string">"tab3Root"</span> <span class="attr">enabled</span>=<span class="string">"false"</span> <span class="attr">swipeBackEnabled</span>=<span class="string">"true"</span> <span class="attr">tabTitle</span>=<span class="string">"Contact"</span> <span class="attr">tabIcon</span>=<span class="string">"contacts"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-tab</span>&gt;</span> <span class="tag">&lt;/<span class="name">ion-tabs</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="3、ionic的一些坑"><a href="#3、ionic的一些坑" class="headerlink" title="3、ionic的一些坑"></a>3、ionic的一些坑</h2><pre><code>1、如何在push页面后隐藏tabbar
 
+   在ionicBootstrap中设置tabsHideOnSubPages为true
+
+2、如何设置返回按键文字
+
+   在ionicBootstrap中设置backButtonText，如”返回”或”“
+
+3、如何在page pop后传递参数到前一个页面
+
+   a) 使用model来代替push，然后在dismiss方法中传递参数
+
+   b) 使用Promise
+</code></pre><p>parent:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;  </div><div class="line">  <span class="keyword">this</span>.nav.push(ChildPage, &#123;resolve: resolve&#125;);  </div><div class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;  </div><div class="line">  <span class="keyword">let</span> value = data[<span class="string">"property"</span>];  </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>child：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> resolve = <span class="keyword">this</span>.navParams.get(<span class="string">"resolve"</span>);  </div><div class="line">    resolve(&#123;property: value&#125;);</div></pre></td></tr></table></figure>
+<pre><code>5 . 如何设置button的disabled状态：注意解除disabled状态需要设置绑定变量为null
+
+&lt;button disabled=“{{buttonDisabled}}”&gt;  
+this.buttonDisabled = true;  
+this.buttonDisabled = null; 
+
+6.如何修改slides的bullet
+
+在slides的option中添加下面两个属性：
+bulletClass: &quot;my-swiper-pagination-bullet&quot;,  
+bulletActiveClass: &apos;my-swiper-pagination-bullet-active&apos;  
+</code></pre>
       
     </div>
 
@@ -447,7 +480,7 @@
           
             <a href="/tags/Ionic2/" rel="tag"># Ionic2</a>
           
-            <a href="/tags/pipe/" rel="tag"># pipe</a>
+            <a href="/tags/tabs/" rel="tag"># tabs</a>
           
         </div>
       
@@ -460,8 +493,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/09/关于Ionic2Angular2使用http的一些坑/" rel="next" title="关于Ionic2\Angular2使用http的一些坑">
-                <i class="fa fa-chevron-left"></i> 关于Ionic2\Angular2使用http的一些坑
+              <a href="/2017/04/05/Ionic2实现下拉刷新和上拉加载/" rel="next" title="Ionic2实现:下拉刷新和上拉加载">
+                <i class="fa fa-chevron-left"></i> Ionic2实现:下拉刷新和上拉加载
               </a>
             
           </div>
@@ -470,8 +503,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/04/Ionic2使用百度地图和html5 geolocation的一些注意事项/" rel="prev" title="Ionic2使用百度地图和html5 geolocation的一些注意事项">
-                Ionic2使用百度地图和html5 geolocation的一些注意事项 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/09/关于Ionic2Angular2使用http的一些坑/" rel="prev" title="关于Ionic2\Angular2使用http的一些坑">
+                关于Ionic2\Angular2使用http的一些坑 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -626,7 +659,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe"><span class="nav-number">1.</span> <span class="nav-text">1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、在ts文件里面写pipe的逻辑"><span class="nav-number">2.</span> <span class="nav-text">2、在ts文件里面写pipe的逻辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、在app-modules-ts中import这个ts文件，然后只需在declarations中声明。"><span class="nav-number">3.</span> <span class="nav-text">3、在app.modules.ts中import这个ts文件，然后只需在declarations中声明。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、在需要的Html模版中使用（不需要引入）"><span class="nav-number">4.</span> <span class="nav-text">4、在需要的Html模版中使用（不需要引入）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、-ionic2-中隐藏子页面tabs选项卡的三种方法"><span class="nav-number">1.</span> <span class="nav-text">1、 ionic2 中隐藏子页面tabs选项卡的三种方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、Ionic2-组件之Tab的基本属性和事件"><span class="nav-number">2.</span> <span class="nav-text">2、Ionic2 组件之Tab的基本属性和事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、ionic的一些坑"><span class="nav-number">3.</span> <span class="nav-text">3、ionic的一些坑</span></a></li></ol></div>
             
 
           </div>

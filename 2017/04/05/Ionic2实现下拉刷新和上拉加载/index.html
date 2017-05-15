@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Ionic2,pipe," />
+  <meta name="keywords" content="Ionic2,refesh," />
 
 
 
@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe |–src　|–pipe　　*.ts  2、在ts文件里面写pipe的逻辑1234567891011121314151617181920import &amp;#123; Pipe, PipeTransform &amp;#125; from &apos;@angular/core&apos;;/* * Raise the value exponen">
-<meta name="keywords" content="Ionic2,pipe">
+<meta name="description" content="下拉刷新：12345678910&amp;lt;ion-content&amp;gt;    &amp;lt;ion-refresher (ionRefresh)=&quot;doRefresh($event)&quot;&amp;gt;      &amp;lt;ion-refresher-content        pullingIcon=&quot;arrow-dropdown&quot;        pullingText=&quot;Pull to refresh&quot;">
+<meta name="keywords" content="Ionic2,refesh">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ionic2创建一个自定义pipe实现千分位号">
-<meta property="og:url" content="http://www.lynson.tech/2017/04/09/Ionic2创建一个自定义pipe实现千分位号/index.html">
+<meta property="og:title" content="Ionic2实现:下拉刷新和上拉加载">
+<meta property="og:url" content="http://www.lynson.tech/2017/04/05/Ionic2实现下拉刷新和上拉加载/index.html">
 <meta property="og:site_name" content="Lynson">
-<meta property="og:description" content="1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe |–src　|–pipe　　*.ts  2、在ts文件里面写pipe的逻辑1234567891011121314151617181920import &amp;#123; Pipe, PipeTransform &amp;#125; from &apos;@angular/core&apos;;/* * Raise the value exponen">
-<meta property="og:updated_time" content="2017-05-15T08:03:57.241Z">
+<meta property="og:description" content="下拉刷新：12345678910&amp;lt;ion-content&amp;gt;    &amp;lt;ion-refresher (ionRefresh)=&quot;doRefresh($event)&quot;&amp;gt;      &amp;lt;ion-refresher-content        pullingIcon=&quot;arrow-dropdown&quot;        pullingText=&quot;Pull to refresh&quot;">
+<meta property="og:updated_time" content="2017-05-15T08:44:48.259Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ionic2创建一个自定义pipe实现千分位号">
-<meta name="twitter:description" content="1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe |–src　|–pipe　　*.ts  2、在ts文件里面写pipe的逻辑1234567891011121314151617181920import &amp;#123; Pipe, PipeTransform &amp;#125; from &apos;@angular/core&apos;;/* * Raise the value exponen">
+<meta name="twitter:title" content="Ionic2实现:下拉刷新和上拉加载">
+<meta name="twitter:description" content="下拉刷新：12345678910&amp;lt;ion-content&amp;gt;    &amp;lt;ion-refresher (ionRefresh)=&quot;doRefresh($event)&quot;&amp;gt;      &amp;lt;ion-refresher-content        pullingIcon=&quot;arrow-dropdown&quot;        pullingText=&quot;Pull to refresh&quot;">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://www.lynson.tech/2017/04/09/Ionic2创建一个自定义pipe实现千分位号/"/>
+  <link rel="canonical" href="http://www.lynson.tech/2017/04/05/Ionic2实现下拉刷新和上拉加载/"/>
 
 
 
 
 
-  <title>Ionic2创建一个自定义pipe实现千分位号 | Lynson</title>
+  <title>Ionic2实现:下拉刷新和上拉加载 | Lynson</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -307,7 +307,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.lynson.tech/2017/04/09/Ionic2创建一个自定义pipe实现千分位号/">
+    <link itemprop="mainEntityOfPage" href="http://www.lynson.tech/2017/04/05/Ionic2实现下拉刷新和上拉加载/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lynson">
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ionic2创建一个自定义pipe实现千分位号</h1>
+          <h1 class="post-title" itemprop="name headline">Ionic2实现:下拉刷新和上拉加载</h1>
         
 
         <div class="post-meta">
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-09T21:33:48+08:00">
-                2017-04-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-05T22:58:50+08:00">
+                2017-04-05
               </time>
             
 
@@ -376,7 +376,7 @@
 
           
           
-             <span id="/2017/04/09/Ionic2创建一个自定义pipe实现千分位号/" class="leancloud_visitors" data-flag-title="Ionic2创建一个自定义pipe实现千分位号">
+             <span id="/2017/04/05/Ionic2实现下拉刷新和上拉加载/" class="leancloud_visitors" data-flag-title="Ionic2实现:下拉刷新和上拉加载">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -409,14 +409,13 @@
       
 
       
-        <h2 id="1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe"><a href="#1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe" class="headerlink" title="1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe"></a>1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe</h2><blockquote>
-<p>|–src<br>　|–pipe<br>　　<strong>*</strong>.ts</p>
-</blockquote>
-<h2 id="2、在ts文件里面写pipe的逻辑"><a href="#2、在ts文件里面写pipe的逻辑" class="headerlink" title="2、在ts文件里面写pipe的逻辑"></a>2、在ts文件里面写pipe的逻辑</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Pipe, PipeTransform &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="comment">/*</span></div><div class="line"> * Raise the value exponentially</div><div class="line"> * Takes an exponent argument that defaults to 1.</div><div class="line"> * Usage:</div><div class="line"> *   value | exponentialStrength:exponent</div><div class="line"> * Example:</div><div class="line"> *   &#123;&#123; 2 |  exponentialStrength:10&#125;&#125;</div><div class="line"> *   formats to: 1024</div><div class="line"> *  将number转换为千分位的字符串</div><div class="line"> */</div><div class="line"><span class="meta">@Pipe</span>(&#123;name: <span class="string">'toNumber'</span>&#125;)</div><div class="line"><span class="keyword">export</span> <span class="keyword">class</span> ToNumberPipe <span class="keyword">implements</span> PipeTransform &#123;</div><div class="line">    <span class="comment">//实现了PipeTransform类，实现transform方法，当html使用了toNumber的管道，会自动调用此方法</span></div><div class="line">    transform(input:<span class="built_in">number</span>): <span class="built_in">string</span> &#123;</div><div class="line">    <span class="comment">//这里可以带多个参数，第一个参数默认是原始数据，这里是指</span></div><div class="line">    <span class="comment">//amount、total 、debt 、overdue ，见下html代码</span></div><div class="line">        <span class="keyword">return</span> input.toString().replace(<span class="regexp">/\B(?=(\d&#123;3&#125;)+(?!\d))/g</span>, <span class="string">","</span>);<span class="comment">//转为千分位的正则表达式</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h3 id="下拉刷新："><a href="#下拉刷新：" class="headerlink" title="下拉刷新："></a>下拉刷新：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ion-content</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ion-refresher</span> (<span class="attr">ionRefresh</span>)=<span class="string">"doRefresh($event)"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">ion-refresher-content</span></span></div><div class="line">        <span class="attr">pullingIcon</span>=<span class="string">"arrow-dropdown"</span></div><div class="line">        <span class="attr">pullingText</span>=<span class="string">"Pull to refresh"</span></div><div class="line">        <span class="attr">refreshingSpinner</span>=<span class="string">"circles"</span></div><div class="line">        <span class="attr">refreshingText</span>=<span class="string">"Refreshing..."</span>&gt;</div><div class="line">      <span class="tag">&lt;/<span class="name">ion-refresher-content</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ion-refresher</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ion-content</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>TypeScript：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">@Component(&#123;...&#125;)</div><div class="line"> export class NewsFeedPage &#123;</div><div class="line">   items = [];</div><div class="line">   doRefresh(refresher) &#123;</div><div class="line">     console.log(&apos;Begin async operation&apos;, refresher);</div><div class="line"> </div><div class="line">     setTimeout(() =&gt; &#123;</div><div class="line">       this.items = [];</div><div class="line">       for (var i = 0; i &lt; 30; i++) &#123;</div><div class="line">        this.items.push( this.items.length );</div><div class="line">      &#125;</div><div class="line">      console.log(&apos;Async operation has ended&apos;);</div><div class="line">      refresher.complete();</div><div class="line">    &#125;, 2000);</div><div class="line">  &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="3、在app-modules-ts中import这个ts文件，然后只需在declarations中声明。"><a href="#3、在app-modules-ts中import这个ts文件，然后只需在declarations中声明。" class="headerlink" title="3、在app.modules.ts中import这个ts文件，然后只需在declarations中声明。"></a>3、在app.modules.ts中import这个ts文件，然后只需在declarations中声明。</h2><h2 id="4、在需要的Html模版中使用（不需要引入）"><a href="#4、在需要的Html模版中使用（不需要引入）" class="headerlink" title="4、在需要的Html模版中使用（不需要引入）"></a>4、在需要的Html模版中使用（不需要引入）</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;professionItem.list[0].amount | toNumber&#125;&#125;辆<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;professionItem.list[0].total | toNumber&#125;&#125;元<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;professionItem.list[0].debt | toNumber&#125;&#125;辆<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;professionItem.list[0].overdue | toNumber&#125;&#125;元<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>这样就完成了，amount等数据会传入到transform方法，然后返回的数据展示在li上。</p>
-
+<h3 id="上拉加载："><a href="#上拉加载：" class="headerlink" title="上拉加载："></a>上拉加载：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ion-content</span>&gt;</span></div><div class="line"></div><div class="line"> <span class="tag">&lt;<span class="name">ion-list</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">ion-item</span> *<span class="attr">ngFor</span>=<span class="string">"let i of items"</span>&gt;</span>&#123;&#123;i&#125;&#125;<span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">ion-list</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">ion-infinite-scroll</span> (<span class="attr">ionInfinite</span>)=<span class="string">"doInfinite($event)"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ion-infinite-scroll-content</span></span></div><div class="line">      <span class="attr">loadingSpinner</span>=<span class="string">"bubbles"</span></div><div class="line">      <span class="attr">loadingText</span>=<span class="string">"Loading more data..."</span>&gt;</div><div class="line">    <span class="tag">&lt;/<span class="name">ion-infinite-scroll-content</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ion-infinite-scroll</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">ion-content</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>TypeScript：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Component</span>(&#123;...&#125;)</div><div class="line"><span class="keyword">export</span> <span class="keyword">class</span> NewsFeedPage &#123;</div><div class="line">  items = [];</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">30</span>; i++) &#123;</div><div class="line">      <span class="keyword">this</span>.items.push( <span class="keyword">this</span>.items.length );</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  doInfinite(infiniteScroll) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Begin async operation'</span>);</div><div class="line"></div><div class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">30</span>; i++) &#123;</div><div class="line">        <span class="keyword">this</span>.items.push( <span class="keyword">this</span>.items.length );</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'Async operation has ended'</span>);</div><div class="line">      infiniteScroll.complete();</div><div class="line">    &#125;, <span class="number">500</span>);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -447,7 +446,7 @@
           
             <a href="/tags/Ionic2/" rel="tag"># Ionic2</a>
           
-            <a href="/tags/pipe/" rel="tag"># pipe</a>
+            <a href="/tags/refesh/" rel="tag"># refesh</a>
           
         </div>
       
@@ -460,8 +459,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/09/关于Ionic2Angular2使用http的一些坑/" rel="next" title="关于Ionic2\Angular2使用http的一些坑">
-                <i class="fa fa-chevron-left"></i> 关于Ionic2\Angular2使用http的一些坑
+              <a href="/2017/04/05/Ionic2关于Slides的一些坑/" rel="next" title="Ionic2关于Slides的一些坑">
+                <i class="fa fa-chevron-left"></i> Ionic2关于Slides的一些坑
               </a>
             
           </div>
@@ -470,8 +469,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/04/Ionic2使用百度地图和html5 geolocation的一些注意事项/" rel="prev" title="Ionic2使用百度地图和html5 geolocation的一些注意事项">
-                Ionic2使用百度地图和html5 geolocation的一些注意事项 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/05/Ionic2之tabs相关内容和其他一些坑/" rel="prev" title="Ionic2之tabs相关内容和其他一些坑">
+                Ionic2之tabs相关内容和其他一些坑 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -626,7 +625,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe"><span class="nav-number">1.</span> <span class="nav-text">1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、在ts文件里面写pipe的逻辑"><span class="nav-number">2.</span> <span class="nav-text">2、在ts文件里面写pipe的逻辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、在app-modules-ts中import这个ts文件，然后只需在declarations中声明。"><span class="nav-number">3.</span> <span class="nav-text">3、在app.modules.ts中import这个ts文件，然后只需在declarations中声明。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、在需要的Html模版中使用（不需要引入）"><span class="nav-number">4.</span> <span class="nav-text">4、在需要的Html模版中使用（不需要引入）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#下拉刷新："><span class="nav-number">1.</span> <span class="nav-text">下拉刷新：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上拉加载："><span class="nav-number">2.</span> <span class="nav-text">上拉加载：</span></a></li></ol></div>
             
 
           </div>
