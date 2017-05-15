@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ionic2使用Slides的loop属性后点击事件失效bug]]></title>
+    <url>%2F2017%2F05%2F15%2FIonic2%E4%BD%BF%E7%94%A8Slides%E7%9A%84loop%E5%B1%9E%E6%80%A7%E5%90%8E%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6%E5%A4%B1%E6%95%88bug%2F</url>
+    <content type="text"><![CDATA[问题描述：Ionic2使用Slides的loop=’true’属性后，从slide第一页滑动到最后一夜，或者最后一页滑动到第一页，点击事件会失效。 问题原因：只要设置了loop=’true’ ，Slide会默认复制第一页和最后一页，分别放在最后一页后和第一页前，达到循环的效果。由于dom代码clone的原因导致点击事件失效 问题解决：为第一页和最后一页的标签加上class，在dom加载完成后对第一页和最后一页加上事件即可。注意：因为clone后，会有2个标签有相同的class，注意区分，还需要阻止事件冒泡 html：1234&lt;ion-slides #ionSlides loop="true" autoplay="3000" pager id="indexSlides" &gt; &lt;ion-slide&gt;&lt;div class="toReport"&gt;&lt;img src=""/&gt;&lt;/div&gt;&lt;/ion-slide&gt; &lt;ion-slide&gt;&lt;div class="toBusines"&gt;&lt;img src=""/&gt;&lt;/div&gt;&lt;/ion-slide&gt;&lt;/ion-slides&gt; TS：123let toReportBtn:any = document.getElementsByClassName("toReport"); toReportBtn[0].addEventListener("click", (e)=&gt;&#123;this.pushToReport();e.stopImmediatePropagation()&#125;); toReportBtn[1].addEventListener("click", (e)=&gt;&#123;this.pushToReport();e.stopImmediatePropagation()&#125;);]]></content>
+      <categories>
+        <category>Ionic2</category>
+      </categories>
+      <tags>
+        <tag>Ionic2 Slides</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[article title]]></title>
     <url>%2F2017%2F05%2F11%2Farticle-title%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>Ionic2</category>
+      </categories>
       <tags>
         <tag>hello!</tag>
       </tags>
