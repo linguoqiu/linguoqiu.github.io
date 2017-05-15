@@ -98,8 +98,8 @@
 <meta property="og:site_name" content="Lynson">
 <meta property="og:description" content="1、服务器接收key=value&amp;amp;key=value类型的值，但服务器无法获取到Post请求的body的值 描述：使用url?key=value&amp;amp;key=value的形式可以正常请求到参数，但是把参数放入到body后，服务器估计获取到信息但无法正确解析  解决：1、body要为字符串，格式：‘key=value&amp;amp;key=value’2、然后发送http请求的时候需要设置下‘">
 <meta property="og:image" content="http://img.blog.csdn.net/20170409002931980?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmFuZ3JlbnpodWNl/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170409002716443?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmFuZ3JlbnpodWNl/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-05-15T08:09:52.706Z">
+<meta property="og:image" content="http://i.imgur.com/H6uuvd4.png">
+<meta property="og:updated_time" content="2017-05-15T08:17:42.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Ionic2\Angular2使用http的一些坑">
 <meta name="twitter:description" content="1、服务器接收key=value&amp;amp;key=value类型的值，但服务器无法获取到Post请求的body的值 描述：使用url?key=value&amp;amp;key=value的形式可以正常请求到参数，但是把参数放入到body后，服务器估计获取到信息但无法正确解析  解决：1、body要为字符串，格式：‘key=value&amp;amp;key=value’2、然后发送http请求的时候需要设置下‘">
@@ -422,7 +422,7 @@
 <p>但是浏览器中看不到有cookie，也无法获取到这个session值，手动设置cookie，下次发送post时，也不会带上cookie。<br>网上查找，说需要在post请求的option中加上：</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.http.get(<span class="string">'http://my.domain.com/request'</span>, &#123; withCredentials: <span class="literal">true</span> &#125;)</div></pre></td></tr></table></figure>
 <p>设置后发现会出现跨域的问题，但已经有cookie存到本地。<br>最后发现使用的googole的插件Allow-Control-Allow-Origin 虽然能进行跨域，但是无法存储和发送cookie</p>
-<h3 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h3><p>1、禁用了Allow-Control-Allow-Origin<br>2、在本机部署nginx进行跨域，问题解决。可以正常从服务器获取cookie，并发送cookie<br>nginx配置：<br><img src="http://img.blog.csdn.net/20170409002716443?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmFuZ3JlbnpodWNl/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="nginx"></p>
+<h3 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h3><p>1、禁用了Allow-Control-Allow-Origin<br>2、在本机部署nginx进行跨域，问题解决。可以正常从服务器获取cookie，并发送cookie<br>nginx配置：<br><img src="http://i.imgur.com/H6uuvd4.png" alt="nginx"></p>
 
       
     </div>
