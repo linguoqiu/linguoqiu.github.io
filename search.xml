@@ -8,26 +8,57 @@
         <category>Ionic2</category>
       </categories>
       <tags>
-        <tag>Ionic2 Slides</tag>
+        <tag>Ionic2</tag>
+        <tag>Slides</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[article title]]></title>
-    <url>%2F2017%2F05%2F11%2Farticle-title%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[Ionic2自定义遮罩层和相关注意事项]]></title>
+    <url>%2F2017%2F05%2F04%2FIonic2%E8%87%AA%E5%AE%9A%E4%B9%89%E9%81%AE%E7%BD%A9%E5%B1%82%E5%92%8C%E7%9B%B8%E5%85%B3%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%20%2F</url>
+    <content type="text"><![CDATA[1、自定义遮罩层步骤1.1先创建一个展示框，在遮罩层之上123&lt;div class="aboutPage-isShowDiv" *ngIf="isShow"&gt; &lt;h1&gt;放内容&lt;/h1&gt; &lt;/div&gt; 1.2根据alert或者其他组件的样式，抽取ion-backdrop标签出来使用123&lt;div *ngIf="isShow" class="backdrop-div" (click)="backdropclick($event)" ontouchmove="event.preventDefault();event.stopPropagation();"&gt; &lt;ion-backdrop disable-activated role="presentation" tappable style="opacity: 0.5; transition-delay: initial; transition-property: none;"&gt;&lt;/ion-backdrop&gt;&lt;/div&gt; 并为组件添加点击事件（阻止冒泡） 12345678910//遮挡层点击事件 backdropclick(e)&#123; //判断点击的是否为遮罩层，是的话隐藏遮罩层 if(e.srcElement.className != 'itemClass')&#123; this.isShow = false; &#125; //隐藏滚动条 this.hiddenscroll(); e.stopPropagation(); &#125; 并为遮罩层添加触摸事件（阻止冒泡、阻止默认事件 ontouchmove=”event.preventDefault();event.stopPropagation();”） 到此，就完成了Ionic2自定义的遮罩层 2.注意事项2.1 在ios手机上遮罩层能滑动解决方法：为遮罩层添加触摸事件，阻止默认事件，阻止冒泡，另外如果样式有些出入的话，还需要微调一下。 2.2 ios上弹出框上有滑动的列表的话，也会带动底层的列表滑动解决方法： 除了给遮罩层添加触摸事件外，还需在弹出框展示的时候隐藏滚动条（设置overflow=’hidden’），恢复时恢复滚动条即可 12&lt;ion-content id="aboutContent"&gt;&lt;/ion-content&gt; 123456789101112//弹出下拉框时，取消scrollhiddenscroll()&#123; //获取当前组件的ID let aboutContent = document.querySelector(&quot;#aboutContent&quot;); //获取当前组件下的scroll-content元素 let scroll:any = aboutContent.querySelector(&quot;.scroll-content&quot;); if(this.isShow)&#123; scroll.style.overflow=&apos;hidden&apos;; &#125;else &#123; scroll.style.overflow=&apos;&apos;; &#125;&#125;]]></content>
       <categories>
         <category>Ionic2</category>
       </categories>
       <tags>
-        <tag>hello!</tag>
+        <tag>Ionic2</tag>
+        <tag>遮罩层</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2017%2F05%2F11%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[Ionic2使用百度地图和html5 geolocation的一些注意事项]]></title>
+    <url>%2F2017%2F05%2F04%2FIonic2%E4%BD%BF%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E5%92%8Chtml5%20geolocation%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%2F</url>
+    <content type="text"><![CDATA[1、完美解决window.navigator.geolocation.getCurrentPosition，在IOS10系统中无法定位问题 目前由于许多用户都将电话升级到了IOS系统，苹果的iOS 10已经正式对外推送，相信很多用户已经更新到了最新的系统。然而，如果web站没有及时支持https协议的话，当很多用户在iOS 10下访问很多网站时，会发现都无法进行正常精确定位，导致部分网站的周边推荐服务无法正常使用。为何在iOS 10下无法获取当前位置信息？这是因为在iOS 10中，苹果对webkit定位权限进行了修改，所有定位请求的页面必须是https协议的。如果是非https网页，在http协议下通过html5原生定位接口会返回错误，也就是无法正常定位到用户的具体位置，而已经支持https的网站则不会受影响。 目前提供的解决方案：1、将网站的http设置为Https。2、通过第三方解决，也就是调用百度地图或者其他地图的定位功能进行定位。调用百度地图方法如下： 12345678910111213141516171819202122232425//获取本机的地址let geolocation = new BMap.Geolocation();geolocation.getCurrentPosition((position)=&gt;&#123; //0代表调用成功，具体状态可见百度地图api if(geolocation.getStatus() == 0)&#123; //经度 let longitude =position.longitude; //纬度 let latitude = position.latitude; let pPoint = new BMap.Point(longitude,latitude); let heading = 0; if(position.heading !=null &amp;&amp; position.heading != '')&#123; heading = position.heading; &#125; let icon = new BMap.Symbol(BMap_Symbol_SHAPE_FORWARD_CLOSED_ARROW, &#123; scale: 2, strokeWeight: 1, rotation: heading,//顺时针旋转30度 fillColor: '#1794f6', fillOpacity: 0.8 &#125;); &#125;else &#123; console.log(position); &#125; 2、Ionic2的组件使用百度地图、百度地图矢量的方法Ionic2使用百度地图或者其他地图时除了在index.html引入js外，还需要在相应需要使用的ts文件上加上声明： 12declare var BMap;declare var BMap_Symbol_SHAPE_FORWARD_CLOSED_ARROW; 同理，如果需要使用到百度地图的矢量，也要加上声明，如上。 如果多个组件使用到的话，可以在declarations.d.ts文件上全局声明。引入其他js如echart.js等方法雷同]]></content>
       <categories>
-        <category>Testing</category>
+        <category>Ionic2</category>
       </categories>
+      <tags>
+        <tag>Ionic2</tag>
+        <tag>geolocation</tag>
+        <tag>百度地图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ionic2创建一个自定义pipe实现千分位号]]></title>
+    <url>%2F2017%2F04%2F09%2FIonic2%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%AE%9A%E4%B9%89pipe%E5%AE%9E%E7%8E%B0%E5%8D%83%E5%88%86%E4%BD%8D%E5%8F%B7%2F</url>
+    <content type="text"><![CDATA[1、在src目录下创建一个pipe目录用于存放自定义pipe，然后创建一个pipe |–src |–pipe *.ts 2、在ts文件里面写pipe的逻辑1234567891011121314151617181920import &#123; Pipe, PipeTransform &#125; from '@angular/core';/* * Raise the value exponentially * Takes an exponent argument that defaults to 1. * Usage: * value | exponentialStrength:exponent * Example: * &#123;&#123; 2 | exponentialStrength:10&#125;&#125; * formats to: 1024 * 将number转换为千分位的字符串 */@Pipe(&#123;name: 'toNumber'&#125;)export class ToNumberPipe implements PipeTransform &#123; //实现了PipeTransform类，实现transform方法，当html使用了toNumber的管道，会自动调用此方法 transform(input:number): string &#123; //这里可以带多个参数，第一个参数默认是原始数据，这里是指 //amount、total 、debt 、overdue ，见下html代码 return input.toString().replace(/\B(?=(\d&#123;3&#125;)+(?!\d))/g, ",");//转为千分位的正则表达式 &#125;&#125; 3、在app.modules.ts中import这个ts文件，然后只需在declarations中声明。4、在需要的Html模版中使用（不需要引入）123456&lt;ul&gt; &lt;li&gt;&#123;&#123;professionItem.list[0].amount | toNumber&#125;&#125;辆&lt;/li&gt; &lt;li&gt;&#123;&#123;professionItem.list[0].total | toNumber&#125;&#125;元&lt;/li&gt; &lt;li&gt;&#123;&#123;professionItem.list[0].debt | toNumber&#125;&#125;辆&lt;/li&gt; &lt;li&gt;&#123;&#123;professionItem.list[0].overdue | toNumber&#125;&#125;元&lt;/li&gt;&lt;/ul&gt; 这样就完成了，amount等数据会传入到transform方法，然后返回的数据展示在li上。]]></content>
+      <categories>
+        <category>Ionic2</category>
+      </categories>
+      <tags>
+        <tag>Ionic2</tag>
+        <tag>pipe</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[关于Ionic2\Angular2使用http的一些坑]]></title>
+    <url>%2F2017%2F04%2F09%2F%E5%85%B3%E4%BA%8EIonic2Angular2%E4%BD%BF%E7%94%A8http%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91%2F</url>
+    <content type="text"><![CDATA[1、服务器接收key=value&amp;key=value类型的值，但服务器无法获取到Post请求的body的值 描述：使用url?key=value&amp;key=value的形式可以正常请求到参数，但是把参数放入到body后，服务器估计获取到信息但无法正确解析 解决：1、body要为字符串，格式：‘key=value&amp;key=value’2、然后发送http请求的时候需要设置下‘Content-Type’: ‘application/x-www-form-urlencoded; charset=UTF-8’ 2、发送登录请求给服务器后，服务器返回cookie，里面含有seesionId，但无法获取到cookie，也无法发送cookie描述：使用angular的post请求后，服务器返回cookie，如下图 但是浏览器中看不到有cookie，也无法获取到这个session值，手动设置cookie，下次发送post时，也不会带上cookie。网上查找，说需要在post请求的option中加上： 1this.http.get('http://my.domain.com/request', &#123; withCredentials: true &#125;) 设置后发现会出现跨域的问题，但已经有cookie存到本地。最后发现使用的googole的插件Allow-Control-Allow-Origin 虽然能进行跨域，但是无法存储和发送cookie 解决：1、禁用了Allow-Control-Allow-Origin2、在本机部署nginx进行跨域，问题解决。可以正常从服务器获取cookie，并发送cookienginx配置：]]></content>
+      <categories>
+        <category>Ionic2</category>
+      </categories>
+      <tags>
+        <tag>Ionic2</tag>
+        <tag>http</tag>
+      </tags>
   </entry>
 </search>
