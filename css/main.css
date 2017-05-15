@@ -1695,7 +1695,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #3314ff;
+  background: #ffffa6;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2583,8 +2583,8 @@ hr {
   float: right;
 }
 .menu {
-  float: right;
-  margin: 8px 0 0 0;
+  float: left;
+  margin: 8px 0 0 15px;
 }
 @media (max-width: 767px) {
   .menu {
