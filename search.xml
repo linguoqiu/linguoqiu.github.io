@@ -110,4 +110,78 @@
         <tag>点击延迟</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[angular2的http请求返回结果的subcribe注意事项]]></title>
+    <url>%2F2016%2F10%2F27%2Fangular2%E7%9A%84http%E8%AF%B7%E6%B1%82%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%9A%84subcribe%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%2F</url>
+    <content type="text"><![CDATA[1234567891011121314mData:anythis.monitorSer.getVehicleLonAndLat(vehicleIds) .subscribe( data =&gt; &#123; //将data下的data存放到mData中 this.mData=JSON.parse(data.data); //功能实现 this.init(); &#125;, error =&gt; this.errorMessage = &lt;any&gt;error);//错误处理 subscribe()异步处理，如果需要用返回的数据，在返回函数里面将数据存入成员变量，并作相应的处理]]></content>
+      <categories>
+        <category>Ionic2</category>
+      </categories>
+      <tags>
+        <tag>Ionic2</tag>
+        <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ionic2可以有两种方式来存储数据，Local Storage和SQLite]]></title>
+    <url>%2F2016%2F10%2F27%2FIonic2%E5%8F%AF%E4%BB%A5%E6%9C%89%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%9D%A5%E5%AD%98%E5%82%A8%E6%95%B0%E6%8D%AE%EF%BC%8CLocal%20Storage%E5%92%8CSQLite%2F</url>
+    <content type="text"><![CDATA[Ionic2可以有两种方式来存储数据，Local Storage和SQLiteLocalStorage 因为比较容易访问，所以不适合存比较敏感性的数据 比如可以存储: 用户是否登录的信息. 一些session信息等 具体用法： 进入项目目录：cd MyFirstApp在主页设置一个按钮，点击按钮，获取LocalStorage的数据并打印在控制台 app/pages/home/home.html 在app/pages/home/home.ts中增加一个处理方法： 我们可以通过 this.local = new Storage(LocalStorage); this.local.set(‘isLogin’, false); 来设置并保存isLogin的值 并且通过： this.local.get(‘isLogin’); 来获取isLogin的值 此上方法目前使用较少，可以用HTML5的LocalStorage代替 localstorage.setItem(‘…’,’…’); localstorage.getItem(‘…’); localstorage注意事项：1、localStorage中一般浏览器支持的是5M大小，这个在不同的浏览器中localStorage会有所不同。2、浏览器的大小不统一，并且在IE8以上的IE版本才支持localStorage这个属性3、目前所有的浏览器中都会把localStorage的值类型限定为string类型，这个在对我们日常比较常见的JSON对象类型需要一些转换4、localStorage在浏览器的隐私模式下面是不可读取的5、localStorage本质上是对字符串的读取，如果存储内容多的话会消耗内存空间，会导致页面变卡6、localStorage不能被爬虫抓取到localStorage与sessionStorage的唯一一点区别就是localStorage属于永久性存储，而sessionStorage属于当会话结束的时候，sessionStorage中的键值对会被清空 SQLite我们还可以通过SQLite来存储数据，通过SQL语句来实现相关存储。 首先我们必须增加一个插件：进入项目目录：cd MyFirstApp 运行：ionic plugin add https://github.com/litehelpers/Cordova-sqlite-storage在app/app.ts中，我们先初始化一些数据库信息： 在app/pages/home/home.html中增加一个按钮和一个Label，点击按钮，将数据库dbname6中people这个表的第一条记录的firstname字段展示出来： app/pages/home/home.html 在app/pages/home/home.ts中增加相应的方法来获取数据库中的数据： 运行：ionic serve -l 点击ShowData按钮：]]></content>
+      <categories>
+        <category>Ionic2</category>
+      </categories>
+      <tags>
+        <tag>Ionic2</tag>
+        <tag>Local</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[在chrome浏览器上出现此错误ERR_BLOCKED_BY_CLIENT]]></title>
+    <url>%2F2016%2F10%2F27%2F%E5%9C%A8chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8A%E5%87%BA%E7%8E%B0%E6%AD%A4%E9%94%99%E8%AF%AFERR_BLOCKED_BY_CLIENT%2F</url>
+    <content type="text"><![CDATA[在 chrome浏览器上出现此错误，一般都是安装有拦截广告的插件，把此功能给拦截了 I had faced the similar error, it is basically caused when use the ad blockers.Turn them off, and you run it easily.]]></content>
+      <categories>
+        <category>Ionic2</category>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>chrome</tag>
+        <tag>ERR_BLOCKED_BY_CLIENT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ionic2(Angular)中使用Rxjs的Observeble]]></title>
+    <url>%2F2016%2F10%2F27%2FIonic2(Angular)%E4%B8%AD%E4%BD%BF%E7%94%A8Rxjs%E7%9A%84Observeble%2F</url>
+    <content type="text"><![CDATA[如下一样，需要为handleError 添加private ，不加或者为public的话， ionic serve 不会报错，但是ionic build ios 会出错。 12345678910111213private extractData(res: Response) &#123; let body = res.json(); console.info(res.json()); return body|| &#123; &#125;;&#125;private handleError (error: any) &#123; // In a real world app, we might use a remote logging infrastructure // We'd also dig deeper into the error to get a better message let errMsg = (error.message) ? error.message : error.status ? `$&#123;error.status&#125; - $&#123;error.statusText&#125;` : 'Server error'; console.error(errMsg); // log to console instead return Observable.throw(errMsg);&#125;]]></content>
+      <categories>
+        <category>Ionic2</category>
+      </categories>
+      <tags>
+        <tag>Ionic2</tag>
+        <tag>Observeble</tag>
+        <tag>Http</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ionic2页面的生命周期]]></title>
+    <url>%2F2016%2F10%2F27%2Fionic2%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%2F</url>
+    <content type="text"><![CDATA[]]></content>
+      <categories>
+        <category>Ionic2</category>
+      </categories>
+      <tags>
+        <tag>Ionic2</tag>
+        <tag>生命周期</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如何在Windows下使用ionic打包与开发IOS程序]]></title>
+    <url>%2F2016%2F09%2F21%2F%E5%A6%82%E4%BD%95%E5%9C%A8Windows%E4%B8%8B%E4%BD%BF%E7%94%A8ionic%E6%89%93%E5%8C%85%E4%B8%8E%E5%BC%80%E5%8F%91IOS%E7%A8%8B%E5%BA%8F%20%2F</url>
+    <content type="text"><![CDATA[开发iOS程序需要mac本，没的话就只能在虚拟机上安装一个MacOS以下为步骤： 1、安装VMware和Mac OS 参考网上教程 2、ionic开发ios程序 3、安装Xcode 为什么要安装Xcode呢？ ionic开发Android程序都不需要安装eclipse等IDE，只要一个能写CSS，JS ，HTML的IDE就行（Hbuilder，WebStrom，Sublime Text）， 开发完成之后不就执行个ionic platform add android,ionic build android，然后就能生成一个.apk文件，给手机上一安装O了。 ionic开发ios程序就得安装Xcode IDE，这是因为蛋疼的ios程序无法直接使用命令生成，使用命令只能生成.project文件，然后再使用Xcode IDE将.project文件转成.ipa文件，更让人蛋疼的是这个ipa文件居然也不能被直接安装到爱疯上，只能先上传到APP Store，人家审核通过之后，我们再从APP Store上下载。（看到这你可能快疯了，但是没法啊，谁让人家NB呢。好了废话少说了，乖乖安装Xcode吧） 4、安装ionic开发环境 （这个和在windows上安装android开发环境类似） 5、安装Nodejs 百度下载，傻瓜式安装，注意：你现在是Mac本，所以需要下载Nodejs for mac的，别下错了 6、安装cordova,ionic 1234sudo npm install -g cordova sudo npm install -g ionic 或者合成一句统一安装 sudo npm install -g cordova ionic 7、创建项目 1ionic start firstIonicProjectForIos [tabs][blank][sidememu] 8、浏览器中运行项目（调试项目） cd firstIonicProjectForIosionic serve(自动在afai浏览器中打开) 9、模拟器中运行项目 因为apple开发的证书限制我们在没有申请购买apple账号的情况下，使用虚拟机来部署我们的应用，在部署之前需要使用npm安装一个ios-sim插件用来调用模拟器的，执行命令： 1sudo npm install -g ios-sim 然后执行 1ionic platform add ios （添加ios平台）ionic build ios 开始编译项目，编译完成之后用Xcode打开开发目录下platform-&gt;ios-&gt;myIonic.xcodeproj的项目文件，Xcode中选择要运行的虚拟机版本并执行快捷键cmd+R运行虚拟机，虚拟机打开后会自动运行你应用。 当然你也可以使用命令： 1ionic emulate ios(在ios模拟器中打开)/ionic run ios(我的报错了) PS: 为什么不用run ios 命令直接启动虚拟机呢，因为我的环境下执行run会报错，虚拟机会打开但是无法运行程序，找了半天解决解决方案没有结果，索性直接用Xcode了，效果是一样的 10、打包项目 能使用Ionic来开发app的很可能对Ios和android的app打包发布流程不是很熟悉，我这里简单说明下： ionic build android命令执行完成之后会在项目目录/platforms/android/build/outputs/apk目录下面生成.apk文件。 但是ionic build ios命令执行完成之后不会生成.ipa文件，只会在项目目录/platform/os目录下生成.xcodeproj文件，这个文件需要借助Xcode才能将其打包成.ipa文件。 因此接下来的任务就成了使用Xcode打包.xcodeproj成为.ipa的事情了。]]></content>
+      <categories>
+        <category>Ionic2</category>
+      </categories>
+      <tags>
+        <tag>Ionic2</tag>
+        <tag>ios</tag>
+      </tags>
+  </entry>
 </search>
