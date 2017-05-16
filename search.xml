@@ -184,4 +184,42 @@
         <tag>ios</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[cordova插件使用（一套流程适用于每个插件使用）]]></title>
+    <url>%2F2016%2F09%2F21%2Fcordova%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8%EF%BC%88%E4%B8%80%E5%A5%97%E6%B5%81%E7%A8%8B%E9%80%82%E7%94%A8%E4%BA%8E%E6%AF%8F%E4%B8%AA%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[例子：iOS状态栏的控制是这么实现的：访问http://plugins.cordova.io/, 您可以在其中搜索cordova插件，例如我搜下statusbar， 会发现有两个插件。其中下面的名字貌似更官方一点，我们就选择这个作为我们需要的插件。插件的安装很简单。我们需要的只是插件的ID, 也就是cordova-plugin-statusbar. 然后打开终端，然后到cd到自己的项目根目录，输入或粘贴如下代码： 1cordova plugin add cordova-plugin-statusbar 回车，稍等片刻会有类似下面的提示：statusbar安装代码以及提示 说明安装成功。虽说安装是成功了，但到底该如何使用呢？一般这种插件都会在GitHub上开源，Google或Github上搜索cordova-plugin-statusbar，很快我们就会找到这个插件的Github地址 点击进入，众API们引入眼帘，好像黑夜看到了曙光，屌丝看到了女神…… 方法如下： StatusBar.styleDefault 状态栏默认样式，也就是电池信号黑色； StatusBar.styleLightContent 状态栏内容浅色，貌似就是白色，适合深色背景； StatusBar.styleBlackTranslucent 状态栏黑色半透明，我测了下，跟上面一样的效果，电池时间都是白色的，适合深色背景； StatusBar.styleBlackOpaque 状态栏黑色不透明。我测了下，还是白色的，跟上面一样，适合深色背景； StatusBar.hide 状态栏隐藏； StatusBar.show 状态栏显示；只要你使用了Cordova的插件（相机啊，地址位置等），你就得调用自动生成的cordova.js. 1&lt;script src="cordova.js"&gt;&lt;/script&gt; 然后，再你自己的JS中，使用类似StatusBar.hide()就可以隐藏状态栏啦！或者使用StatusBar.styleLightContent()让状态栏从黑人变成白人 其他非官方插件的使用也是类似上面的步骤。]]></content>
+      <categories>
+        <category>Ionic2</category>
+        <category>cordova</category>
+      </categories>
+      <tags>
+        <tag>Ionic2</tag>
+        <tag>cordova</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ionic run android错误error gradle line 64]]></title>
+    <url>%2F2016%2F07%2F23%2FIonic%20run%20android%E9%94%99%E8%AF%AFerror%20gradle%20line%2064%20%2F</url>
+    <content type="text"><![CDATA[错误提示如下： FAILURE: Build failed with an exception. Where:Script ‘C:\Users\Jay\testproject\platforms\android\CordovaLib\cordova.gradle’ line: 64 What went wrong:A problem occurred evaluating root project ‘android’.No installed build tools found. Please install the Android build tools version19.1.0 or higher. Try:Run with –stacktrace option to get the stack trace. Run with –info or –debugoption to get more log output. 解决方法： I had the same problem and this is how I fixed it. I had the build-tools version 20 installed but still was getting this error:No installed build tools found. Please install the Android build tools version 19.1.0 or higher.So I created a directory named 20 within build-tools directory, and copied all the files from sdk\build-tools\android-4.4W* to sdk\build-tools\20. The problem was fixed! 根据国外友人的提示，这是由于Android tools的问题，升级Android build tools到最新的版本即可解决问题。]]></content>
+      <categories>
+        <category>Ionic2</category>
+      </categories>
+      <tags>
+        <tag>Ionic2</tag>
+        <tag>gradle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ionic的build命令下载gradle-2.2.1-all.zip卡顿问题]]></title>
+    <url>%2F2016%2F07%2F22%2FIonic%E7%9A%84build%E5%91%BD%E4%BB%A4%E4%B8%8B%E8%BD%BDgradle-2.2.1-all.zip%E5%8D%A1%E9%A1%BF%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[第一次使用ionic build Android命令，会自动下载gradle-2.2.1-all.zip，这时候会发现进度超慢 此问题因为需要连接国外网站下载，网络不稳定的原因。 解决方法： 1、先下载好gradle-2.2.1-all.zip包，放在myApp\platforms\android\gradle文件夹下 2、打开myApp\platforms\android\cordova\lib\builders\GradleBuilder.js文件 3、找到CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL，如下图所示 4、在DOS下载先设置CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL环境变量set CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL=../gradle-2.2.1-all.zip]]></content>
+      <categories>
+        <category>Ionic2</category>
+      </categories>
+      <tags>
+        <tag>Ionic2</tag>
+        <tag>Android</tag>
+        <tag>gradle</tag>
+      </tags>
+  </entry>
 </search>
