@@ -111,6 +111,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Android使用xutils时出错The type org.apache.http.HttpResponse cannot be resolved]]></title>
+    <url>%2F2017%2F01%2F20%2FAndroid%E4%BD%BF%E7%94%A8xutils%E6%97%B6%E5%87%BA%E9%94%99The%20type%20org.apache.http.HttpResponse%20cannot%20be%20resolved%2F</url>
+    <content type="text"><![CDATA[在Android 6.0（API 23）中，Google已经移除了移除了Apache HttpClient相关的类、HttpResponse类。缺失jar包使用HttpResponse等会报错：The type org.apache.http.HttpResponse cannot be resolved. It is indirectly referenced from required 在使用xutils下载服务器资源的时候，在下载成功，获取资源file的时候，出如下的错 解决方法：推荐使用HttpUrlConnection，如果要继续使用需要Apache HttpClient，需要在eclipse下libs里添加org.apache.http.legacy.jar。添加方法如下： 1、Eclipse中 在错误原因上点击ctrl+1，选择Configure build path，或者Project-&gt;Properties-&gt;Java Build Path-&gt;Libraries-&gt;Add Ecternal JARS-&gt;你的SDK目录的/platforms/android-23/optional/org.apache.http.legacy.jar-&gt;ok 2、android studio里在相应的module下的build.gradle中加入：android {useLibrary ‘org.apache.http.legacy’}]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Http</tag>
+        <tag>Android</tag>
+        <tag>xutils</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ionic2点击事件感觉到延迟的解决办法]]></title>
     <url>%2F2016%2F12%2F14%2Fionic2%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6%E6%84%9F%E8%A7%89%E5%88%B0%E5%BB%B6%E8%BF%9F%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%2F</url>
     <content type="text"><![CDATA[In general, we recommend only adding (click) events to elements that are normally clickable. This includes &lt; button&gt; and &lt; a&gt; elements. This improves accessibility as a screen reader will be able to tell that the element is clickable.However, you may need to add a (click) event to an element that is not normally clickable. When you do this you may experience a 300ms delay from the time you click the element to the event firing. To remove this delay, you can add the tappable attribute to your element. 1&lt;div tappable (click)="doClick()"&gt;I am clickable!&lt;/div&gt; 一般来说，我们建议您只向通常可点击的元素添加（点击）事件。 这包括&lt; button&gt;和&lt; a&gt;元素。 这提高了可访问性，因为屏幕阅读器将能够告诉该元素是可点击的。 但是，您可能需要向通常不可点击的元素添加（点击）事件。 执行此操作时，您可能会遇到从点击元素到事件触发的300毫秒延迟。 要删除此延迟，可以将tappable属性添加到元素。]]></content>
