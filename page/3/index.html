@@ -307,6 +307,162 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.lynson.tech/2016/07/23/Ionic run android错误error gradle line 64 /">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lynson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/1_lynson.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lynson">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/07/23/Ionic run android错误error gradle line 64 /" itemprop="url">Ionic run android错误error gradle line 64</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-23T00:13:23+08:00">
+                2016-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ionic2/" itemprop="url" rel="index">
+                    <span itemprop="name">Ionic2</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2016/07/23/Ionic run android错误error gradle line 64 /" class="leancloud_visitors" data-flag-title="Ionic run android错误error gradle line 64">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="错误提示如下："><a href="#错误提示如下：" class="headerlink" title="错误提示如下："></a>错误提示如下：</h4><blockquote>
+<p>FAILURE: Build failed with an exception.</p>
+<ul>
+<li>Where:<br>Script ‘C:\Users\Jay\testproject\platforms\android\CordovaLib\cordova.grad<br>le’ line: 64</li>
+<li>What went wrong:<br>A problem occurred evaluating root project ‘android’.<br>No installed build tools found. Please install the Android build tools version<br>19.1.0 or higher.</li>
+<li>Try:<br>Run with –stacktrace option to get the stack trace. Run with –info or –debug<br>option to get more log output.</li>
+</ul>
+</blockquote>
+<h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><blockquote>
+<p> I had the same problem and this is how I fixed it. I had the build-tools version 20 installed but still was getting this error:<br>No installed build tools found. Please install the Android build tools version 19.1.0 or higher.<br>So I created a directory named 20 within build-tools directory, and copied all the files from sdk\build-tools\android-4.4W* to sdk\build-tools\20. The problem was fixed!</p>
+</blockquote>
+<p>根据国外友人的提示，这是由于Android tools的问题，升级Android build tools到最新的版本即可解决问题。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://www.lynson.tech/2016/07/22/Ionic的build命令下载gradle-2.2.1-all.zip卡顿问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -503,7 +659,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -525,7 +681,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
