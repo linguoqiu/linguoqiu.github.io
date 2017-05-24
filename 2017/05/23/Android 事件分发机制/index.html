@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Lynson">
 <meta property="og:description" content="android开发过程中发现如果viewgrounp和view都有点击事件或者其他事件的话，只会相应view的事件，不会像js一样同时触发，通过查找资料，发现此文章很深入简出的解释了Android 事件分发机制，并根据实际做了下小试验。参考 “图解 Android 事件分发机制”http://www.jianshu.com/p/e99b5e8bd67b   创建一个Activity，在Activ">
 <meta property="og:image" content="http://i.imgur.com/1R0g0sT.png">
-<meta property="og:updated_time" content="2017-05-24T09:37:15.413Z">
+<meta property="og:updated_time" content="2017-05-24T09:41:30.817Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 事件分发机制">
 <meta name="twitter:description" content="android开发过程中发现如果viewgrounp和view都有点击事件或者其他事件的话，只会相应view的事件，不会像js一样同时触发，通过查找资料，发现此文章很深入简出的解释了Android 事件分发机制，并根据实际做了下小试验。参考 “图解 Android 事件分发机制”http://www.jianshu.com/p/e99b5e8bd67b   创建一个Activity，在Activ">
@@ -419,8 +419,10 @@
 </ul>
 <p><img src="http://i.imgur.com/1R0g0sT.png" alt=""></p>
 <ul>
-<li><p>为LinearLayout和checkbox添加点击事件后，如果在LinearLayout上点击了，LinearLayout的点击事件响应，如果在checkbox范围内点击了，会响应checkbox的点击事件</p>
-</li>
+<li>为LinearLayout和checkbox添加点击事件后，如果在LinearLayout上点击了，LinearLayout的点击事件响应，如果在checkbox范围内点击了，会响应checkbox的点击事件</li>
+</ul>
+<a id="more"></a>
+<ul>
 <li><p>设置checkbox的点击事件失效后，发现如果在checkbox范围内点击，也是LinearLayout的点击事件响应</p>
 <p>  android:clickable=”false”<br>  android:focusable=”false”</p>
 </li>
