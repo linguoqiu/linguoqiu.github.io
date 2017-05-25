@@ -88,6 +88,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Javascript关于promise的学习和运行时机]]></title>
+    <url>%2F2017%2F04%2F05%2FJavascript%E5%85%B3%E4%BA%8Epromise%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%92%8C%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9C%BA%2F</url>
+    <content type="text"><![CDATA[本文是个人看了一些Promise资料，对Promise的一些理解 Promise 的含义 所谓Promise，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。 Promise对象有以下两个特点。 （1）对象的状态不受外界影响。Promise对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称 Fulfilled）和Rejected（已失败）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。这也是Promise这个名字的由来，它的英语意思就是“承诺”，表示其他手段无法改变。 （2）一旦状态改变，就不会再变，任何时候都可以得到这个结果。Promise对象的状态改变，只有两种可能：从Pending变为Resolved和从Pending变为Rejected。只要这两种情况发生，状态就凝固了，不会再变了，会一直保持这个结果。如果改变已经发生了，你再对Promise对象添加回调函数，也会立即得到这个结果。这与事件（Event）完全不同，事件的特点是，如果你错过了它，再去监听，是得不到结果的。有了Promise对象，就可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。此外，Promise对象提供统一的接口，使得控制异步操作更加容易。 Promise也有一些缺点。 首先，无法取消Promise，一旦新建它就会立即执行，无法中途取消。 其次，如果不设置回调函数，Promise内部抛出的错误，不会反应到外部。 第三，当处于Pending状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。 Promise 基本用法最基本的用法 12345678910111213141516//Promise新建后就会立即执行。var promise = new Promise(function(resolve, reject) &#123; // ... some code if (/* 异步操作成功 */)&#123; resolve(value); &#125; else &#123; reject(error); &#125;&#125;);//Promise实例生成以后，可以用then方法分别指定Resolved状态和Reject状态的回调函数。promise.then(function(value) &#123; // success&#125;, function(error) &#123; // failure&#125;); 还有很多用法，可以参考es6的相关资料 Promise.resolve()有时需要将现有对象转为Promise对象，Promise.resolve方法就起到这个作用。 Promise.resolve()有四种写法： 1、如果参数是Promise实例，那么Promise.resolve将不做任何修改、原封不动地返回这个实例。 2、thenable对象指的是具有then方法的对象，然后就立即执行thenable对象的then方法。 3、如果参数是一个原始值，或者是一个不具有then方法的对象，则Promise.resolve方法返回一个新的Promise对象，状态为Resolved。 4、Promise.resolve方法允许调用时不带参数，直接返回一个Resolved状态的Promise对象。 promise和setTimeout的执行时间实例如下： 1234567891011121314setTimeout(function () &#123; console.log('three');&#125;, 0);//Promise.resolve方法允许调用时不带参数，直接返回一个Resolved状态的Promise对象。Promise.resolve().then(function () &#123; console.log('two');&#125;);console.log('one');// one// two// three 上面代码中，setTimeout(fn, 0)在下一轮“事件循环”开始时执行，Promise.resolve()在本轮“事件循环”结束时执行，console.log(’one‘)则是立即执行，因此最先输出。]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>promise</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Ionic2之tabs相关内容和其他一些坑]]></title>
     <url>%2F2017%2F04%2F05%2FIonic2%E4%B9%8Btabs%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%E5%92%8C%E5%85%B6%E4%BB%96%E4%B8%80%E4%BA%9B%E5%9D%91%2F</url>
     <content type="text"><![CDATA[1、 ionic2 中隐藏子页面tabs选项卡的三种方法第一种： 隐藏全部子页面的tabs选项界面找到app.module.ts文件 ，修改如下代码 12345imports: [ IonicModule.forRoot(MyApp,&#123; tabsHideOnSubPages: 'true' //隐藏全部子页面tabs &#125;) ], 第二种：隐藏某个子页面的tabs ; 缺点：当子页面使用pop()方法退出时，父页面的任何事件都不响应。 123import&#123; App &#125; from'ionic-angular'; //1.引入App类constructor(privateapp:App) &#123;&#125; //2.声明初始化app对象this.app.getRootNav().push(nextPage); //3.调用this.app.getRootNav() 从根页面跳转就可以了 第三种：隐藏某个子页面的tabs； 缺点：暂无 123456789101112131415161718//当页面进入初始化的时候 letelements = document.querySelectorAll(".tabbar"); if(elements !=null) &#123; Object.keys(elements).map((key) =&gt; &#123; elements[key].style.display ='none'; &#125;); &#125; //当退出页面的时候ionViewWillLeave() &#123; letelements = document.querySelectorAll(".tabbar"); if(elements !=null) &#123; Object.keys(elements).map((key) =&gt; &#123; elements[key].style.display ='flex'; &#125;); &#125;&#125; 2、Ionic2 组件之Tab的基本属性和事件 示例html代码如下: 1&lt;ion-tabs #mainTabs (ionChange)="changeTabs()" color="danger" tabsHighlight="true"&gt; &lt;ion-tab [root]="tab1Root" [rootParams]="homeParams" tabTitle="Home" tabIcon="home"&gt;&lt;/ion-tab&gt; &lt;ion-tab [root]="tab2Root" (ionSelect)="selectFriend()" tabTitle="Friends" tabIcon="aperture" tabBadge="3" tabBadgeStyle="danger"&gt;&lt;/ion-tab&gt; &lt;ion-tab [root]="tab3Root" enabled="false" swipeBackEnabled="true" tabTitle="Contact" tabIcon="contacts"&gt;&lt;/ion-tab&gt; &lt;/ion-tabs&gt; 3、ionic的一些坑1、如何在push页面后隐藏tabbar 在ionicBootstrap中设置tabsHideOnSubPages为true 2、如何设置返回按键文字 在ionicBootstrap中设置backButtonText，如”返回”或”“ 3、如何在page pop后传递参数到前一个页面 a) 使用model来代替push，然后在dismiss方法中传递参数 b) 使用Promise parent: 12345new Promise((resolve, reject) =&gt; &#123; this.nav.push(ChildPage, &#123;resolve: resolve&#125;); &#125;).then(data =&gt; &#123; let value = data["property"]; &#125;); child： 12let resolve = this.navParams.get("resolve"); resolve(&#123;property: value&#125;); 5 . 如何设置button的disabled状态：注意解除disabled状态需要设置绑定变量为null &lt;button disabled=“{{buttonDisabled}}”&gt; this.buttonDisabled = true; this.buttonDisabled = null; 6.如何修改slides的bullet 在slides的option中添加下面两个属性： bulletClass: &quot;my-swiper-pagination-bullet&quot;, bulletActiveClass: &apos;my-swiper-pagination-bullet-active&apos;]]></content>
@@ -149,6 +161,32 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Angular2中ViewChild与ContentChild的区别]]></title>
+    <url>%2F2017%2F02%2F13%2FAngular2%E4%B8%ADViewChild%E4%B8%8EContentChild%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[ViewChild官方文档翻译 : 声明一个对子元素的引用。 ViewChild需要一个参数来选择元素。 如果参数是一个类型，一个指令或一个类型的组件将被绑定。 如果参数是一个字符串，字符串被解释为一个选择器。也就是一个元素包含模板变量（如 #child）。 在任何情况下，如果找到多个元素，那么只返回第一个。 这个子元素将在ngAfterViewInit()回调前被赋值。用最通俗的话大概讲解。 ViewChild就是选择元素用的。 ViewChild会在ngAfterViewInit()回调函数之前做完工作，也就是说你不能在构造函数中使用这个元素。 实例见代码 123456789101112131415161718192021222324import &#123;Component, ViewChild, AfterViewInit&#125; from '@angular/core';@Component(&#123; selector: 'my-com', template: '&lt;button&gt;我是一个按钮&lt;/button&gt;'&#125;)export class MyCom&#123;&#125;@Component(&#123; template: '&lt;my-com #myCom&gt;&lt;/my-com&gt;' directives: [MyCom]&#125;)export class MyPage implements AfterViewInit&#123; @ViewChild(MyCom) myComA; @ViewChild('myCom') myComB; public constructor()&#123; console.log(this.myComA);//undefined console.log(this.myComB);//undefined &#125; public ngAfterViewInit()&#123; console.log(this.myComA);//输出MyCom对象 console.log(this.myComB);//输出MyCom对象 console.log(this.myComA == this.myComB);//true &#125;&#125; 好了，估计你已经知道基本的使用方式了 @ViewChild(MyCom) 可以获取到页面中的MyCom类型的组件 @ViewChild(&apos;myCom&apos;) 可以获取到被标记为#myCom的组件 ContentChild 官方文档翻译 : 查询一个内容。内容查询结果将在ngAfterContentInit()回调前完成 不明白不要紧，先往下看： @ViewChildren跟@ViewChild实际上没什么区别，从名字上很容易理解，一个获取一堆子元素，一个获取一个子元素。 @ViewChild(MyCom) 返回的是一个MyCom变量 @ViewChildren(MyCom) 返回的是一个QueryList&lt;MyCom&gt; 为什么突然蹦出个ViewChildren？因为下面老外使用它来解释 stackoverflow上某老外这样解释 The difference between @ViewChildren and @ContentChildren is that @ViewChildren look for elements in Shadow DOM while @ContentChildren look for them in Light DOM. 可翻译为： @ViewChildren和@ContentChildren之间的区别在于， @ViewChildren用于Shadow DOM，而@ContentChildren用于Light DOM 笔者理解： ContentChild用来获取中的元素 见代码： 1234567891011121314151617181920212223242526import &#123;Component, ViewChild, ContentChild&#125; from '@angular/core';//儿子组件@Component(&#123; selector: 'son-com', template: '&lt;h1&gt;im text&lt;/h1&gt;', directives: [MyCom]&#125;)export class SonCom&#123;&#125;//爸爸组件@Component(&#123; selector: 'father-com', template: ' &lt;son-com&gt;&lt;/son-com&gt; &lt;ng-content&gt;&lt;/ng-content&gt; ', directives: [SonCom]&#125;)export class FatherCom implements AfterViewInit&#123; @ViewChild(SonCom) viewCom; @ContentChild(SonCom) contentCom; public ngAfterViewInit()&#123; console.log(this.viewCom); console.log(this.contentCom); &#125;&#125; 最终输出: &lt;father-com&gt; &lt;h1&gt;im text&lt;/h1&gt; &lt;h1&gt;im text&lt;/h1&gt; &lt;/father-com&gt; 然后我们调试后发现，this.viewCom等于第一行&lt; h1/&gt;，this.contentView等于第二行&lt; h1/&gt;]]></content>
+      <categories>
+        <category>Ionic2</category>
+        <category>Angular2</category>
+      </categories>
+      <tags>
+        <tag>Ionic2</tag>
+        <tag>Angular2</tag>
+        <tag>ViewChild</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[jQuery.extend 函数使用详解]]></title>
+    <url>%2F2017%2F02%2F13%2FjQuery.extend%20%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[jQuery的extend扩展方法Jquery的扩展方法extend是我们在写插件的过程中常用的方法，该方法有一些重载原型，在此，我们一起去了解了解。 一、Jquery的扩展方法原型是: extend(dest,src1,src2,src3...); 它的含义是将src1,src2,src3…合并到dest中,返回值为合并后的dest,由此可以看出该方法合并后，是修改了dest的结构的。如果想要得到合并的结果却又不想修改dest的结构，可以如下使用： var newSrc=$.extend({},src1,src2,src3...)//也就是将&quot;{}&quot;作为dest参数。 这样就可以将src1,src2,src3…进行合并，然后将合并结果返回给newSrc了。如下例： var result=$.extend({},{name:&quot;Tom&quot;,age:21},{name:&quot;Jerry&quot;,sex:&quot;Boy&quot;}) 那么合并后的结果 result={name:&quot;Jerry&quot;,age:21,sex:&quot;Boy&quot;} 也就是说后面的参数如果和前面的参数存在相同的名称，那么后面的会覆盖前面的参数值。 二、省略dest参数 上述的extend方法原型中的dest参数是可以省略的，如果省略了，则该方法就只能有一个src参数，而且是将该src合并到调用extend方法的对象中去，如： 1、$.extend(src) 该方法就是将src合并到jquery的全局对象中去，如： $.extend({ hello:function(){alert(&apos;hello&apos;);} }); 就是将hello方法合并到jquery的全局对象中。 2、$.fn.extend(src)该方法将src合并到jquery的实例对象中去，如: $.fn.extend({ hello:function(){alert(&apos;hello&apos;);} }); 就是将hello方法合并到jquery的实例对象中。 下面例举几个常用的扩展实例： $.extend({net:{}}); 这是在jquery全局对象中扩展一个net命名空间。 $.extend($.net,{ hello:function(){alert(&apos;hello&apos;);} }) 这是将hello方法扩展到之前扩展的Jquery的net命名空间中去。 三、Jquery的extend方法还有一个重载原型：extend(boolean,dest,src1,src2,src3...) 第一个参数boolean代表是否进行深度拷贝，其余参数和前面介绍的一致，什么叫深层拷贝，我们看一个例子： var result=$.extend( true, {}, { name: &quot;John&quot;, location: {city: &quot;Boston&quot;,county:&quot;USA&quot;} }, { last: &quot;Resig&quot;, location: {state: &quot;MA&quot;,county:&quot;China&quot;} } ); 我们可以看出src1中嵌套子对象location:{city:”Boston”},src2中也嵌套子对象location:{state:”MA”},第一个深度拷贝参数为true，那么合并后的结果就是： result={name:&quot;John&quot;,last:&quot;Resig&quot;, location:{city:&quot;Boston&quot;,state:&quot;MA&quot;,county:&quot;China&quot;}} 也就是说它会将src中的嵌套子对象也进行合并，而如果第一个参数boolean为false，我们看看合并的结果是什么，如下： var result=$.extend( false, {}, { name: &quot;John&quot;, location:{city: &quot;Boston&quot;,county:&quot;USA&quot;} }, { last: &quot;Resig&quot;, location: {state: &quot;MA&quot;,county:&quot;China&quot;} } ); 那么合并后的结果就是: result={name:&quot;John&quot;,last:&quot;Resig&quot;,location:{state:&quot;MA&quot;,county:&quot;China&quot;}} 以上就是$.extend()在项目中经常会使用到的一些细节。]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>jQuery</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Android使用xutils时出错The type org.apache.http.HttpResponse cannot be resolved]]></title>
     <url>%2F2017%2F01%2F20%2FAndroid%E4%BD%BF%E7%94%A8xutils%E6%97%B6%E5%87%BA%E9%94%99The%20type%20org.apache.http.HttpResponse%20cannot%20be%20resolved%2F</url>
     <content type="text"><![CDATA[在Android 6.0（API 23）中，Google已经移除了移除了Apache HttpClient相关的类、HttpResponse类。缺失jar包使用HttpResponse等会报错：The type org.apache.http.HttpResponse cannot be resolved. It is indirectly referenced from required 在使用xutils下载服务器资源的时候，在下载成功，获取资源file的时候，出如下的错 解决方法：推荐使用HttpUrlConnection，如果要继续使用需要Apache HttpClient，需要在eclipse下libs里添加org.apache.http.legacy.jar。添加方法如下： 1、Eclipse中 在错误原因上点击ctrl+1，选择Configure build path，或者Project-&gt;Properties-&gt;Java Build Path-&gt;Libraries-&gt;Add Ecternal JARS-&gt;你的SDK目录的/platforms/android-23/optional/org.apache.http.legacy.jar-&gt;ok 2、android studio里在相应的module下的build.gradle中加入：android {useLibrary ‘org.apache.http.legacy’}]]></content>
@@ -162,6 +200,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[JS实现的根据经纬度计算地球上两点之间的距离]]></title>
+    <url>%2F2016%2F12%2F14%2FJS%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%A0%B9%E6%8D%AE%E7%BB%8F%E7%BA%AC%E5%BA%A6%E8%AE%A1%E7%AE%97%E5%9C%B0%E7%90%83%E4%B8%8A%E4%B8%A4%E7%82%B9%E4%B9%8B%E9%97%B4%E7%9A%84%E8%B7%9D%E7%A6%BB%2F</url>
+    <content type="text"><![CDATA[最近用到了根据经纬度计算地球表面两点间距离的公式，然后就用JS实现了一下。计算地球表面两点间的距离大概有两种办法。 第一种是默认地球是一个光滑的球面，然后计算任意两点间的距离，这个距离叫做大圆距离(The Great Circle Distance)。 公式如下： 使用JS来实现为： 12345678910111213141516171819202122var EARTH_RADIUS = 6378137.0; //单位M var PI = Math.PI; function getRad(d)&#123; return d*PI/180.0; &#125; /** * caculate the great circle distance * @param &#123;Object&#125; lat1 * @param &#123;Object&#125; lng1 * @param &#123;Object&#125; lat2 * @param &#123;Object&#125; lng2 */ function getGreatCircleDistance(lat1,lng1,lat2,lng2)&#123; var radLat1 = getRad(lat1); var radLat2 = getRad(lat2); var a = radLat1 - radLat2; var b = getRad(lng1) - getRad(lng2); var s = 2*Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2) + Math.cos(radLat1)*Math.cos(radLat2)*Math.pow(Math.sin(b/2),2))); s = s*EARTH_RADIUS; s = Math.round(s*10000)/10000.0; return s; &#125; 这个公式在大多数情况下比较正确，只有在处理球面上的相对点的时候，会出现问题，有一个修正的公式，因为没有需要，就没有找出来，可以在wiki上查到。 当然，我们都知道，地球其实并不是一个真正的圆球体，而是椭球，所以有了下面的公式： 1234567891011121314151617181920212223242526272829/** * approx distance between two points on earth ellipsoid * @param &#123;Object&#125; lat1 * @param &#123;Object&#125; lng1 * @param &#123;Object&#125; lat2 * @param &#123;Object&#125; lng2 */ function getFlatternDistance(lat1,lng1,lat2,lng2)&#123; var f = getRad((lat1 + lat2)/2); var g = getRad((lat1 - lat2)/2); var l = getRad((lng1 - lng2)/2); var sg = Math.sin(g); var sl = Math.sin(l); var sf = Math.sin(f); var s,c,w,r,d,h1,h2; var a = EARTH_RADIUS; var fl = 1/298.257; sg = sg*sg; sl = sl*sl; sf = sf*sf; s = sg*(1-sl) + (1-sf)*sl; c = (1-sg)*(1-sl) + sf*sl; w = Math.atan(Math.sqrt(s/c)); r = Math.sqrt(s*c)/w; d = 2*w*a; h1 = (3*r -1)/2/c; h2 = (3*r +1)/2/s; return d*(1 + fl*(h1*sf*(1-sg) - h2*(1-sf)*sg)); &#125; 这个公式计算出的结果要比第一个好一些，当然，最后结果的经度实际上还取决于传入的坐标的精度。]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ionic2点击事件感觉到延迟的解决办法]]></title>
     <url>%2F2016%2F12%2F14%2Fionic2%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6%E6%84%9F%E8%A7%89%E5%88%B0%E5%BB%B6%E8%BF%9F%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%2F</url>
     <content type="text"><![CDATA[In general, we recommend only adding (click) events to elements that are normally clickable. This includes &lt; button&gt; and &lt; a&gt; elements. This improves accessibility as a screen reader will be able to tell that the element is clickable.However, you may need to add a (click) event to an element that is not normally clickable. When you do this you may experience a 300ms delay from the time you click the element to the event firing. To remove this delay, you can add the tappable attribute to your element. 1&lt;div tappable (click)="doClick()"&gt;I am clickable!&lt;/div&gt; 一般来说，我们建议您只向通常可点击的元素添加（点击）事件。 这包括&lt; button&gt;和&lt; a&gt;元素。 这提高了可访问性，因为屏幕阅读器将能够告诉该元素是可点击的。 但是，您可能需要向通常不可点击的元素添加（点击）事件。 执行此操作时，您可能会遇到从点击元素到事件触发的300毫秒延迟。 要删除此延迟，可以将tappable属性添加到元素。]]></content>
@@ -172,6 +221,17 @@
         <tag>Ionic2</tag>
         <tag>tappable</tag>
         <tag>点击延迟</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JS、Jquery实现---把后台传过来的时间毫秒数转换成想要的日期格式]]></title>
+    <url>%2F2016%2F11%2F03%2FJS%E3%80%81Jquery%E5%AE%9E%E7%8E%B0---%E6%8A%8A%E5%90%8E%E5%8F%B0%E4%BC%A0%E8%BF%87%E6%9D%A5%E7%9A%84%E6%97%B6%E9%97%B4%E6%AF%AB%E7%A7%92%E6%95%B0%E8%BD%AC%E6%8D%A2%E6%88%90%E6%83%B3%E8%A6%81%E7%9A%84%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[后台传过来的数据 creationTime 在后台是Date类型的 毫秒转换成 05-24 月 日格式的 123456789//获得月日得到日期oTime function getMoth(str)&#123; var oDate = new Date(str), oMonth = oDate.getMonth()+1, oDay = oDate.getDate(), oTime = getzf(oMonth) +'-'+ getzf(oDay);//最后拼接时间 return oTime; &#125;; console.log(getMoth(1465959000));//使用方法 毫秒转换成 年月日+时分秒 格式的 1970-01-18 07:12:39 补0操作： 比如2012-2-2 就会变成 2012-02-02 使用方法： getMyDate(data[i].creationTime); 12345678910111213141516171819//获得年月日 得到日期oTime function getMyDate(str)&#123; var oDate = new Date(str), oYear = oDate.getFullYear(), oMonth = oDate.getMonth()+1, oDay = oDate.getDate(), oHour = oDate.getHours(), oMin = oDate.getMinutes(), oSen = oDate.getSeconds(), oTime = oYear +'-'+ getzf(oMonth) +'-'+ getzf(oDay) +' '+ getzf(oHour) +':'+ getzf(oMin) +':'+getzf(oSen);//最后拼接时间 return oTime; &#125;; //补0操作 function getzf(num)&#123; if(parseInt(num) &lt; 10)&#123; num = '0'+num; &#125; return num; &#125; 毫秒转换成 年月日 时分秒的格式 12345678910111213141516171819/* js由毫秒数得到年月日 使用： (new Date(data[i].creationTime)).Format("yyyy-MM-dd hh:mm:ss.S") */ Date.prototype.Format = function (fmt) &#123; //author: meizz var o = &#123; "M+": this.getMonth() + 1, //月份 "d+": this.getDate(), //日 "h+": this.getHours(), //小时 "m+": this.getMinutes(), //分 "s+": this.getSeconds(), //秒 "q+": Math.floor((this.getMonth() + 3) / 3), //季度 "S": this.getMilliseconds() //毫秒 &#125;; if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length)); for (var k in o) if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length))); return fmt; &#125;;]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
       </tags>
   </entry>
   <entry>
@@ -262,6 +322,39 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Js计算两个日期之间的天数]]></title>
+    <url>%2F2016%2F08%2F24%2FJs%E8%AE%A1%E7%AE%97%E4%B8%A4%E4%B8%AA%E6%97%A5%E6%9C%9F%E4%B9%8B%E9%97%B4%E7%9A%84%E5%A4%A9%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[计算两个日期之间的天数： 1234567function test() &#123; alert(duration(new Date(2009, 11, 31), new Date(2010, 0, 10))); alert(duration(new Date(2009, 0, 31), new Date(2009, 1, 10)));&#125;function duration(d1, d2)&#123; return (d2.getTime() - d1.getTime()) / (24 * 60 * 60 * 1000);&#125;]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JS计算一个月有多少天]]></title>
+    <url>%2F2016%2F08%2F24%2FJS%E8%AE%A1%E7%AE%97%E4%B8%80%E4%B8%AA%E6%9C%88%E6%9C%89%E5%A4%9A%E5%B0%91%E5%A4%A9%20%2F</url>
+    <content type="text"><![CDATA[JS计算当月有多少天的方法： 12345678910111213function getCountDays() &#123; var curDate = new Date(); /* 获取当前月份 */ var curMonth = curDate.getMonth(); /* 生成实际的月份: 由于curMonth会比实际月份小1, 故需加1 */ curDate.setMonth(curMonth + 1); /* 将日期设置为0, 这里为什么要这样设置, 我不知道原因, 这是从网上学来的 */ curDate.setDate(0); /* 返回当月的天数 */ return curDate.getDate();&#125; //例如, 获取当前月份(现在是8月)的总天数: getCountDays() // 返回31 Javascript的Date.setDate()方法： setDate()方法用来设定日期物件中本地时间的日，也就是每个月中的几号，传入参数是一個1~31的整数。若是传入的值超出当月份的正常范围，setDate()方法也会依据超出的数值进行计算，譬如setDate(0)会让日期变成前一个月的最后一天，setDate(-1)会让日期变成前一個月的倒数第二天。若当月有31天，那setDate(32)会让日期变成下个月的第一天。 Date.setDate()的语法： DateObj.setDate(dayValue) dayValue：传入值，是一个1~31的整数，若是传入的值超出当月份的正常范围，setDate()方法也会依据超出的数值进行计算。 传回值：从1970年1月1日0时0分到该UTC时间经过的毫秒数。 123456789101112&lt;script type="text/javascript"&gt; var mydate = new Date("Mar 31, 2013 21:00:00"); document.writeln(mydate.toLocaleString()); document.writeln("&lt;br/&gt;"); mydate.setDate(0); document.writeln(mydate.toLocaleString()); document.writeln("&lt;br/&gt;"); var mydate2 = new Date("Mar 31, 2013 21:00:00"); mydate2.setDate(32); document.writeln(mydate2.toLocaleString()); document.writeln("&lt;br/&gt;");&lt;/script&gt; Date.setDate()的范例输出： 2013年3月31日 下午9:00:00 2013年2月28日 下午9:00:00 2013年4月1日 下午9:00:00 Date.setDate()的范例说明： 1.设定日期为2013年3月31。 2.使用setDate(0)，日期变为2月28日。 3.设定新日期为2013年3月31。 4.使用setDate(32)，日期变为2013年4月1日。]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JS中在当前日期上追加一天或者获取上一个月和下一个月]]></title>
+    <url>%2F2016%2F08%2F24%2FJS%E4%B8%AD%E5%9C%A8%E5%BD%93%E5%89%8D%E6%97%A5%E6%9C%9F%E4%B8%8A%E8%BF%BD%E5%8A%A0%E4%B8%80%E5%A4%A9%E6%88%96%E8%80%85%E8%8E%B7%E5%8F%96%E4%B8%8A%E4%B8%80%E4%B8%AA%E6%9C%88%E5%92%8C%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9C%88%2F</url>
+    <content type="text"><![CDATA[JS中在当前日期上追加一天Date本来就有setDate()的方法 ，用getDate()出来的数值+1就是加1天 如果大于本月最大天数会自动往下加一个月的 如： &lt;script language=&quot;JavaScript&quot;&gt; var now = new Date(); now.setDate(now.getDate()+1); alert(now); &lt;/script&gt; 获取上一个月或者下一个月的算法 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162* 获取上一个月 * * @date 格式为yyyy-mm-dd的日期，如：2014-01-25 */ function getPreMonth(date) &#123; var arr = date.split('-'); var year = arr[0]; //获取当前日期的年份 var month = arr[1]; //获取当前日期的月份 var day = arr[2]; //获取当前日期的日 var days = new Date(year, month, 0); days = days.getDate(); //获取当前日期中月的天数 var year2 = year; var month2 = parseInt(month) - 1; if (month2 == 0) &#123; year2 = parseInt(year2) - 1; month2 = 12; &#125; var day2 = day; var days2 = new Date(year2, month2, 0); days2 = days2.getDate(); if (day2 &gt; days2) &#123; day2 = days2; &#125; if (month2 &lt; 10) &#123; month2 = '0' + month2; &#125; var t2 = year2 + '-' + month2 + '-' + day2; return t2; &#125; /** * 获取下一个月 * * @date 格式为yyyy-mm-dd的日期，如：2014-01-25 */ function getNextMonth(date) &#123; var arr = date.split('-'); var year = arr[0]; //获取当前日期的年份 var month = arr[1]; //获取当前日期的月份 var day = arr[2]; //获取当前日期的日 var days = new Date(year, month, 0); days = days.getDate(); //获取当前日期中的月的天数 var year2 = year; var month2 = parseInt(month) + 1; if (month2 == 13) &#123; year2 = parseInt(year2) + 1; month2 = 1; &#125; var day2 = day; var days2 = new Date(year2, month2, 0); days2 = days2.getDate(); if (day2 &gt; days2) &#123; day2 = days2; &#125; if (month2 &lt; 10) &#123; month2 = '0' + month2; &#125; var t2 = year2 + '-' + month2 + '-' + day2; return t2; &#125; //测试 //alert(getPreMonth("2014-01-25")); //alert(getNextMonth("2014-12-25")); 或者另外一种方法： 如果只是要月份 , 就不用跟日期类打交道了..直接算就好了 12345678910111213function getMonths(date1 , date2)&#123; //用-分成数组 date1 = date1.split("-"); date2 = date2.split("-"); //获取年,月数 var year1 = parseInt(date1[0]) , month1 = parseInt(date1[1]) , year2 = parseInt(date2[0]) , month2 = parseInt(date2[1]) , //通过年,月差计算月份差 months = (year2 - year1) * 12 + (month2-month1) + 1; return months; &#125;]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Ionic run android错误error gradle line 64]]></title>
     <url>%2F2016%2F07%2F23%2FIonic%20run%20android%E9%94%99%E8%AF%AFerror%20gradle%20line%2064%20%2F</url>
     <content type="text"><![CDATA[错误提示如下： FAILURE: Build failed with an exception. Where:Script ‘C:\Users\Jay\testproject\platforms\android\CordovaLib\cordova.gradle’ line: 64 What went wrong:A problem occurred evaluating root project ‘android’.No installed build tools found. Please install the Android build tools version19.1.0 or higher. Try:Run with –stacktrace option to get the stack trace. Run with –info or –debugoption to get more log output. 解决方法： I had the same problem and this is how I fixed it. I had the build-tools version 20 installed but still was getting this error:No installed build tools found. Please install the Android build tools version 19.1.0 or higher.So I created a directory named 20 within build-tools directory, and copied all the files from sdk\build-tools\android-4.4W* to sdk\build-tools\20. The problem was fixed! 根据国外友人的提示，这是由于Android tools的问题，升级Android build tools到最新的版本即可解决问题。]]></content>
@@ -284,6 +377,18 @@
         <tag>Ionic2</tag>
         <tag>Android</tag>
         <tag>gradle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[css伪元素和伪类的区分]]></title>
+    <url>%2F2016%2F07%2F10%2Fcss%E4%BC%AA%E5%85%83%E7%B4%A0%E5%92%8C%E4%BC%AA%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%86%2F</url>
+    <content type="text"><![CDATA[伪类用于向某些选择器添加特殊的效果。伪元素用于将特殊的效果添加到某些选择器。伪类有：:first-child ，:link:，vistited，:hover，:active，:focus，:lang伪元素有：:first-line，:first-letter，:before，:after 使用伪类： 1234567&lt;style&gt; p&gt;i:first-child &#123;color: red&#125;&lt;/style&gt;&lt;p&gt; &lt;i&gt;first&lt;/i&gt; &lt;i&gt;second&lt;/i&gt;&lt;/p&gt; 如果我们不使用伪类，而希望达到上述效果，可以这样做： 不使用伪类： 1234567&lt;style&gt; .first-child &#123;color: red&#125;&lt;/style&gt;&lt;p&gt; &lt;i class="first-child"&gt;first&lt;/i&gt; &lt;i&gt;second&lt;/i&gt;&lt;/p&gt; 即我们给第一个子元素添加一个类，然后定义这个类的样式。 使用为元素： 1234&lt;style&gt; p:first-letter &#123;color: red&#125;&lt;/style&gt;&lt;p&gt;I am stephen lee.&lt;/p&gt; 那么如果我们不使用伪元素，要达到上述效果，应该怎么做呢？ 不使用为元素： 1234&lt;style&gt; .first-letter &#123;color: red&#125;&lt;/style&gt;&lt;p&gt;&lt;span class='first-letter'&gt;I&lt;/span&gt; am stephen lee.&lt;/p&gt; 即我们给第一个字母添加一个 span，然后给 span 增加样式。两者的区别已经出来了。那就是： 伪类的效果可以通过添加一个实际的类来达到，而伪元素的效果则需要通过添加一个实际的元素才能达到，这也是为什么他们一个称为伪类，一个称为伪元素的原因。 伪元素和伪类之所以这么容易混淆，是因为他们的效果类似而且写法相仿，但实际上 CSS3 为了区分两者，已经明确规定了伪类用一个冒号来表示，而伪元素则用两个冒号来表示。 :Pseudo-classes //伪类::Pseudo-elements //伪元素 但因为兼容性的问题，所以现在大部分还是统一的单冒号，但是抛开兼容性的问题，我们在书写时应该尽可能养成好习惯，区分两者。]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+        <tag>css</tag>
       </tags>
   </entry>
 </search>
