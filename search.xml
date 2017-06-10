@@ -391,4 +391,16 @@
         <tag>css</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[Android自定义对话框]]></title>
+    <url>%2F2016%2F05%2F30%2FAndroid%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%B9%E8%AF%9D%E6%A1%86%2F</url>
+    <content type="text"><![CDATA[在Android中自定义对话框的方法 创建一个对话框12Builder builder = new AlertDialog.Builder(this);final AlertDialog dialog = builder.create(); 创建一个View对象，并从xml中加载xml代码省略，和正常的layout一样 12//view是由自己编写的xml转换成view对象xml-----&gt;viewfinal View view = View.inflate(this, R.layout.dialog_confirm_psd, null); 展示对话框12345//让对话框显示一个自己定义的对话框界面效果 //dialog.setView(view); //使用可以设置内边距的setView，为了兼容低版本,使用以下方法 dialog.setView(view, 0, 0, 0, 0); dialog.show(); 最后在view下初始化相应的UI12345678910111213141516//需要在view下findViewById，不然找的是HomeActivity的View控件 Button bt_submit = (Button)view.findViewById(R.id.bt_submit); Button bt_cancel = (Button)view.findViewById(R.id.bt_cancel); bt_submit.setOnClickListener(new OnClickListener() &#123; @Override public void onClick(View v) &#123; &#125; &#125;); //取消按钮的点击事件 bt_cancel.setOnClickListener(new OnClickListener() &#123; @Override public void onClick(View v) &#123; //对话框消失 dialog.dismiss(); &#125; &#125;);]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>对话框</tag>
+      </tags>
+  </entry>
 </search>
