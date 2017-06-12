@@ -309,6 +309,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[微信小程序引用fontawesome字体]]></title>
+    <url>%2F2016%2F10%2F27%2F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%95%E7%94%A8fontawesome%E5%AD%97%E4%BD%93%2F</url>
+    <content type="text"><![CDATA[关于添加字体图标其实跟添加自定义的字体是一样的东西。由于微信小程序不支持本地的路径，但是base64可用,所以我们将通过转为base64使用 前往fontawesome官网下载字体包。 http://fontawesome.dashgame.com/ 打开1中下载的压缩包找到.ttf文件。 将2中的字体文件进行 base64编码 https://transfonter.org/ 可在此网站进行转码，步骤如下 打开3中下载的文件，找到stylesheet.css 打开4中的文件，复制里面的代码到微信小程序中的app.wxss中。 打开1中的文件font-awesome.css,复制里面的css(去掉@font-face部分)到微信小程序中的app.wxss中（接着5中复制内容的后面）。也可以选择font-awesome.min.css,复制的代码如下图所示 在程序中直接引用就可以了。实例代码具体样式的用法，可以到官网查看]]></content>
+      <categories>
+        <category>微信小程序</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+        <tag>fontawesome</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ionic2页面的生命周期]]></title>
     <url>%2F2016%2F10%2F27%2Fionic2%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%2F</url>
     <content type="text"><![CDATA[]]></content>
