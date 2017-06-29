@@ -1,0 +1,1296 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Web,animate,animation," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="转自：http://www.cnblogs.com/starof/p/4968769.html 有问题欢迎与我讨论，共同进步。  一、animates.cssanimate.css是来自dropbox的工程师Daniel Eden开发的一款CSS3的动画效果小类库。包含了60多款不同类型的CSS3动画，包括：晃动，闪动，各种淡出淡出效果，如果你想快速的整合各种CSS3动画特效的话，使用它即可方便">
+<meta name="keywords" content="Web,animate,animation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Css3常用动画+动画库">
+<meta property="og:url" content="http://www.lynson.tech/2017/06/20/Css3常用动画+动画库/index.html">
+<meta property="og:site_name" content="Lynson">
+<meta property="og:description" content="转自：http://www.cnblogs.com/starof/p/4968769.html 有问题欢迎与我讨论，共同进步。  一、animates.cssanimate.css是来自dropbox的工程师Daniel Eden开发的一款CSS3的动画效果小类库。包含了60多款不同类型的CSS3动画，包括：晃动，闪动，各种淡出淡出效果，如果你想快速的整合各种CSS3动画特效的话，使用它即可方便">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/315302/201602/315302-20160224142440880-1954509481.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/315302/201602/315302-20160224141946677-1106322604.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/315302/201602/315302-20160224142847599-1611177751.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/315302/201602/315302-20160224143333302-275724960.png">
+<meta property="og:updated_time" content="2017-06-29T06:57:59.167Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Css3常用动画+动画库">
+<meta name="twitter:description" content="转自：http://www.cnblogs.com/starof/p/4968769.html 有问题欢迎与我讨论，共同进步。  一、animates.cssanimate.css是来自dropbox的工程师Daniel Eden开发的一款CSS3的动画效果小类库。包含了60多款不同类型的CSS3动画，包括：晃动，闪动，各种淡出淡出效果，如果你想快速的整合各种CSS3动画特效的话，使用它即可方便">
+<meta name="twitter:image" content="http://images2015.cnblogs.com/blog/315302/201602/315302-20160224142440880-1954509481.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.lynson.tech/2017/06/20/Css3常用动画+动画库/"/>
+
+
+
+
+
+  <title>Css3常用动画+动画库 | Lynson</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lynson</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.lynson.tech/2017/06/20/Css3常用动画+动画库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lynson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/1_lynson.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lynson">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Css3常用动画+动画库</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-20T20:47:13+08:00">
+                2017-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/06/20/Css3常用动画+动画库/" class="leancloud_visitors" data-flag-title="Css3常用动画+动画库">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>转自：<a href="http://www.cnblogs.com/starof/p/4968769.html" target="_blank" rel="external">http://www.cnblogs.com/starof/p/4968769.html</a> 有问题欢迎与我讨论，共同进步。</p>
+</blockquote>
+<h4 id="一、animates-css"><a href="#一、animates-css" class="headerlink" title="一、animates.css"></a>一、animates.css</h4><p>animate.css是来自dropbox的工程师Daniel Eden开发的一款CSS3的动画效果小类库。包含了60多款不同类型的CSS3动画，包括：晃动，闪动，各种淡出淡出效果，如果你想快速的整合各种CSS3动画特效的话，使用它即可方便的实现。</p>
+<p><img src="http://images2015.cnblogs.com/blog/315302/201602/315302-20160224142440880-1954509481.png" alt=""></p>
+<a id="more"></a>
+<p>查看演示：</p>
+<pre><code>https://daneden.github.io/animate.css/ 
+</code></pre><p>github地址：</p>
+<pre><code>https://github.com/daneden/animate.css
+</code></pre><h4 id="二、magic-css动画库"><a href="#二、magic-css动画库" class="headerlink" title="二、magic.css动画库"></a>二、magic.css动画库</h4><p><img src="http://images2015.cnblogs.com/blog/315302/201602/315302-20160224141946677-1106322604.png" alt=""></p>
+<p>查看演示：</p>
+<pre><code>http://www.17sucai.com/pins/demoshow/10001
+</code></pre><p>github地址：</p>
+<pre><code>https://github.com/miniMAC/magic
+</code></pre><h4 id="三、Effect-css"><a href="#三、Effect-css" class="headerlink" title="三、Effect.css"></a>三、Effect.css</h4><p>针对不同UI的CSS3动画和过渡效果集，包含了丰富的CSS3动画和过渡效果，包括：</p>
+<ul>
+<li>Modal</li>
+<li>overlay</li>
+<li>button</li>
+<li>list</li>
+<li>listscroll</li>
+<li>Caption</li>
+</ul>
+<p>等等</p>
+<p><img src="http://images2015.cnblogs.com/blog/315302/201602/315302-20160224142847599-1611177751.png" alt=""></p>
+<p>查看演示：</p>
+<pre><code>http://www.gbtags.com/gb/linkviewer/3147.htm
+</code></pre><h4 id="四、hover-css"><a href="#四、hover-css" class="headerlink" title="四、hover.css"></a>四、hover.css</h4><p>Hover.css是一套使用CSS3动画实现的Hover特效集锦，包含了：</p>
+<ul>
+<li>2D变形</li>
+<li>边框过渡效果</li>
+<li>阴影过渡效果</li>
+<li>页脚翻转效果</li>
+</ul>
+<p><img src="http://images2015.cnblogs.com/blog/315302/201602/315302-20160224143333302-275724960.png" alt=""></p>
+<p>查看演示：</p>
+<pre><code>http://ianlunn.github.io/Hover/
+</code></pre><p>github地址：</p>
+<pre><code>https://github.com/IanLunn/Hover 
+</code></pre><h4 id="五、常用动画"><a href="#五、常用动画" class="headerlink" title="五、常用动画"></a>五、常用动画</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div><div class="line">265</div><div class="line">266</div><div class="line">267</div><div class="line">268</div><div class="line">269</div><div class="line">270</div><div class="line">271</div><div class="line">272</div><div class="line">273</div><div class="line">274</div><div class="line">275</div><div class="line">276</div><div class="line">277</div><div class="line">278</div><div class="line">279</div><div class="line">280</div><div class="line">281</div><div class="line">282</div><div class="line">283</div><div class="line">284</div><div class="line">285</div><div class="line">286</div><div class="line">287</div><div class="line">288</div><div class="line">289</div><div class="line">290</div><div class="line">291</div><div class="line">292</div><div class="line">293</div><div class="line">294</div><div class="line">295</div><div class="line">296</div><div class="line">297</div><div class="line">298</div><div class="line">299</div><div class="line">300</div><div class="line">301</div><div class="line">302</div><div class="line">303</div><div class="line">304</div><div class="line">305</div><div class="line">306</div><div class="line">307</div><div class="line">308</div><div class="line">309</div><div class="line">310</div><div class="line">311</div><div class="line">312</div><div class="line">313</div><div class="line">314</div><div class="line">315</div><div class="line">316</div><div class="line">317</div><div class="line">318</div><div class="line">319</div><div class="line">320</div><div class="line">321</div><div class="line">322</div><div class="line">323</div><div class="line">324</div><div class="line">325</div><div class="line">326</div><div class="line">327</div><div class="line">328</div><div class="line">329</div><div class="line">330</div><div class="line">331</div><div class="line">332</div><div class="line">333</div><div class="line">334</div><div class="line">335</div><div class="line">336</div><div class="line">337</div><div class="line">338</div><div class="line">339</div><div class="line">340</div><div class="line">341</div><div class="line">342</div><div class="line">343</div><div class="line">344</div><div class="line">345</div><div class="line">346</div><div class="line">347</div><div class="line">348</div><div class="line">349</div><div class="line">350</div><div class="line">351</div><div class="line">352</div><div class="line">353</div><div class="line">354</div><div class="line">355</div><div class="line">356</div><div class="line">357</div><div class="line">358</div><div class="line">359</div><div class="line">360</div><div class="line">361</div><div class="line">362</div><div class="line">363</div><div class="line">364</div><div class="line">365</div><div class="line">366</div><div class="line">367</div><div class="line">368</div><div class="line">369</div><div class="line">370</div><div class="line">371</div><div class="line">372</div><div class="line">373</div><div class="line">374</div><div class="line">375</div><div class="line">376</div><div class="line">377</div><div class="line">378</div><div class="line">379</div><div class="line">380</div><div class="line">381</div><div class="line">382</div><div class="line">383</div><div class="line">384</div><div class="line">385</div><div class="line">386</div><div class="line">387</div><div class="line">388</div><div class="line">389</div><div class="line">390</div><div class="line">391</div><div class="line">392</div><div class="line">393</div><div class="line">394</div><div class="line">395</div><div class="line">396</div><div class="line">397</div><div class="line">398</div><div class="line">399</div><div class="line">400</div><div class="line">401</div><div class="line">402</div><div class="line">403</div><div class="line">404</div><div class="line">405</div><div class="line">406</div><div class="line">407</div><div class="line">408</div><div class="line">409</div><div class="line">410</div><div class="line">411</div><div class="line">412</div><div class="line">413</div><div class="line">414</div><div class="line">415</div><div class="line">416</div><div class="line">417</div><div class="line">418</div><div class="line">419</div><div class="line">420</div><div class="line">421</div><div class="line">422</div><div class="line">423</div><div class="line">424</div><div class="line">425</div><div class="line">426</div><div class="line">427</div><div class="line">428</div><div class="line">429</div><div class="line">430</div><div class="line">431</div><div class="line">432</div><div class="line">433</div><div class="line">434</div><div class="line">435</div><div class="line">436</div><div class="line">437</div><div class="line">438</div><div class="line">439</div><div class="line">440</div><div class="line">441</div><div class="line">442</div><div class="line">443</div><div class="line">444</div><div class="line">445</div><div class="line">446</div><div class="line">447</div><div class="line">448</div><div class="line">449</div><div class="line">450</div><div class="line">451</div><div class="line">452</div><div class="line">453</div><div class="line">454</div><div class="line">455</div><div class="line">456</div><div class="line">457</div><div class="line">458</div><div class="line">459</div><div class="line">460</div><div class="line">461</div><div class="line">462</div><div class="line">463</div><div class="line">464</div><div class="line">465</div><div class="line">466</div><div class="line">467</div><div class="line">468</div><div class="line">469</div><div class="line">470</div><div class="line">471</div><div class="line">472</div><div class="line">473</div><div class="line">474</div><div class="line">475</div><div class="line">476</div><div class="line">477</div><div class="line">478</div><div class="line">479</div><div class="line">480</div><div class="line">481</div><div class="line">482</div><div class="line">483</div><div class="line">484</div><div class="line">485</div><div class="line">486</div><div class="line">487</div><div class="line">488</div><div class="line">489</div><div class="line">490</div><div class="line">491</div><div class="line">492</div><div class="line">493</div><div class="line">494</div><div class="line">495</div><div class="line">496</div><div class="line">497</div><div class="line">498</div><div class="line">499</div><div class="line">500</div><div class="line">501</div><div class="line">502</div><div class="line">503</div><div class="line">504</div><div class="line">505</div><div class="line">506</div><div class="line">507</div><div class="line">508</div><div class="line">509</div><div class="line">510</div><div class="line">511</div><div class="line">512</div><div class="line">513</div><div class="line">514</div><div class="line">515</div><div class="line">516</div><div class="line">517</div><div class="line">518</div><div class="line">519</div><div class="line">520</div><div class="line">521</div><div class="line">522</div><div class="line">523</div><div class="line">524</div><div class="line">525</div><div class="line">526</div><div class="line">527</div><div class="line">528</div><div class="line">529</div><div class="line">530</div><div class="line">531</div><div class="line">532</div><div class="line">533</div><div class="line">534</div><div class="line">535</div><div class="line">536</div><div class="line">537</div><div class="line">538</div><div class="line">539</div><div class="line">540</div><div class="line">541</div><div class="line">542</div><div class="line">543</div><div class="line">544</div><div class="line">545</div><div class="line">546</div><div class="line">547</div><div class="line">548</div><div class="line">549</div><div class="line">550</div><div class="line">551</div><div class="line">552</div><div class="line">553</div><div class="line">554</div><div class="line">555</div><div class="line">556</div><div class="line">557</div><div class="line">558</div><div class="line">559</div><div class="line">560</div><div class="line">561</div><div class="line">562</div><div class="line">563</div><div class="line">564</div><div class="line">565</div><div class="line">566</div><div class="line">567</div><div class="line">568</div><div class="line">569</div><div class="line">570</div><div class="line">571</div><div class="line">572</div><div class="line">573</div><div class="line">574</div><div class="line">575</div><div class="line">576</div><div class="line">577</div><div class="line">578</div><div class="line">579</div><div class="line">580</div><div class="line">581</div><div class="line">582</div><div class="line">583</div><div class="line">584</div><div class="line">585</div><div class="line">586</div><div class="line">587</div><div class="line">588</div><div class="line">589</div><div class="line">590</div><div class="line">591</div><div class="line">592</div><div class="line">593</div><div class="line">594</div><div class="line">595</div><div class="line">596</div><div class="line">597</div><div class="line">598</div><div class="line">599</div><div class="line">600</div><div class="line">601</div><div class="line">602</div><div class="line">603</div><div class="line">604</div><div class="line">605</div><div class="line">606</div><div class="line">607</div><div class="line">608</div><div class="line">609</div><div class="line">610</div><div class="line">611</div><div class="line">612</div><div class="line">613</div><div class="line">614</div><div class="line">615</div><div class="line">616</div><div class="line">617</div><div class="line">618</div><div class="line">619</div><div class="line">620</div><div class="line">621</div><div class="line">622</div><div class="line">623</div><div class="line">624</div><div class="line">625</div><div class="line">626</div><div class="line">627</div><div class="line">628</div><div class="line">629</div><div class="line">630</div><div class="line">631</div><div class="line">632</div><div class="line">633</div><div class="line">634</div><div class="line">635</div><div class="line">636</div><div class="line">637</div><div class="line">638</div><div class="line">639</div><div class="line">640</div><div class="line">641</div><div class="line">642</div><div class="line">643</div><div class="line">644</div><div class="line">645</div><div class="line">646</div><div class="line">647</div><div class="line">648</div><div class="line">649</div><div class="line">650</div><div class="line">651</div><div class="line">652</div><div class="line">653</div><div class="line">654</div><div class="line">655</div><div class="line">656</div><div class="line">657</div><div class="line">658</div><div class="line">659</div><div class="line">660</div><div class="line">661</div><div class="line">662</div><div class="line">663</div><div class="line">664</div><div class="line">665</div><div class="line">666</div><div class="line">667</div><div class="line">668</div><div class="line">669</div><div class="line">670</div><div class="line">671</div><div class="line">672</div><div class="line">673</div><div class="line">674</div><div class="line">675</div><div class="line">676</div><div class="line">677</div><div class="line">678</div><div class="line">679</div><div class="line">680</div><div class="line">681</div><div class="line">682</div><div class="line">683</div><div class="line">684</div><div class="line">685</div><div class="line">686</div><div class="line">687</div><div class="line">688</div><div class="line">689</div><div class="line">690</div><div class="line">691</div><div class="line">692</div><div class="line">693</div><div class="line">694</div><div class="line">695</div><div class="line">696</div><div class="line">697</div><div class="line">698</div><div class="line">699</div><div class="line">700</div><div class="line">701</div><div class="line">702</div><div class="line">703</div><div class="line">704</div><div class="line">705</div><div class="line">706</div><div class="line">707</div><div class="line">708</div><div class="line">709</div><div class="line">710</div><div class="line">711</div><div class="line">712</div><div class="line">713</div><div class="line">714</div><div class="line">715</div><div class="line">716</div><div class="line">717</div><div class="line">718</div><div class="line">719</div><div class="line">720</div><div class="line">721</div><div class="line">722</div><div class="line">723</div><div class="line">724</div><div class="line">725</div><div class="line">726</div><div class="line">727</div><div class="line">728</div><div class="line">729</div><div class="line">730</div><div class="line">731</div><div class="line">732</div><div class="line">733</div><div class="line">734</div><div class="line">735</div><div class="line">736</div><div class="line">737</div><div class="line">738</div><div class="line">739</div><div class="line">740</div><div class="line">741</div><div class="line">742</div><div class="line">743</div><div class="line">744</div><div class="line">745</div><div class="line">746</div><div class="line">747</div><div class="line">748</div><div class="line">749</div><div class="line">750</div><div class="line">751</div><div class="line">752</div><div class="line">753</div><div class="line">754</div><div class="line">755</div><div class="line">756</div><div class="line">757</div><div class="line">758</div><div class="line">759</div><div class="line">760</div><div class="line">761</div><div class="line">762</div><div class="line">763</div><div class="line">764</div><div class="line">765</div><div class="line">766</div><div class="line">767</div><div class="line">768</div><div class="line">769</div><div class="line">770</div><div class="line">771</div><div class="line">772</div><div class="line">773</div><div class="line">774</div><div class="line">775</div><div class="line">776</div><div class="line">777</div><div class="line">778</div><div class="line">779</div><div class="line">780</div><div class="line">781</div><div class="line">782</div><div class="line">783</div><div class="line">784</div><div class="line">785</div><div class="line">786</div><div class="line">787</div><div class="line">788</div><div class="line">789</div><div class="line">790</div><div class="line">791</div><div class="line">792</div><div class="line">793</div><div class="line">794</div><div class="line">795</div><div class="line">796</div><div class="line">797</div><div class="line">798</div><div class="line">799</div><div class="line">800</div><div class="line">801</div><div class="line">802</div><div class="line">803</div><div class="line">804</div><div class="line">805</div><div class="line">806</div><div class="line">807</div><div class="line">808</div><div class="line">809</div><div class="line">810</div><div class="line">811</div><div class="line">812</div><div class="line">813</div><div class="line">814</div><div class="line">815</div><div class="line">816</div><div class="line">817</div><div class="line">818</div><div class="line">819</div><div class="line">820</div><div class="line">821</div><div class="line">822</div><div class="line">823</div><div class="line">824</div><div class="line">825</div><div class="line">826</div><div class="line">827</div><div class="line">828</div><div class="line">829</div><div class="line">830</div><div class="line">831</div><div class="line">832</div><div class="line">833</div><div class="line">834</div><div class="line">835</div><div class="line">836</div><div class="line">837</div><div class="line">838</div><div class="line">839</div><div class="line">840</div><div class="line">841</div><div class="line">842</div><div class="line">843</div><div class="line">844</div><div class="line">845</div><div class="line">846</div><div class="line">847</div><div class="line">848</div><div class="line">849</div><div class="line">850</div><div class="line">851</div><div class="line">852</div><div class="line">853</div><div class="line">854</div><div class="line">855</div><div class="line">856</div><div class="line">857</div><div class="line">858</div><div class="line">859</div><div class="line">860</div><div class="line">861</div><div class="line">862</div><div class="line">863</div><div class="line">864</div><div class="line">865</div><div class="line">866</div><div class="line">867</div><div class="line">868</div><div class="line">869</div><div class="line">870</div><div class="line">871</div><div class="line">872</div><div class="line">873</div><div class="line">874</div><div class="line">875</div><div class="line">876</div><div class="line">877</div><div class="line">878</div><div class="line">879</div><div class="line">880</div><div class="line">881</div><div class="line">882</div><div class="line">883</div><div class="line">884</div><div class="line">885</div><div class="line">886</div><div class="line">887</div><div class="line">888</div><div class="line">889</div><div class="line">890</div><div class="line">891</div><div class="line">892</div><div class="line">893</div><div class="line">894</div><div class="line">895</div><div class="line">896</div><div class="line">897</div><div class="line">898</div><div class="line">899</div><div class="line">900</div><div class="line">901</div><div class="line">902</div><div class="line">903</div><div class="line">904</div><div class="line">905</div><div class="line">906</div><div class="line">907</div><div class="line">908</div><div class="line">909</div><div class="line">910</div><div class="line">911</div><div class="line">912</div><div class="line">913</div><div class="line">914</div><div class="line">915</div><div class="line">916</div><div class="line">917</div><div class="line">918</div><div class="line">919</div><div class="line">920</div><div class="line">921</div><div class="line">922</div><div class="line">923</div><div class="line">924</div><div class="line">925</div><div class="line">926</div><div class="line">927</div><div class="line">928</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* animation */</span></div><div class="line"><span class="selector-class">.a-bounce</span>,<span class="selector-class">.a-flip</span>,<span class="selector-class">.a-flash</span>,<span class="selector-class">.a-shake</span>,<span class="selector-class">.a-swing</span>,<span class="selector-class">.a-wobble</span>,<span class="selector-class">.a-ring</span>&#123;<span class="attribute">-webkit-animation</span>:<span class="number">1s</span> ease;<span class="attribute">-moz-animation</span>:<span class="number">1s</span> ease;<span class="attribute">-ms-animation</span>:<span class="number">1s</span> ease;<span class="attribute">animation</span>:<span class="number">1s</span> ease;&#125;</div><div class="line"><span class="selector-class">.a-fadein</span>,<span class="selector-class">.a-fadeinT</span>,<span class="selector-class">.a-fadeinR</span>,<span class="selector-class">.a-fadeinB</span>,<span class="selector-class">.a-fadeinL</span>,<span class="selector-class">.a-bouncein</span>,<span class="selector-class">.a-bounceinT</span>,<span class="selector-class">.a-bounceinR</span>,<span class="selector-class">.a-bounceinB</span>,<span class="selector-class">.a-bounceinL</span>,<span class="selector-class">.a-rotatein</span>,<span class="selector-class">.a-rotateinLT</span>,<span class="selector-class">.a-rotateinLB</span>,<span class="selector-class">.a-rotateinRT</span>,<span class="selector-class">.a-rotateinRB</span>,<span class="selector-class">.a-flipin</span>,<span class="selector-class">.a-flipinX</span>,<span class="selector-class">.a-flipinY</span>&#123;<span class="attribute">-webkit-animation</span>:<span class="number">1s</span> ease-out backwards;<span class="attribute">-moz-animation</span>:<span class="number">1s</span> ease-out backwards;<span class="attribute">-ms-animation</span>:<span class="number">1s</span> ease-out backwards;<span class="attribute">animation</span>:<span class="number">1s</span> ease-out backwards;&#125;</div><div class="line"><span class="selector-class">.a-fadeout</span>,<span class="selector-class">.a-fadeoutT</span>,<span class="selector-class">.a-fadeoutR</span>,<span class="selector-class">.a-fadeoutB</span>,<span class="selector-class">.a-fadeoutL</span>,<span class="selector-class">.a-bounceout</span>,<span class="selector-class">.a-bounceoutT</span>,<span class="selector-class">.a-bounceoutR</span>,<span class="selector-class">.a-bounceoutB</span>,<span class="selector-class">.a-bounceoutL</span>,<span class="selector-class">.a-rotateout</span>,<span class="selector-class">.a-rotateoutLT</span>,<span class="selector-class">.a-rotateoutLB</span>,<span class="selector-class">.a-rotateoutRT</span>,<span class="selector-class">.a-rotateoutRB</span>,<span class="selector-class">.a-flipout</span>,<span class="selector-class">.a-flipoutX</span>,<span class="selector-class">.a-flipoutY</span>&#123;<span class="attribute">-webkit-animation</span>:<span class="number">1s</span> ease-in forwards;<span class="attribute">-moz-animation</span>:<span class="number">1s</span> ease-in forwards;<span class="attribute">-ms-animation</span>:<span class="number">1s</span> ease-in forwards;<span class="attribute">animation</span>:<span class="number">1s</span> ease-in forwards;&#125;</div><div class="line"><span class="comment">/* 淡入 */</span></div><div class="line"><span class="selector-class">.a-fadein</span>&#123;<span class="attribute">-webkit-animation-name</span>:fadein;<span class="attribute">-moz-animation-name</span>:fadein;<span class="attribute">-ms-animation-name</span>:fadein;<span class="attribute">animation-name</span>:fadein;&#125;</div><div class="line"><span class="comment">/* 淡入-从上 */</span></div><div class="line"><span class="selector-class">.a-fadeinT</span>&#123;<span class="attribute">-webkit-animation-name</span>:fadeinT;<span class="attribute">-moz-animation-name</span>:fadeinT;<span class="attribute">-ms-animation-name</span>:fadeinT;<span class="attribute">animation-name</span>:fadeinT;&#125;</div><div class="line"><span class="comment">/* 淡入-从右 */</span></div><div class="line"><span class="selector-class">.a-fadeinR</span>&#123;<span class="attribute">-webkit-animation-name</span>:fadeinR;<span class="attribute">-moz-animation-name</span>:fadeinR;<span class="attribute">-ms-animation-name</span>:fadeinR;<span class="attribute">animation-name</span>:fadeinR;&#125;</div><div class="line"><span class="comment">/* 淡入-从下 */</span></div><div class="line"><span class="selector-class">.a-fadeinB</span>&#123;<span class="attribute">-webkit-animation-name</span>:fadeinB;<span class="attribute">-moz-animation-name</span>:fadeinB;<span class="attribute">-ms-animation-name</span>:fadeinB;<span class="attribute">animation-name</span>:fadeinB;&#125;</div><div class="line"><span class="comment">/* 淡入-从左 */</span></div><div class="line"><span class="selector-class">.a-fadeinL</span>&#123;<span class="attribute">-webkit-animation-name</span>:fadeinL;<span class="attribute">-moz-animation-name</span>:fadeinL;<span class="attribute">-ms-animation-name</span>:fadeinL;<span class="attribute">animation-name</span>:fadeinL;&#125;</div><div class="line"><span class="comment">/* 淡出 */</span></div><div class="line"><span class="selector-class">.a-fadeout</span>&#123;<span class="attribute">-webkit-animation-name</span>:fadeout;<span class="attribute">-moz-animation-name</span>:fadeout;<span class="attribute">-ms-animation-name</span>:fadeout;<span class="attribute">animation-name</span>:fadeout;&#125;</div><div class="line"><span class="comment">/* 淡出-向上 */</span></div><div class="line"><span class="selector-class">.a-fadeoutT</span>&#123;<span class="attribute">-webkit-animation-name</span>:fadeoutT;<span class="attribute">-moz-animation-name</span>:fadeoutT;<span class="attribute">-ms-animation-name</span>:fadeoutT;<span class="attribute">animation-name</span>:fadeoutT;&#125;</div><div class="line"><span class="comment">/* 淡出-向右 */</span></div><div class="line"><span class="selector-class">.a-fadeoutR</span>&#123;<span class="attribute">-webkit-animation-name</span>:fadeoutR;<span class="attribute">-moz-animation-name</span>:fadeoutR;<span class="attribute">-ms-animation-name</span>:fadeoutR;<span class="attribute">animation-name</span>:fadeoutR;&#125;</div><div class="line"><span class="comment">/* 淡出-向下 */</span></div><div class="line"><span class="selector-class">.a-fadeoutB</span>&#123;<span class="attribute">-webkit-animation-name</span>:fadeoutB;<span class="attribute">-moz-animation-name</span>:fadeoutB;<span class="attribute">-ms-animation-name</span>:fadeoutB;<span class="attribute">animation-name</span>:fadeoutB;&#125;</div><div class="line"><span class="comment">/* 淡出-向左 */</span></div><div class="line"><span class="selector-class">.a-fadeoutL</span>&#123;<span class="attribute">-webkit-animation-name</span>:fadeoutL;<span class="attribute">-moz-animation-name</span>:fadeoutL;<span class="attribute">-ms-animation-name</span>:fadeoutL;<span class="attribute">animation-name</span>:fadeoutL;&#125;</div><div class="line"><span class="comment">/* 弹跳 */</span></div><div class="line"><span class="selector-class">.a-bounce</span>&#123;<span class="attribute">-webkit-animation-name</span>:bounce;<span class="attribute">-moz-animation-name</span>:bounce;<span class="attribute">-ms-animation-name</span>:bounce;<span class="attribute">animation-name</span>:bounce;&#125;</div><div class="line"><span class="comment">/* 弹入 */</span></div><div class="line"><span class="selector-class">.a-bouncein</span>&#123;<span class="attribute">-webkit-animation-name</span>:bouncein;<span class="attribute">-moz-animation-name</span>:bouncein;<span class="attribute">-ms-animation-name</span>:bouncein;<span class="attribute">animation-name</span>:bouncein;&#125;</div><div class="line"><span class="comment">/* 弹入-从上 */</span></div><div class="line"><span class="selector-class">.a-bounceinT</span>&#123;<span class="attribute">-webkit-animation-name</span>:bounceinT;<span class="attribute">-moz-animation-name</span>:bounceinT;<span class="attribute">-ms-animation-name</span>:bounceinT;<span class="attribute">animation-name</span>:bounceinT;&#125;</div><div class="line"><span class="comment">/* 弹入-从右 */</span></div><div class="line"><span class="selector-class">.a-bounceinR</span>&#123;<span class="attribute">-webkit-animation-name</span>:bounceinR;<span class="attribute">-moz-animation-name</span>:bounceinR;<span class="attribute">-ms-animation-name</span>:bounceinR;<span class="attribute">animation-name</span>:bounceinR;&#125;</div><div class="line"><span class="comment">/* 弹入-从下 */</span></div><div class="line"><span class="selector-class">.a-bounceinB</span>&#123;<span class="attribute">-webkit-animation-name</span>:bounceinB;<span class="attribute">-moz-animation-name</span>:bounceinB;<span class="attribute">-ms-animation-name</span>:bounceinB;<span class="attribute">animation-name</span>:bounceinB;&#125;</div><div class="line"><span class="comment">/* 弹入-从左 */</span></div><div class="line"><span class="selector-class">.a-bounceinL</span>&#123;<span class="attribute">-webkit-animation-name</span>:bounceinL;<span class="attribute">-moz-animation-name</span>:bounceinL;<span class="attribute">-ms-animation-name</span>:bounceinL;<span class="attribute">animation-name</span>:bounceinL;&#125;</div><div class="line"><span class="comment">/* 弹出 */</span></div><div class="line"><span class="selector-class">.a-bounceout</span>&#123;<span class="attribute">-webkit-animation-name</span>:bounceout;<span class="attribute">-moz-animation-name</span>:bounceout;<span class="attribute">-ms-animation-name</span>:bounceout;<span class="attribute">animation-name</span>:bounceout;&#125;</div><div class="line"><span class="comment">/* 弹出-向上 */</span></div><div class="line"><span class="selector-class">.a-bounceoutT</span>&#123;<span class="attribute">-webkit-animation-name</span>:bounceoutT;<span class="attribute">-moz-animation-name</span>:bounceoutT;<span class="attribute">-ms-animation-name</span>:bounceoutT;<span class="attribute">animation-name</span>:bounceoutT;&#125;</div><div class="line"><span class="comment">/* 弹出-向右 */</span></div><div class="line"><span class="selector-class">.a-bounceoutR</span>&#123;<span class="attribute">-webkit-animation-name</span>:bounceoutR;<span class="attribute">-moz-animation-name</span>:bounceoutR;<span class="attribute">-ms-animation-name</span>:bounceoutR;<span class="attribute">animation-name</span>:bounceoutR;&#125;</div><div class="line"><span class="comment">/* 弹出-向下 */</span></div><div class="line"><span class="selector-class">.a-bounceoutB</span>&#123;<span class="attribute">-webkit-animation-name</span>:bounceoutB;<span class="attribute">-moz-animation-name</span>:bounceoutB;<span class="attribute">-ms-animation-name</span>:bounceoutB;<span class="attribute">animation-name</span>:bounceoutB;&#125;</div><div class="line"><span class="comment">/* 弹出-向左 */</span></div><div class="line"><span class="selector-class">.a-bounceoutL</span>&#123;<span class="attribute">-webkit-animation-name</span>:bounceoutL;<span class="attribute">-moz-animation-name</span>:bounceoutL;<span class="attribute">-ms-animation-name</span>:bounceoutL;<span class="attribute">animation-name</span>:bounceoutL;&#125;</div><div class="line"><span class="comment">/* 转入 */</span></div><div class="line"><span class="selector-class">.a-rotatein</span>&#123;<span class="attribute">-webkit-animation-name</span>:rotatein;<span class="attribute">-moz-animation-name</span>:rotatein;<span class="attribute">-ms-animation-name</span>:rotatein;<span class="attribute">animation-name</span>:rotatein;&#125;</div><div class="line"><span class="comment">/* 转入-从左上 */</span></div><div class="line"><span class="selector-class">.a-rotateinLT</span>&#123;<span class="attribute">-webkit-animation-name</span>:rotateinLT;<span class="attribute">-moz-animation-name</span>:rotateinLT;<span class="attribute">-ms-animation-name</span>:rotateinLT;<span class="attribute">animation-name</span>:rotateinLT;&#125;</div><div class="line"><span class="comment">/* 转入-从左下 */</span></div><div class="line"><span class="selector-class">.a-rotateinLB</span>&#123;<span class="attribute">-webkit-animation-name</span>:rotateinLB;<span class="attribute">-moz-animation-name</span>:rotateinLB;<span class="attribute">-ms-animation-name</span>:rotateinLB;<span class="attribute">animation-name</span>:rotateinLB;&#125;</div><div class="line"><span class="comment">/* 转入-从右上 */</span></div><div class="line"><span class="selector-class">.a-rotateinRT</span>&#123;<span class="attribute">-webkit-animation-name</span>:rotateinRT;<span class="attribute">-moz-animation-name</span>:rotateinRT;<span class="attribute">-ms-animation-name</span>:rotateinRT;<span class="attribute">animation-name</span>:rotateinRT;&#125;</div><div class="line"><span class="comment">/* 转入-从右下*/</span></div><div class="line"><span class="selector-class">.a-rotateinRB</span>&#123;<span class="attribute">-webkit-animation-name</span>:rotateinRB;<span class="attribute">-moz-animation-name</span>:rotateinRB;<span class="attribute">-ms-animation-name</span>:rotateinRB;<span class="attribute">animation-name</span>:rotateinRB;&#125;</div><div class="line"><span class="comment">/* 转出 */</span></div><div class="line"><span class="selector-class">.a-rotateout</span>&#123;<span class="attribute">-webkit-animation-name</span>:rotateout;<span class="attribute">-moz-animation-name</span>:rotateout;<span class="attribute">-ms-animation-name</span>:rotateout;<span class="attribute">animation-name</span>:rotateout;&#125;</div><div class="line"><span class="comment">/* 转出-向左上 */</span></div><div class="line"><span class="selector-class">.a-rotateoutLT</span>&#123;<span class="attribute">-webkit-animation-name</span>:rotateoutLT;<span class="attribute">-moz-animation-name</span>:rotateoutLT;<span class="attribute">-ms-animation-name</span>:rotateoutLT;<span class="attribute">animation-name</span>:rotateoutLT;&#125;</div><div class="line"><span class="comment">/* 转出-向左下 */</span></div><div class="line"><span class="selector-class">.a-rotateoutLB</span>&#123;<span class="attribute">-webkit-animation-name</span>:rotateoutLB;<span class="attribute">-moz-animation-name</span>:rotateoutLB;<span class="attribute">-ms-animation-name</span>:rotateoutLB;<span class="attribute">animation-name</span>:rotateoutLB;&#125;</div><div class="line"><span class="comment">/* 转出-向右上 */</span></div><div class="line"><span class="selector-class">.a-rotateoutRT</span>&#123;<span class="attribute">-webkit-animation-name</span>:rotateoutRT;<span class="attribute">-moz-animation-name</span>:rotateoutRT;<span class="attribute">-ms-animation-name</span>:rotateoutRT;<span class="attribute">animation-name</span>:rotateoutRT;&#125;</div><div class="line"><span class="comment">/* 转出-向右下 */</span></div><div class="line"><span class="selector-class">.a-rotateoutRB</span>&#123;<span class="attribute">-webkit-animation-name</span>:rotateoutRB;<span class="attribute">-moz-animation-name</span>:rotateoutRB;<span class="attribute">-ms-animation-name</span>:rotateoutRB;<span class="attribute">animation-name</span>:rotateoutRB;&#125;</div><div class="line"><span class="comment">/* 翻转 */</span></div><div class="line"><span class="selector-class">.a-flip</span>&#123;<span class="attribute">-webkit-animation-name</span>:flip;<span class="attribute">-moz-animation-name</span>:flip;<span class="attribute">-ms-animation-name</span>:flip;<span class="attribute">animation-name</span>:flip;&#125;</div><div class="line"><span class="comment">/* 翻入-X轴 */</span></div><div class="line"><span class="selector-class">.a-flipinX</span>&#123;<span class="attribute">-webkit-animation-name</span>:flipinX;<span class="attribute">-moz-animation-name</span>:flipinX;<span class="attribute">-ms-animation-name</span>:flipinX;<span class="attribute">animation-name</span>:flipinX;&#125;</div><div class="line"><span class="comment">/* 翻入-Y轴 */</span></div><div class="line"><span class="selector-class">.a-flipin</span>,<span class="selector-class">.a-flipinY</span>&#123;<span class="attribute">-webkit-animation-name</span>:flipinY;<span class="attribute">-moz-animation-name</span>:flipinY;<span class="attribute">-ms-animation-name</span>:flipinY;<span class="attribute">animation-name</span>:flipinY;&#125;</div><div class="line"><span class="comment">/* 翻出-X轴 */</span></div><div class="line"><span class="selector-class">.a-flipoutX</span>&#123;<span class="attribute">-webkit-animation-name</span>:flipoutX;<span class="attribute">-moz-animation-name</span>:flipoutX;<span class="attribute">-ms-animation-name</span>:flipoutX;<span class="attribute">animation-name</span>:flipoutX;&#125;</div><div class="line"><span class="comment">/* 翻出-Y轴 */</span></div><div class="line"><span class="selector-class">.a-flipout</span>,<span class="selector-class">.a-flipoutY</span>&#123;<span class="attribute">-webkit-animation-name</span>:flipoutY;<span class="attribute">-moz-animation-name</span>:flipoutY;<span class="attribute">-ms-animation-name</span>:flipoutY;<span class="attribute">animation-name</span>:flipoutY;&#125;</div><div class="line"><span class="comment">/* 闪烁 */</span></div><div class="line"><span class="selector-class">.a-flash</span>&#123;<span class="attribute">-webkit-animation-name</span>:flash;<span class="attribute">-moz-animation-name</span>:flash;<span class="attribute">-ms-animation-name</span>:flash;<span class="attribute">animation-name</span>:flash;&#125;</div><div class="line"><span class="comment">/* 震颤 */</span></div><div class="line"><span class="selector-class">.a-shake</span>&#123;<span class="attribute">-webkit-animation-name</span>:shake;<span class="attribute">-moz-animation-name</span>:shake;<span class="attribute">-ms-animation-name</span>:shake;<span class="attribute">animation-name</span>:shake;&#125;</div><div class="line"><span class="comment">/* 摇摆 */</span></div><div class="line"><span class="selector-class">.a-swing</span>&#123;<span class="attribute">-webkit-animation-name</span>:swing;<span class="attribute">-moz-animation-name</span>:swing;<span class="attribute">-ms-animation-name</span>:swing;<span class="attribute">animation-name</span>:swing;&#125;</div><div class="line"><span class="comment">/* 摇晃 */</span></div><div class="line"><span class="selector-class">.a-wobble</span>&#123;<span class="attribute">-webkit-animation-name</span>:wobble;<span class="attribute">-moz-animation-name</span>:wobble;<span class="attribute">-ms-animation-name</span>:wobble;<span class="attribute">animation-name</span>:wobble;&#125;</div><div class="line"><span class="comment">/* 震铃 */</span></div><div class="line"><span class="selector-class">.a-ring</span>&#123;<span class="attribute">-webkit-animation-name</span>:ring;<span class="attribute">-moz-animation-name</span>:ring;<span class="attribute">-ms-animation-name</span>:ring;<span class="attribute">animation-name</span>:ring;&#125;</div><div class="line"><span class="comment">/* define */</span></div><div class="line"><span class="comment">/* 淡入 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> fadein&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> fadein&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> fadein&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> fadein&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 淡入-从上 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> fadeinT&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(-100px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> fadeinT&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(-100px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> fadeinT&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(-100px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> fadeinT&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(-100px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 淡入-从右 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> fadeinR&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(100px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> fadeinR&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(100px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> fadeinR&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(100px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> fadeinR&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(100px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 淡入-从下 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> fadeinB&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(100px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> fadeinB&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(100px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> fadeinB&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(100px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> fadeinB&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(100px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 淡入-从左 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> fadeinL&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(-100px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> fadeinL&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(-100px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> fadeinL&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(-100px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> fadeinL&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(-100px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 淡出 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> fadeout&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> fadeout&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> fadeout&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> fadeout&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 淡出-向上 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> fadeoutT&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(-100px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> fadeoutT&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(-100px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> fadeoutT&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(-100px);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> fadeoutT&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(-100px);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 淡出-向右 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> fadeoutR&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(100px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> fadeoutR&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(100px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> fadeoutR&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(100px);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> fadeoutR&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(100px);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 淡出-向下 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> fadeoutB&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(100px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> fadeoutB&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(100px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> fadeoutB&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(100px);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> fadeoutB&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(100px);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 淡出-向左 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> fadeoutL&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(-100px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> fadeoutL&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(-100px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> fadeoutL&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(-100px);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> fadeoutL&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(-100px);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 弹跳 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> bounce&#123;</div><div class="line">    0%,20%,50%,80%,100%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    40%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(-30px);&#125;</div><div class="line">    60%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(-15px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> bounce&#123;</div><div class="line">    0%,20%,50%,80%,100%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    40%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(-30px);&#125;</div><div class="line">    60%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(-15px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> bounce&#123;</div><div class="line">    0%,20%,50%,80%,100%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    40%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(-30px);&#125;</div><div class="line">    60%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(-15px);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> bounce&#123;</div><div class="line">    0%,20%,50%,80%,100%&#123;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    40%&#123;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(-30px);&#125;</div><div class="line">    60%&#123;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(-15px);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 弹入 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> bouncein&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">scale</span>(0.3);&#125;</div><div class="line">    50%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">scale</span>(1.05);&#125;</div><div class="line">    70%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">scale</span>(0.9);&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">scale</span>(1);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> bouncein&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(0.3);&#125;</div><div class="line">    50%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(1.05);&#125;</div><div class="line">    70%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(0.9);&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(1);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> bouncein&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">scale</span>(0.3);&#125;</div><div class="line">    50%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">scale</span>(1.05);&#125;</div><div class="line">    70%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">scale</span>(0.9);&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">scale</span>(1);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> bouncein&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">scale</span>(0.3);&#125;</div><div class="line">    50%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">scale</span>(1.05);&#125;</div><div class="line">    70%&#123;<span class="attribute">transform</span>:<span class="built_in">scale</span>(0.9);&#125;</div><div class="line">    100%&#123;<span class="attribute">transform</span>:<span class="built_in">scale</span>(1);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 弹入-从上 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> bounceinT&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(-100px);&#125;</div><div class="line">    60%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(30px);&#125;</div><div class="line">    80%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(-10px);&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> bounceinT&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(-100px);&#125;</div><div class="line">    60%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(30px);&#125;</div><div class="line">    80%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(-10px);&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> bounceinT&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(-100px);&#125;</div><div class="line">    60%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(30px);&#125;</div><div class="line">    80%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(-10px);&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> bounceinT&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(-100px);&#125;</div><div class="line">    60%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(30px);&#125;</div><div class="line">    80%&#123;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(-10px);&#125;</div><div class="line">    100%&#123;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 弹入-从右 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> bounceinR&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(100px);&#125;</div><div class="line">    60%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(-30px);&#125;</div><div class="line">    80%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(10px);&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> bounceinR&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(100px);&#125;</div><div class="line">    60%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(-30px);&#125;</div><div class="line">    80%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(10px);&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> bounceinR&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(100px);&#125;</div><div class="line">    60%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(-30px);&#125;</div><div class="line">    80%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(10px);&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> bounceinR&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(100px);&#125;</div><div class="line">    60%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(-30px);&#125;</div><div class="line">    80%&#123;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(10px);&#125;</div><div class="line">    100%&#123;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 弹入-从下 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> bounceinB&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(100px);&#125;</div><div class="line">    60%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(-30px);&#125;</div><div class="line">    80%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(10px);&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> bounceinB&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(100px);&#125;</div><div class="line">    60%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(-30px);&#125;</div><div class="line">    80%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(10px);&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> bounceinB&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(100px);&#125;</div><div class="line">    60%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(-30px);&#125;</div><div class="line">    80%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(10px);&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> bounceinB&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(100px);&#125;</div><div class="line">    60%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(-30px);&#125;</div><div class="line">    80%&#123;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(10px);&#125;</div><div class="line">    100%&#123;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 弹入-从左 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> bounceinL&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(-100px);&#125;</div><div class="line">    60%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(30px);&#125;</div><div class="line">    80%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(-10px);&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> bounceinL&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(-100px);&#125;</div><div class="line">    60%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(30px);&#125;</div><div class="line">    80%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(-10px);&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> bounceinL&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(-100px);&#125;</div><div class="line">    60%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(30px);&#125;</div><div class="line">    80%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(-10px);&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> bounceinL&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(-100px);&#125;</div><div class="line">    60%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(30px);&#125;</div><div class="line">    80%&#123;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(-10px);&#125;</div><div class="line">    100%&#123;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 弹出 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> bounceout&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">scale</span>(1);&#125;</div><div class="line">    25%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">scale</span>(0.95);&#125;</div><div class="line">    50%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">scale</span>(1.1);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">scale</span>(0.3);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> bounceout&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(1);&#125;</div><div class="line">    25%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(0.95);&#125;</div><div class="line">    50%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(1.1);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(0.3);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> bounceout&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">scale</span>(1);&#125;</div><div class="line">    25%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">scale</span>(0.95);&#125;</div><div class="line">    50%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">scale</span>(1.1);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">scale</span>(0.3);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> bounceout&#123;</div><div class="line">    0%&#123;<span class="attribute">transform</span>:<span class="built_in">scale</span>(1);&#125;</div><div class="line">    25%&#123;<span class="attribute">transform</span>:<span class="built_in">scale</span>(0.95);&#125;</div><div class="line">    50%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">scale</span>(1.1);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">scale</span>(0.3);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 弹出-向上*/</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> bounceoutT&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    20%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(20px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(-100px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> bounceoutT&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    20%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(20px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(-100px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> bounceoutT&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    20%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(20px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(-100px);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> bounceoutT&#123;</div><div class="line">    0%&#123;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    20%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(20px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(-100px);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 弹出-向右*/</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> bounceoutR&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    20%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(-20px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(100px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> bounceoutR&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    20%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(-20px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(100px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> bounceoutR&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    20%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(-20px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(100px);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> bounceoutR&#123;</div><div class="line">    0%&#123;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    20%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(-20px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(100px);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 弹出-向下 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> bounceoutB&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    20%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(-20px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(100px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> bounceoutB&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    20%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(-20px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateY</span>(100px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> bounceoutB&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    20%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(-20px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateY</span>(100px);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> bounceoutB&#123;</div><div class="line">    0%&#123;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(0);&#125;</div><div class="line">    20%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(-20px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">translateY</span>(100px);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 弹出-向左 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> bounceoutL&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    20%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(20px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(-100px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> bounceoutL&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    20%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(20px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(-100px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> bounceoutL&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    20%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(20px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(-100px);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> bounceoutL&#123;</div><div class="line">    0%&#123;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    20%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(20px);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(-200px);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 转入 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> rotatein&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(-200deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> rotatein&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(-200deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> rotatein&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(-200deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> rotatein&#123;</div><div class="line">    0%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(-200deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(0);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 转入-从左上 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> rotateinLT&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform-origin</span>:left bottom;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(-90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform-origin</span>:left bottom;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> rotateinLT&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform-origin</span>:left bottom;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(-90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform-origin</span>:left bottom;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> rotateinLT&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform-origin</span>:left bottom;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(-90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform-origin</span>:left bottom;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> rotateinLT&#123;</div><div class="line">    0%&#123;<span class="attribute">transform-origin</span>:left bottom;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(-90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">transform-origin</span>:left bottom;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 转入-从左下 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> rotateineftB&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform-origin</span>:left bottom;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform-origin</span>:left bottom;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> rotateineftB&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform-origin</span>:left bottom;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform-origin</span>:left bottom;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> rotateineftB&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform-origin</span>:left bottom;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform-origin</span>:left bottom;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> rotateineftB&#123;</div><div class="line">    0%&#123;<span class="attribute">transform-origin</span>:left bottom;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">transform-origin</span>:left bottom;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 转入-从右上 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> rotateinRT&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform-origin</span>:right bottom;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform-origin</span>:right bottom;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> rotateinRT&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform-origin</span>:right bottom;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform-origin</span>:right bottom;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> rotateinRT&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform-origin</span>:right bottom;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform-origin</span>:right bottom;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> rotateinRT&#123;</div><div class="line">    0%&#123;<span class="attribute">transform-origin</span>:right bottom;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">transform-origin</span>:right bottom;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 转入-从右下*/</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> rotateinRB&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform-origin</span>:right bottom;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(-90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform-origin</span>:right bottom;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> rotateinRB&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform-origin</span>:right bottom;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(-90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform-origin</span>:right bottom;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> rotateinRB&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform-origin</span>:right bottom;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(-90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform-origin</span>:right bottom;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> rotateinRB&#123;</div><div class="line">    0%&#123;<span class="attribute">transform-origin</span>:right bottom;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(-90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">transform-origin</span>:right bottom;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 转出 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> rotateout&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform-origin</span>:center center;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform-origin</span>:center center;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(200deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> rotateout&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform-origin</span>:center center;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform-origin</span>:center center;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(200deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> rotateout&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform-origin</span>:center center;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform-origin</span>:center center;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(200deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> rotateout&#123;</div><div class="line">    0%&#123;<span class="attribute">transform-origin</span>:center center;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">transform-origin</span>:center center;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(200deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 转出-向左上 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> rotateoutLT&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform-origin</span>:left bottom;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform-origin</span>:left bottom;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(-90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> rotateoutLT&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform-origin</span>:left bottom;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform-origin</span>:left bottom;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(-90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> rotateoutLT&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform-origin</span>:left bottom;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform-origin</span>:left bottom;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(-90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> rotateoutLT&#123;</div><div class="line">    0%&#123;<span class="attribute">transform-origin</span>:left bottom;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">transform-origin</span>:left bottom;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(-90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 转出-向左下 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> rotateoutLB&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform-origin</span>:left bottom;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform-origin</span>:left bottom;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> rotateoutLB&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform-origin</span>:left bottom;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform-origin</span>:left bottom;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> rotateoutLB&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform-origin</span>:left bottom;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform-origin</span>:left bottom;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> rotateoutLB&#123;</div><div class="line">    0%&#123;<span class="attribute">transform-origin</span>:left bottom;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">transform-origin</span>:left bottom;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 转出-向右上 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> rotateoutRT&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform-origin</span>:right bottom;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform-origin</span>:right bottom;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> rotateoutRT&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform-origin</span>:right bottom;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform-origin</span>:right bottom;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> rotateoutRT&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform-origin</span>:right bottom;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform-origin</span>:right bottom;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> rotateoutRT&#123;</div><div class="line">    0%&#123;<span class="attribute">transform-origin</span>:right bottom;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">transform-origin</span>:right bottom;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 转出-向右下 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> rotateoutBR&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform-origin</span>:right bottom;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform-origin</span>:right bottom;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(-90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> rotateoutBR&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform-origin</span>:right bottom;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform-origin</span>:right bottom;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(-90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> rotateoutBR&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform-origin</span>:right bottom;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform-origin</span>:right bottom;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(-90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> rotateoutBR&#123;</div><div class="line">    0%&#123;<span class="attribute">transform-origin</span>:right bottom;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">transform-origin</span>:right bottom;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(-90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 翻转 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> flip&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(0);<span class="attribute">-webkit-animation-timing-function</span>:ease-out;&#125;</div><div class="line">    40%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">translateZ</span>(150px) <span class="built_in">rotateY</span>(170deg);<span class="attribute">-webkit-animation-timing-function</span>:ease-out;&#125;</div><div class="line">    50%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">translateZ</span>(150px) <span class="built_in">rotateY</span>(190deg) <span class="built_in">scale</span>(1);<span class="attribute">-webkit-animation-timing-function</span>:ease-in;&#125;</div><div class="line">    80%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(360deg) <span class="built_in">scale</span>(0.95);<span class="attribute">-webkit-animation-timing-function</span>:ease-in;&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">scale</span>(1);<span class="attribute">-webkit-animation-timing-function</span>:ease-in;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> flip&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(0);<span class="attribute">-moz-animation-timing-function</span>:ease-out;&#125;</div><div class="line">    40%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">translateZ</span>(150px) <span class="built_in">rotateY</span>(170deg);<span class="attribute">-moz-animation-timing-function</span>:ease-out;&#125;</div><div class="line">    50%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">translateZ</span>(150px) <span class="built_in">rotateY</span>(190deg) <span class="built_in">scale</span>(1);<span class="attribute">-moz-animation-timing-function</span>:ease-in;&#125;</div><div class="line">    80%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(360deg) <span class="built_in">scale</span>(0.95);<span class="attribute">-moz-animation-timing-function</span>:ease-in;&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">scale</span>(1);<span class="attribute">-moz-animation-timing-function</span>:ease-in;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> flip&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(0);<span class="attribute">-ms-animation-timing-function</span>:ease-out;&#125;</div><div class="line">    40%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">translateZ</span>(150px) <span class="built_in">rotateY</span>(170deg);<span class="attribute">-ms-animation-timing-function</span>:ease-out;&#125;</div><div class="line">    50%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">translateZ</span>(150px) <span class="built_in">rotateY</span>(190deg) <span class="built_in">scale</span>(1);<span class="attribute">-ms-animation-timing-function</span>:ease-in;&#125;</div><div class="line">    80%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(360deg) <span class="built_in">scale</span>(0.95);<span class="attribute">-ms-animation-timing-function</span>:ease-in;&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">scale</span>(1);<span class="attribute">-ms-animation-timing-function</span>:ease-in;&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> flip&#123;</div><div class="line">    0%&#123;<span class="attribute">transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(0);<span class="attribute">animation-timing-function</span>:ease-out;&#125;</div><div class="line">    40%&#123;<span class="attribute">transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">translateZ</span>(150px) <span class="built_in">rotateY</span>(170deg);<span class="attribute">animation-timing-function</span>:ease-out;&#125;</div><div class="line">    50%&#123;<span class="attribute">transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">translateZ</span>(150px) <span class="built_in">rotateY</span>(190deg) <span class="built_in">scale</span>(1);<span class="attribute">animation-timing-function</span>:ease-in;&#125;</div><div class="line">    80%&#123;<span class="attribute">transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(360deg) <span class="built_in">scale</span>(0.95);<span class="attribute">animation-timing-function</span>:ease-in;&#125;</div><div class="line">    100%&#123;<span class="attribute">transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">scale</span>(1);<span class="attribute">animation-timing-function</span>:ease-in;&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 翻入-X轴 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> flipinX&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    40%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(-10deg);&#125;</div><div class="line">    70%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(10deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> flipinX&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    40%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(-10deg);&#125;</div><div class="line">    70%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(10deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> flipinX&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    40%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(-10deg);&#125;</div><div class="line">    70%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(10deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> flipinX&#123;</div><div class="line">    0%&#123;<span class="attribute">transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    40%&#123;<span class="attribute">transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(-10deg);&#125;</div><div class="line">    70%&#123;<span class="attribute">transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(10deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 翻入-Y轴 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> flipinY&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    40%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(-10deg);&#125;</div><div class="line">    70%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(10deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> flipinY&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    40%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(-10deg);&#125;</div><div class="line">    70%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(10deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> flipinY&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    40%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(-10deg);&#125;</div><div class="line">    70%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(10deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> flipinY&#123;</div><div class="line">    0%&#123;<span class="attribute">transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">    40%&#123;<span class="attribute">transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(-10deg);&#125;</div><div class="line">    70%&#123;<span class="attribute">transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(10deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 翻出-X轴 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> flipoutX&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> flipoutX&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> flipoutX&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> flipoutX&#123;</div><div class="line">    0%&#123;<span class="attribute">transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateX</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 翻出-Y轴 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> flipoutY&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> flipoutY&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> flipoutY&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> flipoutY&#123;</div><div class="line">    0%&#123;<span class="attribute">transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(0);<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    100%&#123;<span class="attribute">transform</span>:<span class="built_in">perspective</span>(400px) <span class="built_in">rotateY</span>(90deg);<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 闪烁 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> flash&#123;</div><div class="line">    0%,50%,100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    25%,75%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> flash&#123;</div><div class="line">    0%,50%,100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    25%,75%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> flash&#123;</div><div class="line">    0%,50%,100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    25%,75%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> flash&#123;</div><div class="line">    0%,50%,100%&#123;<span class="attribute">opacity</span>:<span class="number">1</span>;&#125;</div><div class="line">    25%,75%&#123;<span class="attribute">opacity</span>:<span class="number">0</span>;&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 震颤 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> shake&#123;</div><div class="line">    0%,100%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    10%,30%,50%,70%,90%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(-10px);&#125;</div><div class="line">    20%,40%,60%,80%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(10px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> shake&#123;</div><div class="line">    0%,100%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    10%,30%,50%,70%,90%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(-10px);&#125;</div><div class="line">    20%,40%,60%,80%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(10px);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> shake&#123;</div><div class="line">    0%,100%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    10%,30%,50%,70%,90%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(-10px);&#125;</div><div class="line">    20%,40%,60%,80%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(10px);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> shake&#123;</div><div class="line">    0%,100%&#123;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    10%,30%,50%,70%,90%&#123;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(-10px);&#125;</div><div class="line">    20%,40%,60%,80%&#123;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(10px);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 摇摆 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> swing&#123;</div><div class="line">    20%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(15deg);&#125;</div><div class="line">    40%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(-10deg);&#125;</div><div class="line">    60%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(5deg);&#125;</div><div class="line">    80%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(-5deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> swing&#123;</div><div class="line">    20%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(15deg);&#125;</div><div class="line">    40%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(-10deg);&#125;</div><div class="line">    60%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(5deg);&#125;</div><div class="line">    80%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(-5deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">rotate</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> swing&#123;</div><div class="line">    20%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(15deg);&#125;</div><div class="line">    40%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(-10deg);&#125;</div><div class="line">    60%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(5deg);&#125;</div><div class="line">    80%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(-5deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">rotate</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> swing&#123;</div><div class="line">    20%&#123;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(15deg);&#125;</div><div class="line">    40%&#123;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(-10deg);&#125;</div><div class="line">    60%&#123;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(5deg);&#125;</div><div class="line">    80%&#123;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(-5deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(0);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 摇晃 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> wobble&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    15%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(-100px) <span class="built_in">rotate</span>(-5deg);&#125;</div><div class="line">    30%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(80px) <span class="built_in">rotate</span>(3deg);&#125;</div><div class="line">    45%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(-65px) <span class="built_in">rotate</span>(-3deg);&#125;</div><div class="line">    60%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(40px) <span class="built_in">rotate</span>(2deg);&#125;</div><div class="line">    75%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(-20px) <span class="built_in">rotate</span>(-1deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> wobble&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    15%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(-100px) <span class="built_in">rotate</span>(-5deg);&#125;</div><div class="line">    30%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(80px) <span class="built_in">rotate</span>(3deg);&#125;</div><div class="line">    45%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(-65px) <span class="built_in">rotate</span>(-3deg);&#125;</div><div class="line">    60%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(40px) <span class="built_in">rotate</span>(2deg);&#125;</div><div class="line">    75%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(-20px) <span class="built_in">rotate</span>(-1deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> wobble&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    15%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(-100px) <span class="built_in">rotate</span>(-5deg);&#125;</div><div class="line">    30%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(80px) <span class="built_in">rotate</span>(3deg);&#125;</div><div class="line">    45%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(-65px) <span class="built_in">rotate</span>(-3deg);&#125;</div><div class="line">    60%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(40px) <span class="built_in">rotate</span>(2deg);&#125;</div><div class="line">    75%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(-20px) <span class="built_in">rotate</span>(-1deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> wobble&#123;</div><div class="line">    0%&#123;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">    15%&#123;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(-100px) <span class="built_in">rotate</span>(-5deg);&#125;</div><div class="line">    30%&#123;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(80px) <span class="built_in">rotate</span>(3deg);&#125;</div><div class="line">    45%&#123;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(-65px) <span class="built_in">rotate</span>(-3deg);&#125;</div><div class="line">    60%&#123;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(40px) <span class="built_in">rotate</span>(2deg);&#125;</div><div class="line">    75%&#123;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(-20px) <span class="built_in">rotate</span>(-1deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">transform</span>:<span class="built_in">translateX</span>(0);&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 震铃 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> ring&#123;</div><div class="line">    0%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">scale</span>(1);&#125;</div><div class="line">    10%,20%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">scale</span>(0.9) <span class="built_in">rotate</span>(-3deg);&#125;</div><div class="line">    30%,50%,70%,90%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">scale</span>(1.1) <span class="built_in">rotate</span>(3deg);&#125;</div><div class="line">    40%,60%,80%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">scale</span>(1.1) <span class="built_in">rotate</span>(-3deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">-webkit-transform</span>:<span class="built_in">scale</span>(1) <span class="built_in">rotate</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> ring&#123;</div><div class="line">    0%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(1);&#125;</div><div class="line">    10%,20%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(0.9) <span class="built_in">rotate</span>(-3deg);&#125;</div><div class="line">    30%,50%,70%,90%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(1.1) <span class="built_in">rotate</span>(3deg);&#125;</div><div class="line">    40%,60%,80%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(1.1) <span class="built_in">rotate</span>(-3deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(1) <span class="built_in">rotate</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> ring&#123;</div><div class="line">    0%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">scale</span>(1);&#125;</div><div class="line">    10%,20%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">scale</span>(0.9) <span class="built_in">rotate</span>(-3deg);&#125;</div><div class="line">    30%,50%,70%,90%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">scale</span>(1.1) <span class="built_in">rotate</span>(3deg);&#125;</div><div class="line">    40%,60%,80%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">scale</span>(1.1) <span class="built_in">rotate</span>(-3deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">-ms-transform</span>:<span class="built_in">scale</span>(1) <span class="built_in">rotate</span>(0);&#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> ring&#123;</div><div class="line">    0%&#123;<span class="attribute">transform</span>:<span class="built_in">scale</span>(1);&#125;</div><div class="line">    10%,20%&#123;<span class="attribute">transform</span>:<span class="built_in">scale</span>(0.9) <span class="built_in">rotate</span>(-3deg);&#125;</div><div class="line">    30%,50%,70%,90%&#123;<span class="attribute">transform</span>:<span class="built_in">scale</span>(1.1) <span class="built_in">rotate</span>(3deg);&#125;</div><div class="line">    40%,60%,80%&#123;<span class="attribute">transform</span>:<span class="built_in">scale</span>(1.1) <span class="built_in">rotate</span>(-3deg);&#125;</div><div class="line">    100%&#123;<span class="attribute">transform</span>:<span class="built_in">scale</span>(1) <span class="built_in">rotate</span>(0);&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Web/" rel="tag"># Web</a>
+          
+            <a href="/tags/animate/" rel="tag"># animate</a>
+          
+            <a href="/tags/animation/" rel="tag"># animation</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/14/微信小程序左滑删除效果的实现/" rel="next" title="微信小程序左滑删除效果的实现">
+                <i class="fa fa-chevron-left"></i> 微信小程序左滑删除效果的实现
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODY2My81MjM0"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/1_lynson.jpg"
+               alt="Lynson" />
+          <p class="site-author-name" itemprop="name">Lynson</p>
+           
+              <p class="site-description motion-element" itemprop="description">Keep Moving</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、animates-css"><span class="nav-number">1.</span> <span class="nav-text">一、animates.css</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、magic-css动画库"><span class="nav-number">2.</span> <span class="nav-text">二、magic.css动画库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、Effect-css"><span class="nav-number">3.</span> <span class="nav-text">三、Effect.css</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、hover-css"><span class="nav-number">4.</span> <span class="nav-text">四、hover.css</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、常用动画"><span class="nav-number">5.</span> <span class="nav-text">五、常用动画</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lynson</span>
+</div>
+
+
+
+        <span id="busuanzi_container_site_pv" style='display:none'>
+             
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数    <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量    <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+        </span>
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("rrycEyE0tkhHVsmEwUnlTWv0-gzGzoHsz", "u6BOLS4c1jcOe7DnhrUrhNak");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
