@@ -90,19 +90,19 @@
 
 
 
-<meta name="description" content="问题描述当vue中引入了font-asesome字体（引入方法见另外一篇文章）后，在npm run dev下显示是没问题的，但是在npm run build 后发现如下图的问题：  根据错误显示，路径错了。">
+<meta name="description" content="问题描述 当vue中引入了font-asesome字体（引入方法见另外一篇文章）后，在npm run dev下显示是没问题的，但是在npm run build 后发现如下图的问题：   根据错误显示，路径错了。">
 <meta name="keywords" content="fontawesome,Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue引入font-awesome后build无法显示的问题">
 <meta property="og:url" content="http://www.lynson.tech/2017/06/30/vue引入font-awesome后build无法显示的问题/index.html">
 <meta property="og:site_name" content="Lynson">
-<meta property="og:description" content="问题描述当vue中引入了font-asesome字体（引入方法见另外一篇文章）后，在npm run dev下显示是没问题的，但是在npm run build 后发现如下图的问题：  根据错误显示，路径错了。">
+<meta property="og:description" content="问题描述 当vue中引入了font-asesome字体（引入方法见另外一篇文章）后，在npm run dev下显示是没问题的，但是在npm run build 后发现如下图的问题：   根据错误显示，路径错了。">
 <meta property="og:image" content="http://i.imgur.com/cHArqQ3.png">
 <meta property="og:image" content="http://i.imgur.com/ieizoS5.png">
-<meta property="og:updated_time" content="2017-06-30T02:30:35.843Z">
+<meta property="og:updated_time" content="2017-06-30T02:34:27.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue引入font-awesome后build无法显示的问题">
-<meta name="twitter:description" content="问题描述当vue中引入了font-asesome字体（引入方法见另外一篇文章）后，在npm run dev下显示是没问题的，但是在npm run build 后发现如下图的问题：  根据错误显示，路径错了。">
+<meta name="twitter:description" content="问题描述 当vue中引入了font-asesome字体（引入方法见另外一篇文章）后，在npm run dev下显示是没问题的，但是在npm run build 后发现如下图的问题：   根据错误显示，路径错了。">
 <meta name="twitter:image" content="http://i.imgur.com/cHArqQ3.png">
 
 
@@ -412,8 +412,10 @@
       
 
       
-        <h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><pre><code>当vue中引入了font-asesome字体（引入方法见另外一篇文章）后，在npm run dev下显示是没问题的，但是在npm run build 后发现如下图的问题：
-</code></pre><p><img src="http://i.imgur.com/cHArqQ3.png" alt=""></p>
+        <h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><blockquote>
+<p>当vue中引入了font-asesome字体（引入方法见另外一篇文章）后，在npm run dev下显示是没问题的，但是在npm run build 后发现如下图的问题：</p>
+</blockquote>
+<p><img src="http://i.imgur.com/cHArqQ3.png" alt=""></p>
 <pre><code>根据错误显示，路径错了。
 </code></pre><a id="more"></a>
 <h4 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h4><p>刚开始根据提示，以为是打包路径错了，但其实问题是因为字体文件超出了webpack的loader的limit限制，修改如下：</p>

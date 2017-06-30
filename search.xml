@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[vue引入font-awesome后build无法显示的问题]]></title>
     <url>%2F2017%2F06%2F30%2Fvue%E5%BC%95%E5%85%A5font-awesome%E5%90%8Ebuild%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[问题描述当vue中引入了font-asesome字体（引入方法见另外一篇文章）后，在npm run dev下显示是没问题的，但是在npm run build 后发现如下图的问题： 根据错误显示，路径错了。 问题解决刚开始根据提示，以为是打包路径错了，但其实问题是因为字体文件超出了webpack的loader的limit限制，修改如下：]]></content>
+    <content type="text"><![CDATA[问题描述 当vue中引入了font-asesome字体（引入方法见另外一篇文章）后，在npm run dev下显示是没问题的，但是在npm run build 后发现如下图的问题： 根据错误显示，路径错了。 问题解决刚开始根据提示，以为是打包路径错了，但其实问题是因为字体文件超出了webpack的loader的limit限制，修改如下：]]></content>
       <categories>
         <category>Vue</category>
       </categories>
