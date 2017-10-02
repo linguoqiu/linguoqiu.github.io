@@ -8,8 +8,8 @@
         <category>Vue</category>
       </categories>
       <tags>
-        <tag>fontawesome</tag>
         <tag>Vue</tag>
+        <tag>fontawesome</tag>
       </tags>
   </entry>
   <entry>
@@ -44,8 +44,8 @@
         <category>Vue</category>
       </categories>
       <tags>
-        <tag>fontawesome</tag>
         <tag>Vue</tag>
+        <tag>fontawesome</tag>
       </tags>
   </entry>
   <entry>
@@ -56,8 +56,8 @@
         <category>微信小程序</category>
       </categories>
       <tags>
-        <tag>微信小程序</tag>
         <tag>fontawesome</tag>
+        <tag>微信小程序</tag>
       </tags>
   </entry>
   <entry>
@@ -290,8 +290,8 @@
         <category>Android</category>
       </categories>
       <tags>
-        <tag>Http</tag>
         <tag>Android</tag>
+        <tag>Http</tag>
         <tag>xutils</tag>
       </tags>
   </entry>
@@ -375,9 +375,9 @@
         <category>Ionic2</category>
       </categories>
       <tags>
+        <tag>Http</tag>
         <tag>Ionic2</tag>
         <tag>Observeble</tag>
-        <tag>Http</tag>
       </tags>
   </entry>
   <entry>
@@ -470,8 +470,8 @@
         <category>Ionic2</category>
       </categories>
       <tags>
-        <tag>Ionic2</tag>
         <tag>Android</tag>
+        <tag>Ionic2</tag>
         <tag>gradle</tag>
       </tags>
   </entry>
