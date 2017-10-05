@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Ionic2隐藏状态栏,全屏,禁止旋转,保持横屏]]></title>
     <url>%2F2017%2F07%2F13%2FIonic2%E9%9A%90%E8%97%8F%E7%8A%B6%E6%80%81%E6%A0%8F%2C%E5%85%A8%E5%B1%8F%2C%E7%A6%81%E6%AD%A2%E6%97%8B%E8%BD%AC%2C%E4%BF%9D%E6%8C%81%E6%A8%AA%E5%B1%8F%2F</url>
-    <content type="text"><![CDATA[##保持全屏 1.安装插件 Ionic cordova plugin addcordova-plugin-screen-orientation 2.修改config.xml文件 orientation设置可以让你锁定应用程序屏幕方向以阻止屏幕自动翻转。可选的值有：default，landscape(横屏)，portrait(竖屏)。 隐藏状态栏 1.安装插件： ionic ccordova plugin add cordova-plugin-fullscreen 2.修改config.xml文件 …… 3.在app.component.ts文件里加入引用； import { Nav, Platform } from ‘ionic-angular’; import { StatusBar, Splashscreen } from ‘ionic-native’; 4.修改app.component.ts里的构造函数，保持引用切换回来的时候任然全屏 constructor(private platform: Platform){ this.platform.ready().then(() =&gt; { StatusBar.hide(); document.addEventListener(‘resume’,()=&gt;{ StatusBar.hide(); }); });}]]></content>
+    <content type="text"><![CDATA[##保持全屏 1.安装插件 Ionic cordova plugin addcordova-plugin-screen-orientation 2.修改config.xml文件 orientation设置可以让你锁定应用程序屏幕方向以阻止屏幕自动翻转。可选的值有：default，landscape(横屏)，portrait(竖屏)。 隐藏状态栏 1.安装插件： ionic ccordova plugin add cordova-plugin-fullscreen 2.修改config.xml文件 12345&lt;platform name="android"&gt; ...&lt;preference name="Fullscreen" value="true" /&gt; ...&lt;/platform&gt; 3.在app.component.ts文件里加入引用； 123import &#123; Nav, Platform &#125; from 'ionic-angular';import &#123; StatusBar, Splashscreen &#125; from 'ionic-native'; 4.修改app.component.ts里的构造函数，保持引用切换回来的时候任然全屏 12345678constructor(private platform: Platform)&#123; this.platform.ready().then(() =&gt; &#123; StatusBar.hide(); document.addEventListener('resume',()=&gt;&#123; StatusBar.hide(); &#125;); &#125;);&#125;]]></content>
       <categories>
         <category>Ionic2</category>
       </categories>
@@ -20,8 +20,8 @@
         <category>Ionic2</category>
       </categories>
       <tags>
-        <tag>Web</tag>
         <tag>Ionic2</tag>
+        <tag>Web</tag>
         <tag>https</tag>
       </tags>
   </entry>

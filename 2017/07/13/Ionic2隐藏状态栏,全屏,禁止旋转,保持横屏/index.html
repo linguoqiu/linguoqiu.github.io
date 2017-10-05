@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://www.lynson.tech/2017/07/13/Ionic2隐藏状态栏,全屏,禁止旋转,保持横屏/index.html">
 <meta property="og:site_name" content="Lynson">
 <meta property="og:description" content="##保持全屏 1.安装插件 Ionic cordova plugin addcordova-plugin-screen-orientation 2.修改config.xml文件   orientation设置可以让你锁定应用程序屏幕方向以阻止屏幕自动翻转。可选的值有：default，landscape(横屏)，portrait(竖屏)。">
-<meta property="og:updated_time" content="2017-10-05T01:26:42.246Z">
+<meta property="og:updated_time" content="2017-10-05T01:31:13.591Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ionic2隐藏状态栏,全屏,禁止旋转,保持横屏">
 <meta name="twitter:description" content="##保持全屏 1.安装插件 Ionic cordova plugin addcordova-plugin-screen-orientation 2.修改config.xml文件   orientation设置可以让你锁定应用程序屏幕方向以阻止屏幕自动翻转。可选的值有：default，landscape(横屏)，portrait(竖屏)。">
@@ -420,14 +420,11 @@
 <h2 id="隐藏状态栏"><a href="#隐藏状态栏" class="headerlink" title="隐藏状态栏"></a>隐藏状态栏</h2><p>　1.安装插件：</p>
 <p>  ionic ccordova plugin add cordova-plugin-fullscreen</p>
 <p>  2.修改config.xml文件</p>
-<platform name="android"><br>…<br><preference name="Fullscreen" value="true"><br>…<br></preference></platform>
-
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">platform</span> <span class="attr">name</span>=<span class="string">"android"</span>&gt;</span></div><div class="line">  ...</div><div class="line"><span class="tag">&lt;<span class="name">preference</span> <span class="attr">name</span>=<span class="string">"Fullscreen"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></div><div class="line">  ...</div><div class="line"><span class="tag">&lt;/<span class="name">platform</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>3.在app.component.ts文件里加入引用；</p>
-<p>import { Nav, Platform } from ‘ionic-angular’;</p>
-<p>import { StatusBar, Splashscreen } from ‘ionic-native’;</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Nav, Platform &#125; <span class="keyword">from</span> <span class="string">'ionic-angular'</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> &#123; StatusBar, Splashscreen &#125; <span class="keyword">from</span> <span class="string">'ionic-native'</span>;</div></pre></td></tr></table></figure>
 <p>4.修改app.component.ts里的构造函数，保持引用切换回来的时候任然全屏</p>
-<p>constructor(private platform: Platform){<br>    this.platform.ready().then(() =&gt; {<br>        StatusBar.hide();<br>        document.addEventListener(‘resume’,()=&gt;{<br>            StatusBar.hide();<br>        });<br>    });<br>}</p>
-</preferencename="orientation"value="portrait">
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">constructor</span>(<span class="params"><span class="keyword">private</span> platform: Platform</span>)&#123;</div><div class="line">    <span class="keyword">this</span>.platform.ready().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        StatusBar.hide();</div><div class="line">        <span class="built_in">document</span>.addEventListener(<span class="string">'resume'</span>,<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">            StatusBar.hide();</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></preferencename="orientation"value="portrait">
       
     </div>
 
