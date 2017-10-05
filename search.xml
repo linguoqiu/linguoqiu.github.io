@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ionic2隐藏状态栏,全屏,禁止旋转,保持横屏]]></title>
+    <url>%2F2017%2F07%2F13%2FIonic2%E9%9A%90%E8%97%8F%E7%8A%B6%E6%80%81%E6%A0%8F%2C%E5%85%A8%E5%B1%8F%2C%E7%A6%81%E6%AD%A2%E6%97%8B%E8%BD%AC%2C%E4%BF%9D%E6%8C%81%E6%A8%AA%E5%B1%8F%2F</url>
+    <content type="text"><![CDATA[##保持全屏 1.安装插件 Ionic cordova plugin addcordova-plugin-screen-orientation 2.修改config.xml文件 orientation设置可以让你锁定应用程序屏幕方向以阻止屏幕自动翻转。可选的值有：default，landscape(横屏)，portrait(竖屏)。 隐藏状态栏 1.安装插件： ionic ccordova plugin add cordova-plugin-fullscreen 2.修改config.xml文件 …… 3.在app.component.ts文件里加入引用； import { Nav, Platform } from ‘ionic-angular’; import { StatusBar, Splashscreen } from ‘ionic-native’; 4.修改app.component.ts里的构造函数，保持引用切换回来的时候任然全屏 constructor(private platform: Platform){ this.platform.ready().then(() =&gt; { StatusBar.hide(); document.addEventListener(‘resume’,()=&gt;{ StatusBar.hide(); }); });}]]></content>
+      <categories>
+        <category>Ionic2</category>
+      </categories>
+      <tags>
+        <tag>Ionic2</tag>
+        <tag>保持横屏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ionic2后台使用https无证书打包后无法发送请求的问题]]></title>
     <url>%2F2017%2F07%2F10%2Fionic2%E5%90%8E%E5%8F%B0%E4%BD%BF%E7%94%A8https%E6%97%A0%E8%AF%81%E4%B9%A6%E6%89%93%E5%8C%85%E5%90%8E%E6%97%A0%E6%B3%95%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[参考资料：https://forum.ionicframework.com/t/https-connection-with-self-signed-certificate/12974 问题描述使用Ionic2开发，通过https请求后台数据，在pc调试或者打包为非release包时可以请求，但打包成releasse版后，ios和android均会提示Https connection with self signed certificate 的错误，原因是后台未配置https证书，所以被拦截了。 解决办法后台配置https证书后台配置https证书 修改native端代码如果后台不做修改的情况下，分别修改native两端的代码 IOS： Ios可以在AppDelegate.m file末尾加入以下代码: 123456@implementation NSURLRequest(DataController)+ (BOOL)allowsAnyHTTPSCertificateForHost:(NSString *)host&#123;return YES;&#125;@end ANDROID: 在安卓需要修改一个java类（In android you need to modify a java class）:路径是：project/platforms/android/CordovaLib/src/org/apache/cordova/CordovaWebViewClient.java 123456789101112131415161718192021222324252627public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) &#123;final String packageName = this.cordova.getActivity().getPackageName();final PackageManager pm = this.cordova.getActivity().getPackageManager();ApplicationInfo appInfo;try &#123;appInfo = pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA);if ((appInfo.flags &amp; ApplicationInfo.FLAG_DEBUGGABLE) != 0) &#123;// debug = truehandler.proceed();return;&#125; else &#123;// debug = false// THIS IS WHAT YOU NEED TO CHANGE:// 1. COMMENT THIS LINE// super.onReceivedSslError(view, handler, error);// 2. ADD THESE TWO LINES// ----&gt;handler.proceed();return;// &lt;----&#125;&#125; catch (NameNotFoundException e) &#123;// When it doubt, lock it out!super.onReceivedSslError(view, handler, error);&#125;&#125;]]></content>

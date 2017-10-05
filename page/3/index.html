@@ -307,6 +307,163 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.lynson.tech/2017/04/05/Ionic2关于Slides的一些坑/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gavin Lam">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/1_lynson.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lynson">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/05/Ionic2关于Slides的一些坑/" itemprop="url">Ionic2关于Slides的一些坑</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-05T19:57:18+08:00">
+                2017-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ionic2/" itemprop="url" rel="index">
+                    <span itemprop="name">Ionic2</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/04/05/Ionic2关于Slides的一些坑/" class="leancloud_visitors" data-flag-title="Ionic2关于Slides的一些坑">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>首先，要知道Slides是实际使用的是swiper组件，所以遇到问题也可以查阅swiper相关资料。</p>
+</blockquote>
+<p>通用Html代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ion-slides</span> #<span class="attr">ionSlides</span> <span class="attr">loop</span>=<span class="string">"true"</span> <span class="attr">autoplay</span>=<span class="string">"3000"</span> <span class="attr">pager</span> (<span class="attr">ionSlideAutoplayStop</span>)=<span class="string">"autoPlay()"</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>TS:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@ViewChild</span>(<span class="string">'ionSlides'</span>) slides;</div></pre></td></tr></table></figure>
+<h2 id="1、Slides在用户拖拽后，停止自动播放，解决方法："><a href="#1、Slides在用户拖拽后，停止自动播放，解决方法：" class="headerlink" title="1、Slides在用户拖拽后，停止自动播放，解决方法："></a>1、Slides在用户拖拽后，停止自动播放，解决方法：</h2><p>第一种方法： 可以监听  停止自动播放  事件，然后开启自动播放：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">autoPlay()&#123;</div><div class="line">    <span class="keyword">this</span>.slides.startAutoplay();</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/05/Ionic2关于Slides的一些坑/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://www.lynson.tech/2017/03/20/Java中使用MD5进行加密/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1696,152 +1853,6 @@ ViewChild会在ngAfterViewInit()回调函数之前做完工作，也就是说你
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.lynson.tech/2016/10/27/angular2的http请求返回结果的subcribe注意事项/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gavin Lam">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/1_lynson.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lynson">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/27/angular2的http请求返回结果的subcribe注意事项/" itemprop="url">angular2的http请求返回结果的subcribe注意事项</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-27T10:13:23+08:00">
-                2016-10-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ionic2/" itemprop="url" rel="index">
-                    <span itemprop="name">Ionic2</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2016/10/27/angular2的http请求返回结果的subcribe注意事项/" class="leancloud_visitors" data-flag-title="angular2的http请求返回结果的subcribe注意事项">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">mData:<span class="built_in">any</span></div><div class="line"></div><div class="line"><span class="keyword">this</span>.monitorSer.getVehicleLonAndLat(vehicleIds)</div><div class="line">  .subscribe(</div><div class="line">    <span class="function"><span class="params">data</span> =&gt;</span> &#123;</div><div class="line">      <span class="comment">//将data下的data存放到mData中</span></div><div class="line">      <span class="keyword">this</span>.mData=<span class="built_in">JSON</span>.parse(data.data);</div><div class="line">      <span class="comment">//功能实现</span></div><div class="line">      <span class="keyword">this</span>.init();</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="function"><span class="params">error</span> =&gt;</span>  <span class="keyword">this</span>.errorMessage = &lt;<span class="built_in">any</span>&gt;error</div><div class="line"></div><div class="line">);<span class="comment">//错误处理</span></div></pre></td></tr></table></figure>
-<p>subscribe()异步处理，如果需要用返回的数据，在返回函数里面将数据存入成员变量，并作相应的处理</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1891,7 +1902,7 @@ ViewChild会在ngAfterViewInit()回调函数之前做完工作，也就是说你
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1913,7 +1924,7 @@ ViewChild会在ngAfterViewInit()回调函数之前做完工作，也就是说你
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
