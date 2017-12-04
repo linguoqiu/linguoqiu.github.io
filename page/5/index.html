@@ -307,6 +307,156 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.lynson.tech/2016/08/24/JS计算一个月有多少天 /">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gavin Lam">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/1_lynson.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lynson">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/24/JS计算一个月有多少天 /" itemprop="url">JS计算一个月有多少天</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-24T18:53:11+08:00">
+                2016-08-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2016/08/24/JS计算一个月有多少天 /" class="leancloud_visitors" data-flag-title="JS计算一个月有多少天">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p> JS计算当月有多少天的方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCountDays</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> curDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">  <span class="comment">/* 获取当前月份 */</span></div><div class="line">  <span class="keyword">var</span> curMonth = curDate.getMonth();</div><div class="line">  <span class="comment">/*  生成实际的月份: 由于curMonth会比实际月份小1, 故需加1 */</span></div><div class="line">  curDate.setMonth(curMonth + <span class="number">1</span>);</div><div class="line">  <span class="comment">/* 将日期设置为0, 这里为什么要这样设置, 我不知道原因, 这是从网上学来的 */</span></div><div class="line">  curDate.setDate(<span class="number">0</span>);</div><div class="line">  <span class="comment">/* 返回当月的天数 */</span></div><div class="line">  <span class="keyword">return</span> curDate.getDate();</div><div class="line">&#125;</div><div class="line"> <span class="comment">//例如,  获取当前月份(现在是8月)的总天数: </span></div><div class="line"> getCountDays()       <span class="comment">// 返回31</span></div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/08/24/JS计算一个月有多少天 /" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://www.lynson.tech/2016/08/24/JS中在当前日期上追加一天或者获取上一个月和下一个月/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1121,7 +1271,7 @@ alert(now);
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
