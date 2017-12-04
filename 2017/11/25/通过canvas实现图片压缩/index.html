@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Javascript," />
+  <meta name="keywords" content="Web," />
 
 
 
@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="计算两个日期之间的天数： 1234567function test() &amp;#123;   alert(duration(new Date(2009, 11, 31), new Date(2010, 0, 10)));   alert(duration(new Date(2009, 0, 31), new Date(2009, 1, 10)));&amp;#125;function duration(d1">
-<meta name="keywords" content="Javascript">
+<meta name="description" content="在一次的项目中，需要用户上传图片，目前市场随便一个手机拍出来的照片都是好几兆，直接上传特别占用带宽，影响用户体验，所以要求对用户上传图片进行压缩后再上传；那么前端怎么实现这个功能呢？">
+<meta name="keywords" content="Web">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Js计算两个日期之间的天数">
-<meta property="og:url" content="http://www.lynson.tech/2016/08/24/Js计算两个日期之间的天数/index.html">
+<meta property="og:title" content="通过canvas实现图片压缩">
+<meta property="og:url" content="http://www.lynson.tech/2017/11/25/通过canvas实现图片压缩/index.html">
 <meta property="og:site_name" content="Lynson">
-<meta property="og:description" content="计算两个日期之间的天数： 1234567function test() &amp;#123;   alert(duration(new Date(2009, 11, 31), new Date(2010, 0, 10)));   alert(duration(new Date(2009, 0, 31), new Date(2009, 1, 10)));&amp;#125;function duration(d1">
-<meta property="og:updated_time" content="2017-05-25T06:05:06.000Z">
+<meta property="og:description" content="在一次的项目中，需要用户上传图片，目前市场随便一个手机拍出来的照片都是好几兆，直接上传特别占用带宽，影响用户体验，所以要求对用户上传图片进行压缩后再上传；那么前端怎么实现这个功能呢？">
+<meta property="og:updated_time" content="2017-12-04T13:34:20.570Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Js计算两个日期之间的天数">
-<meta name="twitter:description" content="计算两个日期之间的天数： 1234567function test() &amp;#123;   alert(duration(new Date(2009, 11, 31), new Date(2010, 0, 10)));   alert(duration(new Date(2009, 0, 31), new Date(2009, 1, 10)));&amp;#125;function duration(d1">
+<meta name="twitter:title" content="通过canvas实现图片压缩">
+<meta name="twitter:description" content="在一次的项目中，需要用户上传图片，目前市场随便一个手机拍出来的照片都是好几兆，直接上传特别占用带宽，影响用户体验，所以要求对用户上传图片进行压缩后再上传；那么前端怎么实现这个功能呢？">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://www.lynson.tech/2016/08/24/Js计算两个日期之间的天数/"/>
+  <link rel="canonical" href="http://www.lynson.tech/2017/11/25/通过canvas实现图片压缩/"/>
 
 
 
 
 
-  <title>Js计算两个日期之间的天数 | Lynson</title>
+  <title>通过canvas实现图片压缩 | Lynson</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -307,7 +307,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.lynson.tech/2016/08/24/Js计算两个日期之间的天数/">
+    <link itemprop="mainEntityOfPage" href="http://www.lynson.tech/2017/11/25/通过canvas实现图片压缩/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gavin Lam">
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Js计算两个日期之间的天数</h1>
+          <h1 class="post-title" itemprop="name headline">通过canvas实现图片压缩</h1>
         
 
         <div class="post-meta">
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-24T18:58:26+08:00">
-                2016-08-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-25T20:13:23+08:00">
+                2017-11-25
               </time>
             
 
@@ -359,8 +359,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript</span>
+                  <a href="/categories/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
                   </a>
                 </span>
 
@@ -376,7 +376,7 @@
 
           
           
-             <span id="/2016/08/24/Js计算两个日期之间的天数/" class="leancloud_visitors" data-flag-title="Js计算两个日期之间的天数">
+             <span id="/2017/11/25/通过canvas实现图片压缩/" class="leancloud_visitors" data-flag-title="通过canvas实现图片压缩">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -409,8 +409,96 @@
       
 
       
-        <p> 计算两个日期之间的天数：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   alert(duration(<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2009</span>, <span class="number">11</span>, <span class="number">31</span>), <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2010</span>, <span class="number">0</span>, <span class="number">10</span>)));</div><div class="line">   alert(duration(<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2009</span>, <span class="number">0</span>, <span class="number">31</span>), <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2009</span>, <span class="number">1</span>, <span class="number">10</span>)));</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">duration</span>(<span class="params">d1, d2</span>)</span>&#123;</div><div class="line">   <span class="keyword">return</span> (d2.getTime() - d1.getTime()) / (<span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>在一次的项目中，需要用户上传图片，目前市场随便一个手机拍出来的照片都是好几兆，直接上传特别占用带宽，影响用户体验，所以要求对用户上传图片进行压缩后再上传；那么前端怎么实现这个功能呢？</p>
+<a id="more"></a>
+<p>亲测可将4M图片压缩至100kb左右，代码如下：</p>
+<pre><code>&lt;input id=&quot;file&quot; type=&quot;file&quot;&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var eleFile = document.querySelector(&apos;#file&apos;);
+    // 压缩图片需要的一些元素和对象
+    var reader = new FileReader(),
+    //创建一个img对象
+    img = new Image();
+
+    // 选择的文件对象
+    var file = null;
+
+    // 缩放图片需要的canvas
+    var canvas = document.createElement(&apos;canvas&apos;);
+    var context = canvas.getContext(&apos;2d&apos;);
+
+    // base64地址图片加载完毕后
+    img.onload = function() {
+        // 图片原始尺寸
+        var originWidth = this.width;
+        var originHeight = this.height;
+        // 最大尺寸限制，可通过国设置宽高来实现图片压缩程度
+        var maxWidth = 800,
+        maxHeight = 800;
+        // 目标尺寸
+        var targetWidth = originWidth,
+        targetHeight = originHeight;
+        // 图片尺寸超过400x400的限制
+        if(originWidth &gt; maxWidth || originHeight &gt; maxHeight) {
+            if(originWidth / originHeight &gt; maxWidth / maxHeight) {
+            // 更宽，按照宽度限定尺寸
+            targetWidth = maxWidth;
+            targetHeight = Math.round(maxWidth * (originHeight / originWidth));
+        } else {
+            targetHeight = maxHeight;
+            targetWidth = Math.round(maxHeight * (originWidth / originHeight));
+        }
+    }
+    // canvas对图片进行缩放
+    canvas.width = targetWidth;
+    canvas.height = targetHeight;
+    // 清除画布
+    context.clearRect(0, 0, targetWidth, targetHeight);
+    // 图片压缩
+    context.drawImage(img, 0, 0, targetWidth, targetHeight);
+    /*第一个参数是创建的img对象；第二个参数是左上角坐标，后面两个是画布区域宽高*/
+    //压缩后的图片base64 url
+    /*canvas.toDataURL(mimeType, qualityArgument),mimeType 默认值是&apos;image/jpeg&apos;;
+     * qualityArgument表示导出的图片质量，只要导出为jpg和webp格式的时候此参数才有效果，默认值是0.92*/
+    var newUrl = canvas.toDataURL(&apos;image/jpeg&apos;, 0.92);//base64 格式
+    //console.log(canvas.toDataURL(&apos;image/jpeg&apos;, 0.92));
+　　　　　　　　　　preview.style.backgroundImage=&apos;url(&apos; + newUrl + &apos;)&apos;;
+    };
+
+    // 文件base64化，以便获知图片原始尺寸
+    reader.onload = function(e) {
+        img.src = e.target.result;
+    };
+    eleFile.addEventListener(&apos;change&apos;, function(event) {
+        file = event.target.files[0];
+        // 选择的文件是图片
+        if(file.type.indexOf(&quot;image&quot;) == 0) {
+            reader.readAsDataURL(file);
+        }
+    });
+&lt;/script&gt;
+</code></pre><p>CSS样式如下（形成图片预览效果）： </p>
+<pre><code>#preview {
+    display: inline-block;
+    width: 2.56rem;
+    height: 2.56rem;
+    position: relative;
+    background-image: url(img/iconfont-tianjia.png);
+    background-repeat: no-repeat;
+    background-size:cover ;
+}
+#file {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    z-index: 5;
+}
+</code></pre><p>其原理是通过canvas结合js重新绘制一副 2d 图片，然后给canvas画布设置宽高来完成目标图片的压缩！</p>
+
       
     </div>
 
@@ -439,7 +527,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Javascript/" rel="tag"># Javascript</a>
+            <a href="/tags/Web/" rel="tag"># Web</a>
           
         </div>
       
@@ -452,8 +540,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/24/JS计算一个月有多少天 /" rel="next" title="JS计算一个月有多少天">
-                <i class="fa fa-chevron-left"></i> JS计算一个月有多少天
+              <a href="/2017/07/13/Ionic2隐藏状态栏,全屏,禁止旋转,保持横屏/" rel="next" title="Ionic2隐藏状态栏,全屏,禁止旋转,保持横屏">
+                <i class="fa fa-chevron-left"></i> Ionic2隐藏状态栏,全屏,禁止旋转,保持横屏
               </a>
             
           </div>
@@ -461,10 +549,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/21/cordova插件使用（一套流程适用于每个插件使用）/" rel="prev" title="cordova插件使用（一套流程适用于每个插件使用）">
-                cordova插件使用（一套流程适用于每个插件使用） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
