@@ -307,6 +307,173 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.lynson.tech/2018/02/06/react-router的withRouter的作用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gavin Lam">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/1_lynson.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lynson">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/06/react-router的withRouter的作用/" itemprop="url">react-router的withRouter的作用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-06T22:13:23+08:00">
+                2018-02-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/02/06/react-router的withRouter的作用/" class="leancloud_visitors" data-flag-title="react-router的withRouter的作用">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+</blockquote>
+<p>首先withRouter可以用来给组件注入router相关的一些参数（match, location, history），比如：  </p>
+<pre><code class="JavaScript"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>
+<span class="keyword">import</span> PropTypes <span class="keyword">from</span> <span class="string">'prop-types'</span>
+<span class="keyword">import</span> { withRouter } <span class="keyword">from</span> <span class="string">'react-router'</span><span class="comment">// A simple component that shows the pathname of the current location</span>
+<span class="class"><span class="keyword">class</span> <span class="title">ShowTheLocation</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>{ 
+<span class="keyword">static</span> propTypes = { 
+   <span class="attr">match</span>: PropTypes.object.isRequired, 
+   <span class="attr">location</span>: PropTypes.object.isRequired, 
+   <span class="attr">history</span>: PropTypes.object.isRequired
+ }
+  render() {
+    <span class="keyword">const</span> { match, location, history } = <span class="keyword">this</span>.props
+   <span class="keyword">return</span> (
+     &lt;div&gt;You are now at {location.pathname}&lt;/div&gt;
+   )
+ }
+}
+<span class="comment">// Create a new component that is "connected" (to borrow redux// terminology) to the router.</span>
+<span class="keyword">const</span> ShowTheLocationWithRouter = withRouter(ShowTheLocation)
+</code></pre>
+<p>其次withRouter是专门用来处理数据更新问题的。在使用一些redux的的<code>connect()</code>或者mobx的<code>inject()</code>的组件中，如果依赖于路由的更新要重新渲染，会出现路由更新了但是组件没有重新渲染的情况。这是因为redux和mobx的这些连接方法会修改组件的<code>shouldComponentUpdate</code>。<br>所以在使用withRouter解决更新问题的时候，一定要保证withRouter在最外层，比如<code>withRouter(connect(Component))</code></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://www.lynson.tech/2017/11/28/js实现图片上传预览原理分析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1678,161 +1845,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.lynson.tech/2017/06/12/微信小程序引用fontawesome字体/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gavin Lam">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/1_lynson.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lynson">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/12/微信小程序引用fontawesome字体/" itemprop="url">微信小程序引用fontawesome字体</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-12T20:34:40+08:00">
-                2017-06-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/微信小程序/" itemprop="url" rel="index">
-                    <span itemprop="name">微信小程序</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/06/12/微信小程序引用fontawesome字体/" class="leancloud_visitors" data-flag-title="微信小程序引用fontawesome字体">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>关于添加字体图标其实跟添加自定义的字体是一样的东西。由于微信小程序不支持本地的路径，但是base64可用,所以我们将通过转为base64使用</p>
-</blockquote>
-<h4 id="前往fontawesome官网下载字体包。"><a href="#前往fontawesome官网下载字体包。" class="headerlink" title="前往fontawesome官网下载字体包。"></a>前往fontawesome官网下载字体包。</h4><blockquote>
-<p><a href="http://fontawesome.dashgame.com/" target="_blank" rel="external">http://fontawesome.dashgame.com/</a></p>
-</blockquote>
-<h4 id="打开1中下载的压缩包找到-ttf文件。"><a href="#打开1中下载的压缩包找到-ttf文件。" class="headerlink" title="打开1中下载的压缩包找到.ttf文件。"></a>打开1中下载的压缩包找到.ttf文件。</h4><p><img src="http://img.blog.csdn.net/20170508100942244" alt=""></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/12/微信小程序引用fontawesome字体/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1882,7 +1894,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1893,7 +1905,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1904,7 +1916,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">49</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1946,7 +1958,7 @@
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
